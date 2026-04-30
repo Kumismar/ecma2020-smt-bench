@@ -23,3 +23,6 @@ It may serve as a bug finder in case the solvers do not follow matching semantic
 Also, thanks to the script, one can generate fresh set of benchmarks for the SMT solvers.
 
 The payload assignment is driven by linear congruence generator &ndash; you can regenerate identical testbeds by having the same seed (NOTE: it is recommended to do that on the same piece of hardware, since the pattern matching times may vary).
+
+## The source of patterns and XSS payloads
+Both `xss-payloads.txt` and `patterns-used-in-testbed.txt` come from the Black Ostrich string solver data &ndash; you can find them [here](https://www.cse.chalmers.se/research/group/security/black-ostrich/).
