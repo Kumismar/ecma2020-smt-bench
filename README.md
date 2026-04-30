@@ -13,8 +13,8 @@ The benchmarks are created by 'randomly' assigning an XSS payload from `xss-payl
 (check-sat)
 ```
 
-The raw payload used is also stored in a comment on the first line of each file for easier debugging.
 Each pair (regex, payload) is then matched by JavaScript regex engine and classified as `sat`/`unsat` based on the result.
+
 ## The benchmark generator
 In this repository, there is `make_smt_random.js` script that takes care of the benchmark generation.
 As mentioned earlier, it takes regex patterns one by one, assigns a 'random' XSS payload and verifies the satisfiability of the given combination.
