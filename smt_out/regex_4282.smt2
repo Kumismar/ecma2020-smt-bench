@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(05)[0-9][0-9][1-9]([0-9]){6}$")))
+(assert (= x "<img LOWSRC=""javascript:document.vulnerable=true;"">"))
+(check-sat)

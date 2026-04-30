@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\d{2,3})$")))
+(assert (= x "<script> var+x+=+showModelessDialog+(this); alert(x.document.cookie); </script>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\d+((\s?|[\.]?)\d+)+)?")))
+(assert (= x "<stylesheet xmlns=""http://www.w3.org/TR/WD-xsl"">"))
+(check-sat)

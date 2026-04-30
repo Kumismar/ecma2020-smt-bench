@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?:(?:0[1-9]|1[0-2])[/\-. ]?(?:0[1-9]|[12][0-9])|(?:(?:0[13-9]|1[0-2])[/\-. ]?30)|(?:(?:0[13578]|1[02])[/\-. ]?31))[/\-. ]?(?:19|20)[0-9]{2}")))
+(assert (= x "<dir onblur=alert(1) tabindex=1 id=x></dir><input autofocus>"))
+(check-sat)

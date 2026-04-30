@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\+375\([0-9]{2}\)[0-9]{3}-[0-9]{2}-[0-9]{2}")))
+(assert (= x "<figure onmouseenter=""alert(1)"">test</figure>"))
+(check-sat)

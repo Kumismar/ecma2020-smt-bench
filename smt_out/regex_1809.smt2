@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[ab]+@.+")))
+(assert (= x "<head><style type=""text/css"">@font-face {font-family: y; src: url(""font.svg#x"") format(""svg"");} body {font: 100px ""y"";}</style></head>"))
+(check-sat)

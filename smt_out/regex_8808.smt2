@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "((\|\|)|(&&)|(==)|([aA][Nn][dD])|([rR][Ee][Dd])|([Aa][Mm][Bb][Ee][Rr])|([Gg][Rr][Ee][Ee][Nn])|([Ii][Ff][Ff])|([Xx]?[Oo][Rr])|([Nn][Oo][Tt])|[RrAaGgTtFf!01^ ()?:]|[Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])*")))
+(assert (= x "<multicol onmousedown=""alert(1)"">test</multicol>"))
+(check-sat)

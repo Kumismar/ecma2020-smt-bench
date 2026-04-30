@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{10,125}")))
+(assert (= x "<a onbeforepaste=""alert(1)"" contenteditable>test</a>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z,a-z0-9]{4,4}")))
+(assert (= x "<svg><animatetransform onend=alert(1) attributeName=transform dur=1s>"))
+(check-sat)

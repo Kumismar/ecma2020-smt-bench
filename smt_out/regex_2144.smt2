@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!.*@(?:[lL][iI][vV][eE]|[yY][aA][hH][oO][oO]|[iI][cC][lL][oO][uU][dD]|[mM][eE]|[oO][uU][tT][lL][oO][oO][kK]|[mM][sS][nN]|[aA][oO][lL]|[cC][oO][xX]|[qQ][qQ]|(?:[hH][oO][tT]|[gG]|[yY]|[gG][oO][oO][gG][lL][eE]|[sS][hH][oO][rR][tT]|[aA][tT]|[pP][rR][oO][tT][oO][nN]|[hH][uU][sS][hH]|[lL][yY][cC][oO][sS]|[fF][aA][sS][tT])?[mM][aA][iI][lL])\.\w+$).*$")))
+(assert (= x "ABC<div style=""x:\xE2\x80\x8Aexpression(javascript:alert(1)"">DEF"))
+(check-sat)

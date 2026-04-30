@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "bpcode")))
+(assert (= x "&#34;&#62;<h1/onmouseover='\u0061lert(1)'>"))
+(check-sat)

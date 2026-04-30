@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{5,5}")))
+(assert (= x "<math href=""javascript:javascript:alert(1)"">CLICKME</math>  <math> <maction actiontype=""statusline#http://google.com"" xlink:href=""javascript:javascript:alert(1)"">CLICKME</maction> </math>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-ZäöüÄÖÜ]+[a-zA-ZäöüÄÖÜß'’\- \.]{1,24}[0-9a-zA-Z \-]{0,5}$")))
+(assert (= x "<nextid id=x tabindex=1 onbeforeactivate=alert(1)></nextid>"))
+(check-sat)

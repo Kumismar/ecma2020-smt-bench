@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "Enter email address")))
+(assert (= x "<div id=""x"">XXX</div> <style>  #x{font-family:foo[bar;color:green;}  #y];color:red;{}  </style>"))
+(check-sat)

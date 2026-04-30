@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-zÄÖÜäöüß0-9\s-]+")))
+(assert (= x "<output onfocusout=alert(1) tabindex=1 id=x></output><input autofocus>"))
+(check-sat)

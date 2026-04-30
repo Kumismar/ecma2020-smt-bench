@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!\s*$)[a-zA-Z0-9\s@@(.,-_)]{1,50}$")))
+(assert (= x "<a href=""data:application/x-x509-user-cert;&NewLine;base64&NewLine;,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==""&#09;&#10;&#11;>X</a"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\D*")))
+(assert (= x "0&q=';alert(String.fromCharCode(88,83,83))//\';alert%2?8String.fromCharCode(88,83,83))//"";alert(String.fromCharCode?(88,83,83))//\"";alert(String.fromCharCode(88,83,83)%?29//--></SCRIPT>"">'><SCRIPT>alert(String.fromCharCode(88,83%?2C83))</SCRIPT>&submit-frmGoogleWeb=Web+Search"))
+(check-sat)

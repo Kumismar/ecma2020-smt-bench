@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z].{1,}")))
+(assert (= x "<video><track default onload=alert(1) src=""data:text/vtt,WEBVTT""></video>"))
+(check-sat)

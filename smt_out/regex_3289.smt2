@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "/(.+)\s(.+)/")))
+(assert (= x "<meter onmousedown=""alert(1)"">test</meter>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9_ ]{2,40}")))
+(assert (= x "<image srcset=1 onerror=alert(1)>"))
+(check-sat)

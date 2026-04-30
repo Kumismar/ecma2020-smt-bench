@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{11,14}")))
+(assert (= x "<import namespace=""t"" implementation=""#default#time2"">"))
+(check-sat)

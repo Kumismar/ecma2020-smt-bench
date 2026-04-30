@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)")))
+(assert (= x "<h1 draggable=""true"" ondragleave=""alert(1)"">test</h1>"))
+(check-sat)

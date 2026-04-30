@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!.*(icloud.com|me.com|docomo.ne.jp|ezweb.ne.jp|softbank.ne.jp|i.softbank.jp|hotmail.co.jp|hotmail.com|msn.com|outlook.jp|outlook.com|live.jp)).+$")))
+(assert (= x "<style>@keyframes x{}</style><abbr style=""animation-name:x"" onanimationstart=""alert(1)""></abbr>"))
+(check-sat)

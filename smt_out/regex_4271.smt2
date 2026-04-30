@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(https?:\/\/)?((?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61})?)?[A-Za-z0-9]\\.)*[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z]{2,})?(\.[a-zA-Z]{2,})?\.[a-zA-Z]{2,}\/?(:[0-9]{1,5})?$")))
+(assert (= x "<style>:target {color: red;}</style><label id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></label>"))
+(check-sat)

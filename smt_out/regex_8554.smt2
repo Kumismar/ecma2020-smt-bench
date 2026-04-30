@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u0374-\u03FF\. ]{3,}")))
+(assert (= x "<source onmouseenter=""alert(1)"">test</source>"))
+(check-sat)

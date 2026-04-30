@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9.-]*")))
+(assert (= x "<object id=""x"" classid=""clsid:CB927D12-4FF7-4a9e-A169-56E4B8A75598""></object> <object classid=""clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"" onqt_error=""javascript:alert(1)"" style=""behavior:url(#x);""><param name=postdomevents /></object>"))
+(check-sat)

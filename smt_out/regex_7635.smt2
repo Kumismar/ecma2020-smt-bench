@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{6,7}")))
+(assert (= x "<style>@keyframes x{}</style><fieldset style=""animation-name:x"" onanimationend=""alert(1)""></fieldset>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d[,\d]*")))
+(assert (= x "<;STYLE>;li {list-style-image: url("";javascript:alert(&#39;XSS&#39;)"";);}<;/STYLE>;<;UL>;<;LI>;XSS"))
+(check-sat)

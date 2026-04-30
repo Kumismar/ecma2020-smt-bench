@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "alpha_numeric_punc")))
+(assert (= x "<a onpaste=""alert(1)"" contenteditable>test</a>"))
+(check-sat)

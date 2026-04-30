@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\s]{3,32}")))
+(assert (= x "<ruby onfocusout=alert(1) tabindex=1 id=x></ruby><input autofocus>"))
+(check-sat)

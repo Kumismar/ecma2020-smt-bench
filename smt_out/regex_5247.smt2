@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z]{1,}[\.]{0,1}[\s]{1}[A-Za-z]{1,}[\s|-]{0,1}[A-Za-z]{0,}")))
+(assert (= x "<div draggable=""true"" contenteditable>drag me</div><plaintext ondragover=alert(1) contenteditable>drop here</plaintext>"))
+(check-sat)

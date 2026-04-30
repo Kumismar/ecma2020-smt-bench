@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z-àáâãäåçèéêëìíîïðòóôõöùúûüýÿ][a-zA-Z-àáâãäåçèéêëìíîïðòóôõöùúûüýÿ .,'-]*$")))
+(assert (= x "<?xml version=""1.0"" encoding=""ISO-8859-1""?><foo><![CDATA[' or 1=1 or ''=']]></foof>"))
+(check-sat)

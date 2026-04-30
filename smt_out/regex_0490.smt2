@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{3}(-)?[0-9]{3}(-)?[0-9]{4}")))
+(assert (= x "<div id=""x"">x</div> <xml:namespace prefix=""t""> <import namespace=""t"" implementation=""#default#time2""> <t:set attributeName=""innerHTML"" targetElement=""x"" to=""&lt;img&#11;src=x:x&#11;onerror&#11;=javascript:alert(1)&gt;"">"))
+(check-sat)

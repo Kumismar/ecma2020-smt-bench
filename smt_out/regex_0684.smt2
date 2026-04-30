@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$")))
+(assert (= x "<aside onclick=""alert(1)"">test</aside>"))
+(check-sat)

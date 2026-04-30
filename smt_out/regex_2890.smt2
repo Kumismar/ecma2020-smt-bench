@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d[0-9]{5}")))
+(assert (= x "<a style=""behavior:url(#default#AnchorClick);"" folder=""javascript:javascript:alert(1)"">XXX</a>"))
+(check-sat)

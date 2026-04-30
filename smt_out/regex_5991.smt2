@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+48 ){1}([0-9]{3})-([0-9]{3})-([0-9]{3})")))
+(assert (= x "<thead draggable=""true"" ondrag=""alert(1)"">test</thead>"))
+(check-sat)

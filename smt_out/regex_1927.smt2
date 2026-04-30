@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(CZ|Cz|cz|cZ|SK|Sk|sk|sK)[0-9\.\-]{8,10}$")))
+(assert (= x "<body onerror=alert(1) onload=/>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{1,5}-\d{1,4}-\d{3,5}")))
+(assert (= x "<t:set attributeName=""innerHTML"" targetElement=""x"" to=""&lt;img&#11;src=x:x&#11;onerror&#11;=alert(116)&gt;"">//[""'`-->]]>]</div>"))
+(check-sat)

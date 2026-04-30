@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z\sa-z]{2,30}")))
+(assert (= x "<noframes onmouseup=""alert(1)"">test</noframes>"))
+(check-sat)

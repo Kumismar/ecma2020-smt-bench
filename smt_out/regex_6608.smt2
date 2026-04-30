@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([\u30A1-\u30FC|\u3000]+)$")))
+(assert (= x "<style>@keyframes x{}</style><legend style=""animation-name:x"" onanimationstart=""alert(1)""></legend>"))
+(check-sat)

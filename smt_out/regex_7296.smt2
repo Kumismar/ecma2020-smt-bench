@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(.+){5}(-(.+){4})?$")))
+(assert (= x "<td draggable=""true"" ondragleave=""alert(1)"">test</td>"))
+(check-sat)

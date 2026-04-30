@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d]{8,16}$")))
+(assert (= x "<div id=""95""><svg xmlns=""http://www.w3.org/2000/svg"" xmlns:xlink=""http://www.w3.org/1999/xlink"">"))
+(check-sat)

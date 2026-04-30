@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "0|\w+")))
+(assert (= x "&lt;SPAN DATASRC=\""#xss\"" DATAFLD=\""B\"" DATAFORMATAS=\""HTML\""&gt;&lt;/SPAN&gt;"))
+(check-sat)

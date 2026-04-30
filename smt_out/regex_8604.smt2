@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([A-z. áÁéÉóÓöÖőŐúÚüÜűŰ]){3,}$")))
+(assert (= x "<command onmousedown=""alert(1)"">test</command>"))
+(check-sat)

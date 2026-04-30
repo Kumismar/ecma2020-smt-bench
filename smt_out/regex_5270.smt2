@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z0-9.& _]*[A-Za-z0-9][A-Za-z0-9.& _]*$")))
+(assert (= x "<embed src=""http://corkami.googlecode.com/svn/!svn/bc/480/trunk/misc/pdf/helloworld_js_X.pdf""> ?"))
+(check-sat)

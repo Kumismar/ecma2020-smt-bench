@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[+][0-9].{10,}")))
+(assert (= x "<a href=http://foo.bar/#x=`y></a><img alt=""`><img src=xx:x onerror=alert(108)></a>"">"))
+(check-sat)

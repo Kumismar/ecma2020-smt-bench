@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[_.\w-]+@([\w][\w\-]+\.)+[a-zA-Z]{2,3}")))
+(assert (= x "<form onclick=""alert(1)"">test</form>"))
+(check-sat)

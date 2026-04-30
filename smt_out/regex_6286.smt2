@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[а-яёА-ЯЁ0-9a-zA-z .?:,]{1,256}")))
+(assert (= x "<option ondblclick=""alert(1)"">test</option>"))
+(check-sat)

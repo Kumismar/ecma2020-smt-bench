@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\p{L}/gu0-9.!#$%&+'^_`{}~-]+@[\p{L}/gu0-9-]+[.]+(?:.[\p{L}/gu0-9-]+)*$")))
+(assert (= x "<fieldset onpaste=""alert(1)"" contenteditable>test</fieldset>"))
+(check-sat)

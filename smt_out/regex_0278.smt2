@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([01]?[0-9]{1}|2[0-3]{1}):[0-5]{1}[0-9]{1}")))
+(assert (= x "<strong onmousedown=""alert(1)"">test</strong>"))
+(check-sat)

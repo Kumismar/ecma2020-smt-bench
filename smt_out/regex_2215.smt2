@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^1[3,4,5,6,7,8,9]\d{9}$")))
+(assert (= x "<SCRIPT onreadystatechange=javascript:javascript:alert(1);></SCRIPT>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\d\._]+@[a-zA-Z\d\._]+\.[a-zA-Z\d\.]{2,}")))
+(assert (= x """'`><\x3Cimg src=xxx:x onerror=javascript:alert(1)>"))
+(check-sat)

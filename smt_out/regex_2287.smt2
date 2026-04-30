@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!sample@email.tst)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")))
+(assert (= x """/><img/onerror=\x0Bjavascript:alert(1)\x0Bsrc=xxx:x />"))
+(check-sat)

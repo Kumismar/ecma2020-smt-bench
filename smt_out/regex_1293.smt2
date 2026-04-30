@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(([A-Z]{1,2} ?\d{1,4})|([A-Z]{3} ?\d{1,3})|(\d{1,3} ?[A-Z]{3})|(\d{1,4} ?[A-Z]{1,2})|([A-Z]{3} ?\d{1,3} ?[A-Z])|([A-Z] ?\d{1,3} ?[A-Z]{3})|([A-Z]{2} ?\d{2} ?[A-Z]{3})|([A-Z]{3} ?\d{4}))$")))
+(assert (= x "<fieldset onkeydown=""alert(1)"" contenteditable>test</fieldset>"))
+(check-sat)

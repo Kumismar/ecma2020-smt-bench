@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^()+^#|§ƒ!ÑÐ¾!{}))°*$µ`£E%´`=?;_@/><\][\\\x22,;|]+")))
+(assert (= x "<body onMouseEnter body onMouseEnter=""javascript:javascript:alert(1)""></body onMouseEnter>"))
+(check-sat)

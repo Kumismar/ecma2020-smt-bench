@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "je n'aime pas le sport")))
+(assert (= x "<article draggable=""true"" ondragend=""alert(1)"">test</article>"))
+(check-sat)

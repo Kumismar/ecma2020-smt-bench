@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{3,25}[ ]{1}[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{3,25}[ ]{1}[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]{3,25}")))
+(assert (= x "<input name=""password"" type=""password"" value=""secret"" />"))
+(check-sat)

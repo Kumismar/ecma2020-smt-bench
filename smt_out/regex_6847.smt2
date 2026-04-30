@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\D{3,30}$")))
+(assert (= x "<iframe/src \/\/onload = prompt(1)"))
+(check-sat)

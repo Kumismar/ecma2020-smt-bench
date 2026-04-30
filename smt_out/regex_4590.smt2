@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^CB\d{3,7}|cb\d{3,7}$")))
+(assert (= x "<blink onfocusout=alert(1) tabindex=1 id=x></blink><input autofocus>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w._%-]+@[\w.-]+\.[a-zA-Z]{2,4}$")))
+(assert (= x "<audio onmousemove=""alert(1)"">test</audio>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z0-9._%+-]+@[a-z0-9.-]+\. The Keyboard that appears allows for the input of the the following characters:")))
+(assert (= x "<div onkeypress=""alert(1)"" contenteditable>test</div>"))
+(check-sat)

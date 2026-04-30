@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u0600-\u06FFأ-يa-z A-Z]*$")))
+(assert (= x "&lt;XSS STYLE=\""behavior&#58; url(xss&#46;htc);\""&gt;"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(([X-Z]{1})(\d{7})([A-Z]{1}))|((\d{8})([A-Z]{1}))")))
+(assert (= x "<style>@keyframes x{}</style><i style=""animation-name:x"" onanimationstart=""alert(1)""></i>"))
+(check-sat)

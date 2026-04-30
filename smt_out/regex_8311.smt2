@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.*[0123456789])(?=.*[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ]).{8,}$")))
+(assert (= x "<style>@keyframes x{}</style><listing style=""animation-name:x"" onanimationend=""alert(1)""></listing>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^Yb2cR3d7hm$")))
+(assert (= x "<strong oncontextmenu=""alert(1)"">test</strong>"))
+(check-sat)

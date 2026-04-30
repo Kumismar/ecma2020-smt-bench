@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[1-9](\d{0,4})?(\.\d{1,2})?")))
+(assert (= x "<audio id=x controls onfocus=alert(1) id=x><source src=""validaudio.wav""></audio>"))
+(check-sat)

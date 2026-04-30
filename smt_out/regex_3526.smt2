@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((((\+31|0|0031)[1-9]{2}[0-9][-]?[0-9]{6}[0-9]*)|((\+31|0|0031)[1-9][0-9][-]?[1-9][0-9]{6}))|(((\+31|0|0031)[\s]?[-]?6){1}[-]?[1-9]{1}[0-9]{7}))")))
+(assert (= x "<html oncut=""alert(1)"" contenteditable>test</html>"))
+(check-sat)

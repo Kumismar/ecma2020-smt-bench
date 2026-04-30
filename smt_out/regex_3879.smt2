@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w'\-,.][^_!Â¡?Ã·?Â¿/\\+=@#$%Ë†&*(){}|~<>;:[\]]{2,}$")))
+(assert (= x "<LAYER SRC=""%(scriptlet)s""></LAYER>"))
+(check-sat)

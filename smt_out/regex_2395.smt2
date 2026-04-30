@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\b(Gloves|gloves|GLOVES)\b")))
+(assert (= x "<acronym onkeyup=""alert(1)"" contenteditable>test</acronym>"))
+(check-sat)

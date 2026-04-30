@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{5}\s*(?:-?\s*\d{4})?")))
+(assert (= x "<a href=""javascript&colon;\u0061&#x6C;&#101%72t&lpar;1&rpar;""><button>"))
+(check-sat)

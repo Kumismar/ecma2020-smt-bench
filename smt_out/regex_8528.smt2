@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\w,ě,š,č,ř,ž,ý,á,í,é,ť,ú,ů,ó,ď,ň,Ě,Š,Č,Ř,Ž,Ý,Á,Í,É,Ť,Ú,Ů,Ó,Ď,Ň]{2,16}")))
+(assert (= x "<div id=d><div style=""font-family:'sans\27\3B color\3Ared\3B'"">X</div></div> <script>with(document.getElementById(""d""))innerHTML=innerHTML</script>"))
+(check-sat)

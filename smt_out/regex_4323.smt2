@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-z0-9ÄÖÜäöüß%,/\.\s\-]{1,}")))
+(assert (= x "<acronym onmousedown=""alert(1)"">test</acronym>"))
+(check-sat)

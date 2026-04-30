@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(1[0-3]|0[1-9])\/([0-9]{4})")))
+(assert (= x "<content ondblclick=""alert(1)"">test</content>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0-9]{7,8}-[0-9Kk]{1}$")))
+(assert (= x "<marquee width=1 loop=1 onfinish=alert(1)>XSS</marquee>"))
+(check-sat)

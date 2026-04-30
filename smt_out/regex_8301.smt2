@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-zА-Яа-яЁёІіЇїЄє\s]+$")))
+(assert (= x "<table onblur=alert(1) tabindex=1 id=x></table><input autofocus>"))
+(check-sat)

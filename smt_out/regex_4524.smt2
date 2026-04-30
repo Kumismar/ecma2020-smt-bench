@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[а-яА-Яa-zA-Z0-9_-]{3,255}")))
+(assert (= x "<scRiPt y=""><"">/*<sCRipt* */prompt()</script"))
+(check-sat)

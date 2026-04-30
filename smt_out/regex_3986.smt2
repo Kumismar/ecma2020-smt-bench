@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z0-9]{32}")))
+(assert (= x "<audio src=1 href=1 onerror=""javascript:alert(1)""></audio>"))
+(check-sat)

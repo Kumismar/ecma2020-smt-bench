@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z \u00E0-\u00FC\u00d1\u00f1]{1,200}")))
+(assert (= x "<TD BACKGROUND=""javascript:alert('XSS')"">"))
+(check-sat)

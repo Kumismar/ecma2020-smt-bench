@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "((A[KLRZ])|(C[AOT])|(D[CE])|(FL)|(GA)|(HI)|(I[ADLN])|(K[SY])|(LA)|(M[ADEINOST])|(N[CDEHJMVY])|(MP)|(O[HKR])|(PA)|(RI)|(S[CD])|(T[NX])|(UT)|(V[AT])|(W[AIVY]))")))
+(assert (= x "<blink draggable=""true"" ondragend=""alert(1)"">test</blink>"))
+(check-sat)

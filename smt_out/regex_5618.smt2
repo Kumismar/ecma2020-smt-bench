@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+")))
+(assert (= x """`'><script>\x00javascript:alert(1)</script>"))
+(check-sat)

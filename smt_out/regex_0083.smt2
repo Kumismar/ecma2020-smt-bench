@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!(^[0-9]{3}-[0-9]{2}-[0-9]{4}))(?!(^[0-9]{4}$))(?!(^[0-9]{9}$))(.*))$")))
+(assert (= x "<style>@keyframes x{}</style><optgroup style=""animation-name:x"" onanimationend=""alert(1)""></optgroup>"))
+(check-sat)

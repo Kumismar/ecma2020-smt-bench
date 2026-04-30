@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!info@|sales@|administratie@|management@|inkoop@|verkoop@|administration@).)*$")))
+(assert (= x "<form><input type=search onsearch=alert(1) value=""Hit return"" autofocus>"))
+(check-sat)

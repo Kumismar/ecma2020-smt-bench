@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^@]+@(?!(yahoo|hotmail|gmail|googlemail|mail|email|cuoly))[^@]+\.[a-z]{2,}$")))
+(assert (= x "<font id=x tabindex=1 onfocusin=alert(1)></font>"))
+(check-sat)

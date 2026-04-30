@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\+?\d{6,14}$|^\(?\+?\d{1,3}\)?[ \-]?\d{3,4}[ \-]\d{3,4}([ \-]\d{3,4})?$")))
+(assert (= x "<basefont draggable=""true"" ondragend=""alert(1)"">test</basefont>"))
+(check-sat)

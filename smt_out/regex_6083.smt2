@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?:8\s?|\+7\s?)(?:\(?\d{3,5}\)?\s?)(?:\d{1,3}[\-\s]?)(?:\d{2}[\-\s]?\d{2})$")))
+(assert (= x "<optgroup onbeforecut=""alert(1)"" contenteditable>test</optgroup>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\+?[\d\/\s\-]{8,20}$")))
+(assert (= x "<blockquote onmouseleave=""alert(1)"">test</blockquote>"))
+(check-sat)

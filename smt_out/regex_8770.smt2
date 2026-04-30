@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\+375\((25|29|33|44)\)\d{3}.+")))
+(assert (= x "<track id=x tabindex=1 onbeforedeactivate=alert(1)></track><input autofocus>"))
+(check-sat)

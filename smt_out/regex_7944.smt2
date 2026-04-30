@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9+-/()\s]{8,15}")))
+(assert (= x "<svg><xmp onload=alert(1)></xmp>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "BECAUSE I LIVE YE SHALL LIVE ALSO")))
+(assert (= x "<rtc onmouseup=""alert(1)"">test</rtc>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "genomic_region")))
+(assert (= x "<script src=http://yoursite.com/your_files.js></script>"))
+(check-sat)

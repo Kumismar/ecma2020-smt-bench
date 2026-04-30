@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!.*@(?:aol|att|comcast|facebook|gmail|gmx|googlemail|cox|hotmail|hotmail|mac|me|mail|msn|live|sbcglobal|verizon|yahoo|yahoo|email|games|gmx|hush|hushmail|icloud|inbox|lavabit|love|outlook|pobox|rocketmail|safe-mail|wow|ygm|ymail)\..+$).*$")))
+(assert (= x "<div draggable=""true"" contenteditable>drag me</div><var ondragover=alert(1) contenteditable>drop here</var>"))
+(check-sat)

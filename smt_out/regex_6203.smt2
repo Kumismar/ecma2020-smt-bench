@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(0?[1-9]|[12]\d|3[01])$")))
+(assert (= x "<audio src/onerror=alert(1)>"))
+(check-sat)

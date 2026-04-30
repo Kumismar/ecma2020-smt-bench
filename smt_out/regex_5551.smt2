@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^[a-zA-Z\d]{3}$)|(^\d{5}$)|(^[a-zA-Z\d]{6}$)")))
+(assert (= x "<label oncut=""alert(1)"" contenteditable>test</label>"))
+(check-sat)

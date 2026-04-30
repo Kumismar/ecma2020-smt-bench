@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([\w!#$%&'*+\-\/=?\^`{|}~]+\.)*[\w!#$%&'*+\-\/=?\^`{|}~]+@((((([a-zA-Z0-9]{1}[a-zA-Z0-9\-]{0,62}[a-zA-Z0-9]{1})|[a-zA-Z])\.)+[a-zA-Z]{2,62})|(\d{1,3}\.){3}\d{1,3}(:\d{1,5})?)$")))
+(assert (= x "<tr onmouseover=""alert(1)"">test</tr>"))
+(check-sat)

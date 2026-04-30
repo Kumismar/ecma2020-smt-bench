@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(DE\d{20})|(CH\d{19})|(AT\d{18})")))
+(assert (= x "<html onfocusout=alert(1) tabindex=1 id=x></html><input autofocus>"))
+(check-sat)

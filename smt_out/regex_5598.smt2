@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^(1-?)?(\([2-9]\d{2}\)|[2-9]\d{2})-?\d{3}-?\d{4}$)?")))
+(assert (= x "<tfoot id=x tabindex=1 onactivate=alert(1)></tfoot>"))
+(check-sat)

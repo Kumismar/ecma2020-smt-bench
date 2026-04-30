@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9-()+\s]{10,}")))
+(assert (= x "<STYLE>a{background:url('s1' 's2)}@import javascript:javascript:alert(1);');}</STYLE>"))
+(check-sat)

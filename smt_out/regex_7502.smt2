@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z]{1,}[0-9]{1,}")))
+(assert (= x "<audio id=x controls onfocusin=alert(1) id=x><source src=""validaudio.wav""></audio>"))
+(check-sat)

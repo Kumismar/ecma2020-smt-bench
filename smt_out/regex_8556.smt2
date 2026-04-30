@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.+@(?:(?!(g|hot|y|google|hush|fast|at|short|at|proton)?mail)(?!live)(?!gmx)(?!gmail)(?!yahoo)(?!hotmail)(?!outlook)(?!msn)(?!icloud)(?!facebook)(?!aol)(?!zoho)(?!yandex)(?!lycox)(?!inbox)(?!myway)(?!aim)(?!goowy)(?!juno).)+\..+$")))
+(assert (= x "<mark id=x tabindex=1 ondeactivate=alert(1)></mark><input id=y autofocus>"))
+(check-sat)

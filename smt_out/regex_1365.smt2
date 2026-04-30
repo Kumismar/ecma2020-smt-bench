@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?:^\d{5}$)|(?:^\w{3}\s\w{3}$)|(?:^\w{6}$)")))
+(assert (= x "<% foo><x foo=""%><script>alert(91)</script>"">//[""'`-->]]>]</div>"))
+(check-sat)

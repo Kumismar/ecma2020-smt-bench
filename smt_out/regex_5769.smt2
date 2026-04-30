@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z0-9._%+-]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!hotmail.co.il)(?!walla.co.il)(?!mail.ru)(?!outlook.com)(?!email.com)[a-z0-9.-]+\.[a-z]{2,}$")))
+(assert (= x "<ol draggable=""true"" ondragstart=""alert(1)"">test</ol>"))
+(check-sat)

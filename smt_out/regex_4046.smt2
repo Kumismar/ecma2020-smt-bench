@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^CS\d{3,7}|AI\d{3,7}$")))
+(assert (= x "<hgroup draggable=""true"" ondragstart=""alert(1)"">test</hgroup>"))
+(check-sat)

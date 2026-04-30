@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\(?(?!37|96|900|456|555)[2-9](?!11)[0-8][0-9]\)?[-.\s]?(?!555[-.\s]?(?:1212|01)|(\d)\1{2}[-.\s]?\1{4})[2-9](?!11)[0-9]{2}[-.\s]?[0-9]{4}$")))
+(assert (= x "<meta onmouseout=""alert(1)"">test</meta>"))
+(check-sat)

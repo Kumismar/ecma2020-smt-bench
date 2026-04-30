@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-z A-Z 0-9 \- ' / . &]{2,80}$")))
+(assert (= x "<wbr id=x tabindex=1 onbeforeactivate=alert(1)></wbr>"))
+(check-sat)

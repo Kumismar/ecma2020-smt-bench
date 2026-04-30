@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!\s*$)[a-zA-Z0-9\s@@(.,-_)]{1,30}$")))
+(assert (= x "<acronym onmouseout=""alert(1)"">test</acronym>"))
+(check-sat)

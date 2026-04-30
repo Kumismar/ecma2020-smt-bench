@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([a-zA-Z0-9_%.-]{1,30})@([a-zA-Z0-9_.-]{1,30})\.([a-zA-Z]{1,15})$")))
+(assert (= x "<script>alert(document.getElementsByTagName('html')[0].innerHTML.match(/'([^']%2b)/)[1])</script>"))
+(check-sat)

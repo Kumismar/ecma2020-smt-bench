@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{5,14}")))
+(assert (= x "<video autoplay controls onpause=alert(1)><source src=""validvideo.mp4"" type=""video/mp4""></video>"))
+(check-sat)

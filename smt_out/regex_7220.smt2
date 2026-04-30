@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "THE WORD OF THE LORD ENDURETH FOREVER")))
+(assert (= x "<img src/onerror=alert(1)>"))
+(check-sat)

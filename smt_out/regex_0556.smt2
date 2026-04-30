@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((([0-9]{5})(?:-(?=[0-9]))?([0-9]{4})?)|([ABCEGHJKLMNPRSTVXYabceghjklmnprstvxy][0-9][A-Za-z] ?[0-9][A-Za-z][0-9]))$")))
+(assert (= x "<META HTTP-EQUIV=""refresh"" CONTENT=""0;url=javascript:alert('XSS');"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\d{2,4}-\d{3,4}-\d{3,4}$")))
+(assert (= x "&#x000003c;"))
+(check-sat)

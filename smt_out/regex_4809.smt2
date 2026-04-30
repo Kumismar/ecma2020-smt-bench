@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z éèçàê_\.-]{2,30}$")))
+(assert (= x "<noscript onkeyup=""alert(1)"" contenteditable>test</noscript>"))
+(check-sat)

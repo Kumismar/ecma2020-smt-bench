@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z0-9._\-]+@[0-9a-zA-Z\-]+\.[a-zA-Z.]{2,}$")))
+(assert (= x "';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//"";alert(String.fromCharCode(88,83,83))//\"";alert(String.fromCharCode(88,83,83))//--></SCRIPT>"">'><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>"))
+(check-sat)

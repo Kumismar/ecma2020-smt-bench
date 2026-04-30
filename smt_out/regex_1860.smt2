@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\s*\d{10}\s*")))
+(assert (= x "<image xmlns:xlink=""http://www.w3.org/1999/xlink"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{5,20}$")))
+(assert (= x "<div style=""background:url(test5.svg)"">PRESS ENTER</div>//[""'`-->]]>]</div>"))
+(check-sat)

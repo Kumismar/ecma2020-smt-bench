@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9A-Za-z_-]{1,8}")))
+(assert (= x "xmlns:svg=""http://www.w3.org/2000/svg"">"))
+(check-sat)

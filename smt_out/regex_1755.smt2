@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Z]{1,2}\d[A-Z\d]? \d[ABD-HJLNP-UW-Z]{2}$")))
+(assert (= x "<hgroup draggable=""true"" ondragend=""alert(1)"">test</hgroup>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([_a-zA-Z0-9-\.]+)@([a-zA-Z0-9-\.]+)\.([a-zA-Z0-9]{2,6})")))
+(assert (= x "&lt;!--&#91;if gte IE 4&#93;&gt;"))
+(check-sat)

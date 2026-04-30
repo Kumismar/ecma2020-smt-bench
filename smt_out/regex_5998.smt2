@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\S[\w-]*")))
+(assert (= x "<svg><path><animateMotion onrepeat=alert(1) dur=""1s"" repeatCount=""2"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{2}\/[0-9]{2}\/(19|20){1}[0-9]{2}")))
+(assert (= x "<dialog draggable=""true"" ondragend=""alert(1)"">test</dialog>"))
+(check-sat)

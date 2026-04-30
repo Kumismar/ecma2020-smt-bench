@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\dX]{18}")))
+(assert (= x "%22;alert%28%27RVRSH3LL_XSS%29//"))
+(check-sat)

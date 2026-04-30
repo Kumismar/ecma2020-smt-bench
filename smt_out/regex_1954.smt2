@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[V][0-9]{16}")))
+(assert (= x "0\""autofocus/onfocus=alert(1)--><video/poster/onerror=prompt(2)>""-confirm(3)-"""))
+(check-sat)

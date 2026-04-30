@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[7896][0-9]{9}")))
+(assert (= x "<div id=""44""><style>*[{}@import'test.css?]{color: green;}</style>X//[""'`-->]]>]</div><div id=""45""><div style=""font-family:'foo[a];color:red;';"">XXX</div>//[""'`-->]]>]</div><div id=""46""><div style=""font-family:foo}color=red;"">XXX</div>//[""'`-->]]>]</div><div id=""47""><svg xmlns=""http://www.w3.org/2000/svg""><script>alert(47)</script></svg>//[""'`-->]]>]</div><div id=""48""><SCRIPT FOR=document EVENT=onreadystatechange>alert(48)</SCRIPT>//[""'`-->]]>]</div><div id=""49""><OBJECT CLASSID=""clsid:333C7BC4-460F-11D0-BC04-0080C7055A83""><PARAM NAME=""DataURL"" VALUE=""javascript:alert(49)""></OBJECT>//[""'`-->]]>]</div><div id=""50""><object data=""data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==""></object>//[""'`-->]]>]</div><div id=""51""><embed src=""data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==""></embed>//[""'`-->]]>]</div><div id=""52""><x style=""behavior:url(test.sct)"">//[""'`-->]]>]</div>"))
+(check-sat)

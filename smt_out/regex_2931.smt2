@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\+\s0-9]{9,13}")))
+(assert (= x "<x contenteditable onblur=alert(1)>lose focus!"))
+(check-sat)

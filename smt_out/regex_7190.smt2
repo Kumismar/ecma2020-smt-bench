@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\w{4}")))
+(assert (= x "<legend onmouseleave=""alert(1)"">test</legend>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[x-zX-Z]{0,1}[0-9]{1,8}[a-zA-Z]{1,}")))
+(assert (= x "<keygen onbeforecopy=""alert(1)"" contenteditable>test</keygen>"))
+(check-sat)

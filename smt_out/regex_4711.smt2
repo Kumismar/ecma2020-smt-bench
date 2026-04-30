@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^\([0-9][1-9]\)[ ]?[0-9]{4,5}[ -][0-9]{4}$)|(^\+[0-9]{9,}$)|(^0[1-9]00[ ]?[0-9]{2,3}[ ]?[0-9]{4}$)")))
+(assert (= x "<aside id=x tabindex=1 onbeforeactivate=alert(1)></aside>"))
+(check-sat)

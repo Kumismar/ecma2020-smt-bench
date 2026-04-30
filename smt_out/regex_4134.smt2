@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z1234]+")))
+(assert (= x "<;IMG SRC=JaVaScRiPt:alert(';XSS';)>;"))
+(check-sat)

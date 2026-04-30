@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\+[0-9]?()[0-9](\s|\S)(\d[0-9]{9})$")))
+(assert (= x "“><s”%2b”cript>alert(document.cookie)</script>"))
+(check-sat)

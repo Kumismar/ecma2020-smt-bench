@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z0-9 _]+$")))
+(assert (= x "<noframes id=x tabindex=1 onbeforeactivate=alert(1)></noframes>"))
+(check-sat)

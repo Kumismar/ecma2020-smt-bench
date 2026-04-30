@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u30A1-\u30F6].*\S+.*")))
+(assert (= x "<basefont draggable=""true"" ondrag=""alert(1)"">test</basefont>"))
+(check-sat)

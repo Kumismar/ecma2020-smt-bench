@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\-\.0-9A-Z a-zäöüÄÖÜß]{3,}$")))
+(assert (= x "<svg xmlns=""http://www.w3.org/2000/svg"" onload=""alert(document.domain)""/>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!00)[0-3][0-9]")))
+(assert (= x "<div style=""font-family:'foo&#10;;color:red;';"">LOL"))
+(check-sat)

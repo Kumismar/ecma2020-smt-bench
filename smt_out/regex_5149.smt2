@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^AT\d{3,7}|AI\d{3,7}$")))
+(assert (= x "<b draggable=""true"" ondragleave=""alert(1)"">test</b>"))
+(check-sat)

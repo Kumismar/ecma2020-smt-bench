@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-zА-Яа-яЁё\s]+$")))
+(assert (= x "<video onblur=alert(1) tabindex=1 id=x></video><input autofocus>"))
+(check-sat)

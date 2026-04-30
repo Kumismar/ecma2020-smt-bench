@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([a-zA-Z0-9´`áéíóúÁÉÍÓÚäëïöüÄËÏÖÜàèìòùÀÈÌÒÙñÑº,.\s]{10,80})+$")))
+(assert (= x "<rtc onkeypress=""alert(1)"" contenteditable>test</rtc>"))
+(check-sat)

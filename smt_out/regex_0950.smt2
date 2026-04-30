@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\s*[А-Яа-яЁё]{2,}\s+([А-Яа-яЁё\s\.\-]{2,})$")))
+(assert (= x "<style>@keyframes x{}</style><rt style=""animation-name:x"" onanimationend=""alert(1)""></rt>"))
+(check-sat)

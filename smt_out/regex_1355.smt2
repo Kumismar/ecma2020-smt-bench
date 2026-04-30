@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\d{3}-?\d{4}$")))
+(assert (= x "<header id=x tabindex=1 onfocusin=alert(1)></header>"))
+(check-sat)

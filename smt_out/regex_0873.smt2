@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\s*[A-CEGHJ-NPR-TVXYa-ceghj-npr-tvxy][0-9][A-CEGHJ-NPR-TV-Za-ceghj-npr-tv-z]\s*[0-9][A-CEGHJ-NPR-TV-Za-ceghj-npr-tv-z][0-9]\s*")))
+(assert (= x "<title onmousedown=""alert(1)"">test</title>"))
+(check-sat)

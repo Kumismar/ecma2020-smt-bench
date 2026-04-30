@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[ぁ-んァ-ン]+$")))
+(assert (= x "<LINK REL=""stylesheet"" HREF=""http://ha.ckers.org/xss.css"">"))
+(check-sat)

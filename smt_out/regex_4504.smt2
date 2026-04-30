@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9-\s.,%&]+")))
+(assert (= x "<!-- IE9+, FF4+, Opera 11.60+, Safari 4.0.4+, GC7+  -->"))
+(check-sat)

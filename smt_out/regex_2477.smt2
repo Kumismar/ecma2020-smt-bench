@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "number_greater_than_zero")))
+(assert (= x "<frameset id=x tabindex=1 ondeactivate=alert(1)></frameset><input id=y autofocus>"))
+(check-sat)

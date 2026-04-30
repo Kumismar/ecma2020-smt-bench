@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^0]+[0-9]{1,3}(\.?[0-9]{3})*(,[0-9]{1,2})?$")))
+(assert (= x "&lt;SCRIPT \""a='&gt;'\"" SRC=\""http&#58;//ha&#46;ckers&#46;org/xss&#46;js\""&gt;&lt;/SCRIPT&gt;"))
+(check-sat)

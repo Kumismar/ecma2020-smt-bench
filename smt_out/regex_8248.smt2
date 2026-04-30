@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([A-ZÑa-zñáéíóúÁÉÍÓÚ]{3,12})+([ ]{1})+([A-Za-zzáéíóúÁÉÍÓÚ]{3,12})")))
+(assert (= x "<;STYLE type="";text/css"";>;BODY{background:url("";javascript:alert(';XSS';)"";)}<;/STYLE>;"))
+(check-sat)

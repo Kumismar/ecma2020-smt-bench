@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z]{6}[A-Z0-9]{2,5}")))
+(assert (= x "<image src=validimage.png onloadstart=alert(1)>"))
+(check-sat)

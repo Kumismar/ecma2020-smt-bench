@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9\./\s-]+$")))
+(assert (= x "<div id=""132""><!doctype html>"))
+(check-sat)

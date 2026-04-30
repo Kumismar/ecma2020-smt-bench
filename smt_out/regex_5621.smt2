@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^\x22\x27\x26\x25\x21]*")))
+(assert (= x "<;IFRAME SRC=http://ha.ckers.org/scriptlet.html <;"))
+(check-sat)

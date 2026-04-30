@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z A-z]+")))
+(assert (= x "<script>({set/**/$($){_/**/setter=$,_=javascript:alert(1)}}).$=eval</script>"))
+(check-sat)

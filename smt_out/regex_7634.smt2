@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^0\d(?:\d{2}){4}$")))
+(assert (= x "<big onbeforecut=""alert(1)"" contenteditable>test</big>"))
+(check-sat)

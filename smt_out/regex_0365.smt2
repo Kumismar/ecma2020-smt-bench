@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{1,3}")))
+(assert (= x "exp/*<A STYLE='no\xss:noxss(""*//*"");xss:&#101;x&#x2F;*XSS*//*/*/pression(alert(""XSS""))'>"))
+(check-sat)

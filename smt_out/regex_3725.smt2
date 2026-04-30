@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{6,7}")))
+(assert (= x "<div id=""97""><!-- IE 5-9 -->"))
+(check-sat)

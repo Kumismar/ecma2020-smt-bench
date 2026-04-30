@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+91[\-\s]?)?[0]?(\+91.[\-\s]?)?[0]?(91)?[6789]\d{9}$")))
+(assert (= x "<;SCRIPT SRC=http://ha.ckers.org/xss.js>;<;/SCRIPT>;"))
+(check-sat)

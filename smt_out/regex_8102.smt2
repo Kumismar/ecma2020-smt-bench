@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z]\d+")))
+(assert (= x "<isindex oncontextmenu=""alert(1)"">test</isindex>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+420|\+421|00420|00421)?[ ]*[0-9]{3}[ ]*[0-9]{3}[ ]*[0-9]{3}$")))
+(assert (= x "<body onload=""document.vulnerable=true;"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{5}\s\w+")))
+(assert (= x "<label>type a,b,c,d - watch the network tab/traffic (JS is off, latest NoScript)</label>"))
+(check-sat)

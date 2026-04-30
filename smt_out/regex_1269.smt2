@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[ A-Za-zА-Яа-яЁё]{3,15}")))
+(assert (= x "<param onkeypress=""alert(1)"" contenteditable>test</param>"))
+(check-sat)

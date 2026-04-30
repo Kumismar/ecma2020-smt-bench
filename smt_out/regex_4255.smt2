@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\D?(\d{2})\D?\D?(\d{5})\D?(\d{4})$")))
+(assert (= x "<form><input oninvalid=alert(1) required><input type=submit>"))
+(check-sat)

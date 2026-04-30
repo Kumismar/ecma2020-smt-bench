@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9 ëïöäüàèáé-]{3,36}")))
+(assert (= x "<frameset onScroll frameset onScroll=""javascript:javascript:alert(1)""></frameset onScroll>"))
+(check-sat)

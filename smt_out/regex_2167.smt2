@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(([hH][Tt]{2}[Pp][Ss]?):\/\/)?([\da-zA-Z\.-]+)\.([a-zA-Z\.]{2,6})([\/\w \.-]*)*\/?$")))
+(assert (= x "<rp ondblclick=""alert(1)"">test</rp>"))
+(check-sat)

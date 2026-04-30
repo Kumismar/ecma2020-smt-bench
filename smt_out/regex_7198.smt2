@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[1-9][0-9]{9}")))
+(assert (= x "<IMG SRC=x onkeyup=""alert(String.fromCharCode(88,83,83))"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-zА-Яа-яЁёĄąČčĘęĖėĮįŠšŲųŪūŽž]\D{1,20}[\s]?[A-Za-zА-Яа-яЁёĄąČčĘęĖėĮįŠšŲųŪūŽž]\D{1,20}?")))
+(assert (= x "&lt;&lt;SCRIPT&gt;alert(&quot;XSS&quot;);//&lt;&lt;/SCRIPT&gt;"))
+(check-sat)

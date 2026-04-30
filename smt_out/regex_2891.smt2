@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "treize heures")))
+(assert (= x "&lt;DIV STYLE=\""background-image&#58; url(javascript&#058;alert('XSS'))\""&gt;"))
+(check-sat)

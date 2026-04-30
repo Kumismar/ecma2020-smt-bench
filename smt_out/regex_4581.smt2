@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.{5,16}$")))
+(assert (= x "<meta HTTP-EQUIV=""refresh"" CONTENT=""0; URL=http://;URL=javascript:document.vulnerable=true;"">"))
+(check-sat)

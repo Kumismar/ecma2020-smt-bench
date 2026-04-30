@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[1-9][O0-9]{1,5}\/87[O012][O0-9]{1,2}\/1[O0-9]{2}$")))
+(assert (= x "<acronym onpaste=""alert(1)"" contenteditable>test</acronym>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^!#$%&\x22\x27()\*\+\-\.,\/:;<=>?@\[\]^_`{|}~]+")))
+(assert (= x "&lt;META HTTP-EQUIV=&quot;refresh&quot; CONTENT=&quot;0; URL=http://;URL=javascript:alert(&apos;XSS&apos;);&quot;&gt;"))
+(check-sat)

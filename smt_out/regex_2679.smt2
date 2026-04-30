@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([a-zA-Z]){6}([0-9a-zA-Z]){2}([0-9a-zA-Z]{3})?$")))
+(assert (= x "<style>:target {color: red;}</style><shadow id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></shadow>"))
+(check-sat)

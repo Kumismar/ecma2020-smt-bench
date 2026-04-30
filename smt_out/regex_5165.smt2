@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\(\d{3}\) \d{3}[\-]\d{4}")))
+(assert (= x "<html><BODY><?xml:namespace prefix=""t"" ns=""urn:schemas-microsoft-com:time""><?import namespace=""t"" implementation=""#default#time2""><t:set attributeName=""innerHTML"" to=""XSS<SCRIPT DEFER>document.vulnerable=true</SCRIPT>""></BODY></html>"))
+(check-sat)

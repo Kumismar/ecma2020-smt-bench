@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Z a-z 0-9]{5,20}$")))
+(assert (= x "</script><img/*/src=""worksinchrome&colon;prompt&#x28;1&#x29;""/*/onerror='eval(src)'>"))
+(check-sat)

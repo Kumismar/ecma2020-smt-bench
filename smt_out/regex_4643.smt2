@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "achetez")))
+(assert (= x "<footer onmousemove=""alert(1)"">test</footer>"))
+(check-sat)

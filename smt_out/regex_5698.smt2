@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[AC-FHKNPRTV-Yac-fhknprtv-y]\d[0-9Ww][ -]?[0-9AC-FHKNPRTV-Yac-fhknprtv-y]{4}")))
+(assert (= x "<address id=x tabindex=1 onfocusin=alert(1)></address>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([ \u00c0-\u01ffa-zA-Z'\-]){3,50}$")))
+(assert (= x "<frame onkeydown=""alert(1)"" contenteditable>test</frame>"))
+(check-sat)

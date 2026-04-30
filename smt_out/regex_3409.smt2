@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\w'.#, -]{3,255}")))
+(assert (= x "<marquee loop=1 width=0 onfinish=alert(1)>"))
+(check-sat)

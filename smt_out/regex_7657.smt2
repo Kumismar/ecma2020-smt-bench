@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u00C0-\u1FFF\u2C00-\uD7FFa-zA-ZäöüÄÖÜ]{4}[\w\d]{1,16}")))
+(assert (= x "<font id=x tabindex=1 onactivate=alert(1)></font>"))
+(check-sat)

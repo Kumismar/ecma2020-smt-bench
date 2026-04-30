@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[*+!.&#$|'\\%0-9a-z^_`{}=?~:-]+@([a-z0-9_-]+\.)+[A-Za-z]{2,}$")))
+(assert (= x "<embed src=%(jscript)s></embed>"))
+(check-sat)

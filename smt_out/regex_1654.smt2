@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([SK]+[0-9\.\-]{8,10}|[0-9\.\-]{10})$")))
+(assert (= x "<rp id=x tabindex=1 onfocus=alert(1)></rp>"))
+(check-sat)

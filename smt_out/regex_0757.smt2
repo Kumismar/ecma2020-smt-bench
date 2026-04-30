@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\d){3}(-)(\d){8}$")))
+(assert (= x "<object onError object onError=""javascript:javascript:alert(1)""></object onError>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-zАБВГДЕЖЗИЙКЛМНОПРСТУФХЦШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцшщъыьэюя \t\r\n\f]*$")))
+(assert (= x "<meta charset=""x-imap4-modified-utf7"">&<script&S1&TS&1>alert&A7&(1)&R&UA;&&<&A9&11/script&X&>"))
+(check-sat)

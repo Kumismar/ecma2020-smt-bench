@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(([V]|[v]|\s){1})([0-9]{12})")))
+(assert (= x "<svg><table onload=alert(1)></table>"))
+(check-sat)

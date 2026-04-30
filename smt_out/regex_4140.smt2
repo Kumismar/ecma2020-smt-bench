@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z0-9._%+\/!#$%&'*=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]{2,})+$")))
+(assert (= x "<iframe xmlns=""#"" src=""javascript:alert(1)""></iframe>"))
+(check-sat)

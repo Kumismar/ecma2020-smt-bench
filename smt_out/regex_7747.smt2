@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z öüóőúéáűíÖÜÓŐÚÉÁŰÍ .]{3,50}")))
+(assert (= x "<textarea onauxclick=alert(1)>XSS</textarea>"))
+(check-sat)

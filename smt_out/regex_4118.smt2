@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".*@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!yahoo.co.in)(?!aol.com)(?!abc.com)(?!xyz.com)(?!pqr.com)(?!rediffmail.com)(?!live.com)(?!outlook.com)(?!me.com)(?!msn.com)(?!ymail.com)(?!doc-mail.net)(?!sharklasers.com)(?!mailinator.com)(?!mailcatch.com)(?!trashmail.com)(?!getnada.com)([\w-]+\.)+[\w-]{2,4}$")))
+(assert (= x "<listing id=x tabindex=1 onfocus=alert(1)></listing>"))
+(check-sat)

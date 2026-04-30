@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[+]?\d?[ .-]?[(]?\d{3}[)]?[ .-]?\d{3}[ .-]?\d{4}$")))
+(assert (= x "<IMG SRC=x onsubmit=""alert(String.fromCharCode(88,83,83))"">"))
+(check-sat)

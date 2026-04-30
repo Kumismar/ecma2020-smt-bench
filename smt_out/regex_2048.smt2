@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]+[\.]{0,1}[0-9]*")))
+(assert (= x "<script onfocusout=alert(1) tabindex=1 id=x></script><input autofocus>"))
+(check-sat)

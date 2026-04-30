@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".*(\W+.*(\d+.*[A-Z]+|[A-Z]+.*\d+)|\d+.*(\W+.*[A-Z]+|[A-Z]+.*\W+)|[A-Z]+.*(\W+.*\d+|\d+.*\W+)).*")))
+(assert (= x "<dir draggable=""true"" ondragenter=""alert(1)"">test</dir>"))
+(check-sat)

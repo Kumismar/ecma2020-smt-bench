@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\b[0-9]{3}[a-zA-Z]{2,4}[0-9]{4,5}\b")))
+(assert (= x "<tt oncontextmenu=""alert(1)"">test</tt>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}")))
+(assert (= x "<style>:target {color: red;}</style><select id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></select>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.+@(?:(?!(g|hot|y|google|hush|fast|at|short|at|proton)?mail)(?!live)(?!gmx)(?!gmail)(?!yahoo)(?!outlook)(?!msn)(?!icloud)(?!facebook)(?!aol)(?!zoho)(?!yandex)(?!lycox)(?!inbox)(?!myway)(?!aim)(?!goowy)(?!juno).)+\..+$")))
+(assert (= x "&lt;IMG SRC=javascript:alert(&apos;XSS&apos;)&gt;"))
+(check-sat)

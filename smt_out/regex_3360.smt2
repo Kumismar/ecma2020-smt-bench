@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[2]+$")))
+(assert (= x "<svg><script x:href='https://dl.dropbox.com/u/13018058/js.js' {Opera}"))
+(check-sat)

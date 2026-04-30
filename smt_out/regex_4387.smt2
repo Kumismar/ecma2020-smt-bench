@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([A-Za-zÁÉÍÓÚÑáéíóúñ]{1,}(\.{1})?( {1})?){1,}")))
+(assert (= x "<image xlink:href=""data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' onload='alert(88)'%3E%3C/svg%3E""/>"))
+(check-sat)

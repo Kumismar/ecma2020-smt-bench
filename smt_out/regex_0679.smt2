@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{0,50}")))
+(assert (= x "<figcaption draggable=""true"" ondragleave=""alert(1)"">test</figcaption>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([0-9]{5}(-[0-9]{4})?)|([A-Z][0-9][A-Z]\s+[0-9][A-Z][0-9])")))
+(assert (= x "<x contenteditable onfocus=alert(1)>focus this!"))
+(check-sat)

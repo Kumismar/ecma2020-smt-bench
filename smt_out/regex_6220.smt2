@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z0-9\-]+")))
+(assert (= x "<div style=""font-family:foo{bar;background:url(http://foo.f/oo};color:red/*/foo.jpg);"">X"))
+(check-sat)

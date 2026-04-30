@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\x00-\x7F]+$")))
+(assert (= x "<style>:target {color:red;}</style><cite id=x style=""transition:color 1s"" ontransitionend=alert(1)></cite>"))
+(check-sat)

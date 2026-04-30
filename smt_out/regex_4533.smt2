@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?:[\da-fA-F]{4}-)+[\da-fA-F]{4}\s*)+$")))
+(assert (= x "<table id=x tabindex=1 ondeactivate=alert(1)></table><input id=y autofocus>"))
+(check-sat)

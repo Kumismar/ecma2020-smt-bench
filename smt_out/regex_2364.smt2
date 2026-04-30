@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,10}$")))
+(assert (= x "<track onfocusout=alert(1) tabindex=1 id=x></track><input autofocus>"))
+(check-sat)

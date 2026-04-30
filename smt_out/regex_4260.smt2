@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9 , . / () -]{1,40}")))
+(assert (= x "<hgroup onmouseleave=""alert(1)"">test</hgroup>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[6789]\d{8}$")))
+(assert (= x "<marquee oncontextmenu=""alert(1)"">test</marquee>"))
+(check-sat)

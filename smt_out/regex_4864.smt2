@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-z]{6}\d{2}[A-z]\d{2}[A-z]\d{3}[A-z]$")))
+(assert (= x "<bdo onfocusout=alert(1) tabindex=1 id=x></bdo><input autofocus>"))
+(check-sat)

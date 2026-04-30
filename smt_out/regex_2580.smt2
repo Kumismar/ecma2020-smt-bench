@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-z0-9а-яёЁїЇіІєЄӘәҒғҚқҢңӨөҮүҰұҺһ-]*[a-z0-9а-яёЁїЇіІєЄӘәҒғҚқҢңӨөҮүҰұҺһ.-]*[a-z0-9а-яёЁїЇіІєЄӘәҒғҚқҢңӨөҮүҰұҺһ]+$")))
+(assert (= x "<track id=x tabindex=1 onfocusin=alert(1)></track>"))
+(check-sat)

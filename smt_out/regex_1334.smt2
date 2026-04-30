@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\wäöüßÄÖÜ\-\.]{1,}\@([\wäöüßÄÖÜ-]{1,}\.){1,}[\wäöüßÄÖÜ-]{2,6}$")))
+(assert (= x "<style onLoad style onLoad=""javascript:javascript:alert(1)""></style onLoad>"))
+(check-sat)

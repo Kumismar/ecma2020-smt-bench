@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[1-9][0-9]{9}")))
+(assert (= x "<body onhashchange=alert(1)><a href=#x>click this!#x"))
+(check-sat)

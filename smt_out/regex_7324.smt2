@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9a-zA-Z\s]{6,}")))
+(assert (= x "`""'><img src=xxx:x onerror\x0A=javascript:alert(1)>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0-9,A-Z,a-z,_ \.\-*?\/]+$|[A-Z,a-z][A-Z,a-z, \.'~\-]+$")))
+(assert (= x "<hr onbeforecut=""alert(1)"" contenteditable>test</hr>"))
+(check-sat)

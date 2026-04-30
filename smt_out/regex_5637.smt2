@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([A-Za-zÁ-ž]*[ ][A-Za-zÁá-ž-]*)*[A-Za-zÁá-ž]$")))
+(assert (= x "<kbd draggable=""true"" ondragend=""alert(1)"">test</kbd>"))
+(check-sat)

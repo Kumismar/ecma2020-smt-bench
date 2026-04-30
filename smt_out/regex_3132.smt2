@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "http://www\.linkedin\.com\/(.+)|https://www\.linkedin\.com\/(.+)|www\.linkedin\.com\/(.+)")))
+(assert (= x "<svg><acronym onload=alert(1)></acronym>"))
+(check-sat)

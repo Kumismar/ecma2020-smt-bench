@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*\d)(?=.*[a-zÄäÖöÜüß])().{4,}")))
+(assert (= x "<audio onbeforecopy=""alert(1)"" contenteditable>test</audio>"))
+(check-sat)

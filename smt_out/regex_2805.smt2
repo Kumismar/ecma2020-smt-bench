@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?![0-9]|[!@#$%^&*(),.?:{} |<>]|\bcom\b|\bnet\b|\blose weight\b|\bfuck\b|\bsex\b|\bsexy\b).)*$")))
+(assert (= x "<input TYPE=""IMAGE"" SRC=""javascript:document.vulnerable=true;"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\p{L}0-9\s'\-,.]+")))
+(assert (= x "<style draggable=""true"" ondragstart=""alert(1)"">test</style>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\w.-]{4,16}")))
+(assert (= x "<video autoplay controls onseeking=alert(1)><source src=""validvideo.mp4"" type=""video/mp4""></video>"))
+(check-sat)

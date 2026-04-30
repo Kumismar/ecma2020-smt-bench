@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.+@((?!hotmail)(?!gmail)(?!ymail)(?!googlemail)(?!live)(?!gmx)(?!yahoo)(?!outlook)(?!msn)(?!icloud)(?!facebook)(?!aol)(?!zoho)(?!mail)(?!yandex)(?!hushmail)(?!lycox)(?!lycosmail)(?!inbox)(?!myway)(?!aim)(?!fastmail)(?!goowy)(?!juno)(?!shortmail)(?!atmail)(?!protonmail).)+\..+$")))
+(assert (= x "<svg><big onload=alert(1)></big>"))
+(check-sat)

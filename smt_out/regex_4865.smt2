@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z][12]\d{8}")))
+(assert (= x "exp/*&lt;XSS STYLE=&apos;no\xss:noxss(&quot;*//*&quot;);"))
+(check-sat)

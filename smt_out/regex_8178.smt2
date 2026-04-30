@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-3]\d+\.[0-1]\d.[1-2]\d{3}")))
+(assert (= x """><link rel=import href=data:text/html&comma;&lt;script&gt;alert(1)&lt;&sol;script&gt;"))
+(check-sat)

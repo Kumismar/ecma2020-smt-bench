@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "password")))
+(assert (= x "<style/onload=&lt;!--&#09;&gt;&#10;alert&#10;&lpar;1&rpar;>"))
+(check-sat)

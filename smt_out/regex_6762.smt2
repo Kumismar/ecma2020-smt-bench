@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^LC\d{3,7}|lc\d{3,7}$")))
+(assert (= x "<command onmouseover=""alert(1)"">test</command>"))
+(check-sat)

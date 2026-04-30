@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9m\s]{2,}")))
+(assert (= x "<style/onload=prompt&#40;'&#88;&#83;&#83;'&#41;"))
+(check-sat)

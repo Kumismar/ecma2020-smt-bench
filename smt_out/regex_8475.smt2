@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(\+212|0)([ \-/]*)(\d[ \-/]*){9,15}")))
+(assert (= x "<tfoot oncontextmenu=""alert(1)"">test</tfoot>"))
+(check-sat)

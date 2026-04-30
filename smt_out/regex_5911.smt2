@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^\?$|^er\.[\d]{4}-[\d]{2}-[\d]{2}\.[\d.-]+)")))
+(assert (= x "<progress onmouseleave=""alert(1)"">test</progress>"))
+(check-sat)

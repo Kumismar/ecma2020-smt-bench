@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^\x21-\x2C\x2E\x2F\x3A-\x40\x5B-\x60\x7B-\x7E]*")))
+(assert (= x "<data onblur=alert(1) tabindex=1 id=x></data><input autofocus>"))
+(check-sat)

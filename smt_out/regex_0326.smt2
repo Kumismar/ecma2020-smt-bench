@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?:([a-zA-Z\d]|(-(?!-))|(_(?!_)))([a-zA-Z\d]|(-(?!-))|(_(?!_))|(\.(?!\.))){4,60}([a-zA-Z\d]|(-(?!-))|(_(?!_)))|((([a-zA-Z\d]|(-(?!-))|(_(?!_)))+([a-zA-Z\d]|(-(?!-))|(_(?!_))|(\.(?!\.))))*([a-zA-Z\d]|(-(?!-))|(_(?!_)))+)@((([a-zA-Z\d]|[a-zA-Z\d](-(?!-))+[a-zA-Z\d]){1,60}\.){1,3}[a-zA-Z]{2,4}))$")))
+(assert (= x "<ul oncopy=""alert(1)"" contenteditable>test</ul>"))
+(check-sat)

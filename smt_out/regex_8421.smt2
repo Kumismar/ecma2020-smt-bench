@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "|^\d{9}$| placeholder=")))
+(assert (= x "<svg><div onload=alert(1)></div>"))
+(check-sat)

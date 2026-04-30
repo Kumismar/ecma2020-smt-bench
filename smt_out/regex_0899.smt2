@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\d{6,8}[-|(\s)]{0,1}\d{4}$")))
+(assert (= x "<img src=""/"" =_="" title=""onerror='prompt(1)'"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(http|https)://.+")))
+(assert (= x "<audio autoplay controls onseeked=alert(1)><source src=""validaudio.wav"" type=""audio/wav""></audio>"))
+(check-sat)

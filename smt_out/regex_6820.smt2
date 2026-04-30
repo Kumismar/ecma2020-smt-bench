@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Zа-яА-Я0-9](?:[a-zа-яА-ЯA-Z0-9-]{0,61}[a-zа-яА-ЯA-Z0-9])?\.(?:ru|com|org|info|net|рф)$")))
+(assert (= x "<article draggable=""true"" ondragend=""alert(1)"">test</article>"))
+(check-sat)

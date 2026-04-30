@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z, A-Z]{3,}")))
+(assert (= x "<video onmousedown=""alert(1)"">test</video>"))
+(check-sat)

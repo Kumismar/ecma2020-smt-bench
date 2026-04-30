@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9]{1,50}[A-Za-z0-9-/ .]{2,80}")))
+(assert (= x "<span onmouseenter=""alert(1)"">test</span>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((https?):\/\/)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)*$")))
+(assert (= x "<acronym id=x tabindex=1 onbeforedeactivate=alert(1)></acronym><input autofocus>"))
+(check-sat)

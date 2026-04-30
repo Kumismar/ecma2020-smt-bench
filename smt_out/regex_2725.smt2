@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{0}|[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")))
+(assert (= x "<?xml version=""1.0"" encoding=""ISO-8859-1""?><foo><![CDATA[' or 1=1 or ''=']]></foof>"))
+(check-sat)

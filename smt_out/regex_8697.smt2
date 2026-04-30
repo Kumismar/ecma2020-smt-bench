@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([A-Z]{1,2})?\s?\d{2,4}\s?([A-Za-z]{1,3})$")))
+(assert (= x "<aside onbeforepaste=""alert(1)"" contenteditable>test</aside>"))
+(check-sat)

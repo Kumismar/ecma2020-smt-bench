@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!.*(^テスト株式会社$|^テスト$|^合同会社$|^有限会社$|^会社$|^株式会社$|^-$|^ランサーズ株式会社$|^○○株式会社$|^○$|^○○$|^d$|^dd$|^あいうえお$|^あいう$|^z$|^zz$|^s$|^ss$|^q$|^qq$|^k$|^kk$|^a$|^aa$|^あ$|^ああ$|^あああ$|^あああ$|^ああああ$)).+$")))
+(assert (= x "<caption draggable=""true"" ondrag=""alert(1)"">test</caption>"))
+(check-sat)

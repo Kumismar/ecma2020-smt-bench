@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0123456789\-]+$")))
+(assert (= x "&lt;IFRAME SRC=http://ha.ckers.org/scriptlet.html &lt;"))
+(check-sat)

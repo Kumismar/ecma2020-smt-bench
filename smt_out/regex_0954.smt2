@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-ZàáâãäçèéêëìíîïñòóôõöùúûüýÿÀÁÂÃÄÇÈÉÊËÌÍÎÏÑÒÓÔÕÖÙÚÛÜÝ\s]+$")))
+(assert (= x "<HTML xmlns:xss><?import namespace=""xss"" implementation=""http://www.securitycompass.com/xss.htc""><xss:xss>XSS</xss:xss></html>"))
+(check-sat)

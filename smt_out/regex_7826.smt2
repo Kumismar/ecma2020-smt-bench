@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-z][a-z0-9._%+-]{2,14}[a-z0-9]$")))
+(assert (= x "<acronym id=x tabindex=1 onfocus=alert(1)></acronym>"))
+(check-sat)

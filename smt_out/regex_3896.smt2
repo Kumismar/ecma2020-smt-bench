@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ ]{3,50}")))
+(assert (= x "&lt;IMG DYNSRC=\""javascript&#058;alert('XSS')\""&gt;"))
+(check-sat)

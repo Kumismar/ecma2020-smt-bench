@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\((00|\+)39\)|(00|\+)39)?(32[04789]|38[890]|39[123]|34[024-9]|33[013-9]|36[0685]|35[0123]|37[0135789])(\s)?\d{6,7}$")))
+(assert (= x "<pre onmouseup=""alert(1)"">test</pre>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^0(7|8|9)0\d{8}$")))
+(assert (= x "<link href=validstyles.css rel=stylesheet onload=alert(1)>"))
+(check-sat)

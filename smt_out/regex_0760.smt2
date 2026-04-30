@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{4,4}")))
+(assert (= x "<sub id=x tabindex=1 onbeforedeactivate=alert(1)></sub><input autofocus>"))
+(check-sat)

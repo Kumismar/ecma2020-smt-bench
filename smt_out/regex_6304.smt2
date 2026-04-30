@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(^(\d{3,4}-)?\d{7,8})$|(13[0-9]{9})|(400[0-9]{7})$")))
+(assert (= x "</ foo=""><script>alert(1)</script>"">"))
+(check-sat)

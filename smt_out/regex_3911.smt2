@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([ \u00c0-\u01ffa-zA-Z'\-]){2,200}$")))
+(assert (= x "<details id=x tabindex=1 onfocus=alert(1)></details>"))
+(check-sat)

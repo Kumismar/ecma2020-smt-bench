@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!Last Name|last name|LAST NAME)[a-zA-Z][a-zA-Z ]+")))
+(assert (= x "<code ondblclick=""alert(1)"">test</code>"))
+(check-sat)

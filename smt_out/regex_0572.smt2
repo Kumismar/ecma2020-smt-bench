@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[7-9]{1}[0-9]{9}")))
+(assert (= x "<time draggable=""true"" ondragenter=""alert(1)"">test</time>"))
+(check-sat)

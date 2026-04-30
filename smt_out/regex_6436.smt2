@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[6|9]{1}[0-9]{8}")))
+(assert (= x "<iframe xmlns=""#"" src=""javascript:alert(1)""></iframe>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([A-Za-z\s.]+)")))
+(assert (= x "<span id=x tabindex=1 onactivate=alert(1)></span>"))
+(check-sat)

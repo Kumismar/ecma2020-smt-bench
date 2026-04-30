@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*")))
+(assert (= x "<iframe id=x tabindex=1 ondeactivate=alert(1)></iframe><input id=y autofocus>"))
+(check-sat)

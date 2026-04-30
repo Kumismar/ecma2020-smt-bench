@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[_\.0-9a-z-]+@([0-9a-z][0-9a-z-]+\.)+[a-z]{1,20}$")))
+(assert (= x "&lt;TABLE BACKGROUND=&quot;javascript:alert(&apos;XSS&apos;)&quot;&gt;&lt;/TABLE&gt;"))
+(check-sat)

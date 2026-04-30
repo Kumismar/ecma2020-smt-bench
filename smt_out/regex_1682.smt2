@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "email address")))
+(assert (= x "<form><textarea oninvalid=alert(1) required><input type=submit>"))
+(check-sat)

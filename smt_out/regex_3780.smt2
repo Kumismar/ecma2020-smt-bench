@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z\s]{3,30}$")))
+(assert (= x "<;XML ID=I>;<;X>;<;C>;<;![CDATA[<;IMG SRC="";javas]]>;<;![CDATA[cript:alert(';XSS';);"";>;]]>;"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u00a1-\uffff]+([ -.']+[a-zA-Z\u00a1-\uffff]+)*")))
+(assert (= x "<sub onkeyup=""alert(1)"" contenteditable>test</sub>"))
+(check-sat)

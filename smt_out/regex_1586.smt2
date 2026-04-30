@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-2]{0,1}")))
+(assert (= x "<svg oncut=""alert(1)"" contenteditable>test</svg>"))
+(check-sat)

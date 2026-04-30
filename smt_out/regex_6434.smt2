@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\d{3}-\d{4}$")))
+(assert (= x "<progress id=x tabindex=1 onbeforeactivate=alert(1)></progress>"))
+(check-sat)

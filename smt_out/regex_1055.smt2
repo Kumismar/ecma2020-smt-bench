@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-ž0-9-:&.'_ ]{2,}$")))
+(assert (= x "xss:ex/*XSS*//*/*/pression(alert(""XSS""))'>"))
+(check-sat)

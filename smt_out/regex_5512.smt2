@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z0-9_]{1,64}$")))
+(assert (= x "<SCRIPT ="">"" SRC=""http://ha.ckers.org/xss.js""></SCRIPT>"))
+(check-sat)

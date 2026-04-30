@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z0-9._'%+-]+@(\[(\d{1,3}\.){3}|(?!hotmail|gmail|yahoo|live|msn|outlook|comcast|verizon|aol|icloud|mail|ymail|att|GMAIL|YAHOO|HOTMAIL|AOL)(([a-zA-Z\d-]+\.)+))([a-zA-Z]{2,4}|\d{1,3})(\]?)$")))
+(assert (= x "<basefont id=x tabindex=1 onactivate=alert(1)></basefont>"))
+(check-sat)

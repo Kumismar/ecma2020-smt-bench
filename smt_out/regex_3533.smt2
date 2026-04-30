@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[1-9][0-9]{3}[ ]?([A-RT-Za-rt-z][A-Za-z])")))
+(assert (= x "<details id=x tabindex=1 onbeforeactivate=alert(1)></details>"))
+(check-sat)

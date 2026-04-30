@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9รงรฑรรยบยชรกรฉรญรณรบร รจรฌรฒรนรรรรรรรรรรรครซรฏรถรผรรรรร ]+")))
+(assert (= x "&lt;XML ID=\""xss\""&gt;&lt;I&gt;&lt;B&gt;&lt;IMG SRC=\""javas&lt;!-- --&gt;cript&#58;alert('XSS')\""&gt;&lt;/B&gt;&lt;/I&gt;&lt;/XML&gt;"))
+(check-sat)

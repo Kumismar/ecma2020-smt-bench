@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9\.\-_]{6,14}")))
+(assert (= x "<rtc draggable=""true"" ondragend=""alert(1)"">test</rtc>"))
+(check-sat)

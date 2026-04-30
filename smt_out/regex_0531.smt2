@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!First Name|first name|FIRST NAME)[a-zA-Z][a-zA-Z ]+")))
+(assert (= x "<thead ondblclick=""alert(1)"">test</thead>"))
+(check-sat)

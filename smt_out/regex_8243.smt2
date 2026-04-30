@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{6,26}")))
+(assert (= x "<a href=http://foo.bar/#x=`y></a><img alt=""`><img src=xx:x onerror=alert(108)></a>"">"))
+(check-sat)

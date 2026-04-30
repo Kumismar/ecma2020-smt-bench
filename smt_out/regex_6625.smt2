@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([А-Я][а-яё]+|[A-Z][a-z]+)([ -]+([А-Я][а-яё]+|[A-Z][a-z]+))+$")))
+(assert (= x "<bgsound onfocusout=alert(1) tabindex=1 id=x></bgsound><input autofocus>"))
+(check-sat)

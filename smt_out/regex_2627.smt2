@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\s*1\d{10}\s*$")))
+(assert (= x "<script src=""\\example.com\foo.js""></script> // Safari 5.0//[""'`-->]]>]</div>"))
+(check-sat)

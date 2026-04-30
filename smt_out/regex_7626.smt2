@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(.*\d.*){6,}$")))
+(assert (= x "&lt;A HREF=\""http&#58;//0102&#46;0146&#46;0007&#46;00000223/\""&gt;XSS&lt;/A&gt;"))
+(check-sat)

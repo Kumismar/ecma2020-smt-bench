@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*?[0-9])(?=.*?[A-Za-z]).+")))
+(assert (= x "<link rel=stylesheet href=data:,*%7bx:expression(javascript:alert(1))%7d"))
+(check-sat)

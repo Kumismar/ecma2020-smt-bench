@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{1,6}\)?))(-| )?(\d{1,4})(-| )?(\d{1,4})(( x| ext)\d{1,5}){0,1}$")))
+(assert (= x "<tr oncopy=""alert(1)"" contenteditable>test</tr>"))
+(check-sat)

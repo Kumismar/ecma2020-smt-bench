@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{9,194}")))
+(assert (= x "<input autofocus onfocus=alert(1)>"))
+(check-sat)

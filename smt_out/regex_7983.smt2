@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u3041-\u3096|\u30A1-\u30FF|　| ]*")))
+(assert (= x "<s id=x tabindex=1 onactivate=alert(1)></s>"))
+(check-sat)

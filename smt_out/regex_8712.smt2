@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))")))
+(assert (= x "<style>:target {transform: rotate(180deg);}</style><legend id=x style=""transition:transform 2s"" ontransitionrun=alert(1)></legend>"))
+(check-sat)

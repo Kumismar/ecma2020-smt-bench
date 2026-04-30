@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+98|0)\d{10,10}$")))
+(assert (= x "<fieldset onmouseleave=""alert(1)"">test</fieldset>"))
+(check-sat)

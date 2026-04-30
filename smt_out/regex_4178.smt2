@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!(gmail.com|hotmail.com|yahoo.com|yandex.ru|hey.com|aol.com|mailinator.com|protonmail.com)).)*$")))
+(assert (= x "<picture oncopy=""alert(1)"" contenteditable>test</picture>"))
+(check-sat)

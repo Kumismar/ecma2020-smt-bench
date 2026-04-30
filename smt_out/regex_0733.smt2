@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,50})+$")))
+(assert (= x "<frameset onScroll frameset onScroll=""javascript:javascript:alert(1)""></frameset onScroll>"))
+(check-sat)

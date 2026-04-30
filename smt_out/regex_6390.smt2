@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\x21-\x7E]{1,3}")))
+(assert (= x "top[""al""+""ert""](1)"))
+(check-sat)

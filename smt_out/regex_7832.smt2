@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[ά-ώΑ-Ω a-zA-z]{9,}")))
+(assert (= x "<svg onmouseup=""alert(1)"">test</svg>"))
+(check-sat)

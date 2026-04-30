@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\x00-\x7F\xA0-\xFF]*((\s)[\x00-\x7F\xA0-\xFF]*)*$")))
+(assert (= x "<html onmouseover html onmouseover=""javascript:javascript:alert(1)""></html onmouseover>"))
+(check-sat)

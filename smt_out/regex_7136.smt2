@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "((^(6|7)[0-9]{1,9}$)|(^(00|\+)[0-9]{1,15}$))")))
+(assert (= x "<marquee id=x tabindex=1 onfocus=alert(1)></marquee>"))
+(check-sat)

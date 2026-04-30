@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9A-Za-z]{6}")))
+(assert (= x "<legend onbeforepaste=""alert(1)"" contenteditable>test</legend>"))
+(check-sat)

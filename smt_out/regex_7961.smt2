@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]")))
+(assert (= x "<form action=javascript:alert(1)><input type=submit>"))
+(check-sat)

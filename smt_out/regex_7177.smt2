@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "P[0-9]{7,11}")))
+(assert (= x "<plaintext oncut=""alert(1)"" contenteditable>test</plaintext>"))
+(check-sat)

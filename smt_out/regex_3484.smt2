@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0]{1}[0-9]{9}")))
+(assert (= x "<style>li {list-style-image: url(""javascript:document.vulnerable=true;"");</STYLE><UL><LI>XSS"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^\s@]+@[^\s@]+\.[^\s@]{2,}$")))
+(assert (= x "<center draggable=""true"" ondragleave=""alert(1)"">test</center>"))
+(check-sat)

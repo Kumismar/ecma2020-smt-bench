@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z]{3}([1-9]\d{0,3})?")))
+(assert (= x """></iframe><script>alert(`TEXT YOU WANT TO BE DISPLAYED`);</script><iframe frameborder=""0%EF%BB%BF"))
+(check-sat)

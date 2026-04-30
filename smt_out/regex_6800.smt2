@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\s*(\+420)?\s*[1-9]\s*[0-9]\s*[0-9]\s*[0-9]\s*[0-9]\s*[0-9]\s*[0-9]\s*[0-9]\s*[0-9]\s*$")))
+(assert (= x "<script>$(""span.foo"").click(function() {alert('foo');$(""a.bar"").click();});$(""a.bar"").click(function() {alert('bar');location=""http://html5sec.org"";});</script>//[""'`-->]]>]</div>"))
+(check-sat)

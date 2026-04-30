@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(0?[0-9]|2[ABab1-9]|[13-8][0-9]|9[0-5]|97[1-6])[0-9]{0,3}$")))
+(assert (= x "<address onbeforecopy=""alert(1)"" contenteditable>test</address>"))
+(check-sat)

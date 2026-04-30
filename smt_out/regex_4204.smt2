@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+[0-9]{2,}[0-9]{4,}[0-9]*)(x?[0-9]{1,})?$")))
+(assert (= x "<embed draggable=""true"" ondragend=""alert(1)"">test</embed>"))
+(check-sat)

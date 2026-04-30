@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{0,8}")))
+(assert (= x "<;TABLE>;<;TD BACKGROUND="";javascript:alert(';XSS';)"";>;<;/TD>;<;/TABLE>;"))
+(check-sat)

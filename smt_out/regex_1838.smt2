@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-zÀ-ÿ0-9_-]{3,16}$")))
+(assert (= x "<strong oncopy=""alert(1)"" contenteditable>test</strong>"))
+(check-sat)

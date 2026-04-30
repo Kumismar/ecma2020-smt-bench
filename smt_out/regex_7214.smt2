@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([Tt]wee|2)$")))
+(assert (= x "<iframe id=x tabindex=1 onbeforedeactivate=alert(1)></iframe><input autofocus>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\(\d{2}\)\s\d{3,5}-\d{4}")))
+(assert (= x "<body onResize body onResize=""javascript:javascript:alert(1)""></body onResize>"))
+(check-sat)

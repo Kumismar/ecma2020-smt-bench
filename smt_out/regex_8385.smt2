@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9-#,*]{1}[0-9]{6,10}")))
+(assert (= x "<blockquote id=x tabindex=1 onfocus=alert(1)></blockquote>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+\d{2})?([\- ]?\d+)+$")))
+(assert (= x "<div id=""122""><iframe sandbox=""allow-same-origin allow-forms allow-scripts"" src=""http://example.org/""></iframe>//[""'`-->]]>]</div>"))
+(check-sat)

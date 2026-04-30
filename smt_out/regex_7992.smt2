@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z ]*$")))
+(assert (= x "&lt;A HREF=\""htt p&#58;//6 6&#46;000146&#46;0x7&#46;147/\""&gt;XSS&lt;/A&gt;"))
+(check-sat)

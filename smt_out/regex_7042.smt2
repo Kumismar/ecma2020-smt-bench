@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\s*[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\s*$")))
+(assert (= x "<IMG SRC=x onblur=""alert(String.fromCharCode(88,83,83))"">"))
+(check-sat)

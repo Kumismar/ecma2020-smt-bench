@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^±!@£$%^&*_+§¡€#¢§¶•ªº«\/<>?:;|=]{1,20}$")))
+(assert (= x "<scr<script>ipt>alert(document.cookie)</scr</script>ipt>"))
+(check-sat)

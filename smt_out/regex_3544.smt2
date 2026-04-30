@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[8|9][0-9]{7}")))
+(assert (= x "<a href=""\xE2\x81\x9Fjavascript:javascript:alert(1)"" id=""fuzzelement1"">test</a>"))
+(check-sat)

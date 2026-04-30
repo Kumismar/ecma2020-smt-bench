@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-zA-Z]{2}$")))
+(assert (= x "<cite id=x tabindex=1 onactivate=alert(1)></cite>"))
+(check-sat)

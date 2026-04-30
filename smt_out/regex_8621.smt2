@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z]{1}[a-z_]{2,19}")))
+(assert (= x "<meta HTTP-EQUIV=""Set-Cookie"" Content=""USERID=<SCRIPT>document.vulnerable=true</SCRIPT>"">"))
+(check-sat)

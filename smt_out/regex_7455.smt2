@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.*(?=.{6,25}).*$")))
+(assert (= x "<;STYLE type="";text/css"";>;BODY{background:url("";javascript:alert(';XSS';)"";)}<;/STYLE>;"))
+(check-sat)

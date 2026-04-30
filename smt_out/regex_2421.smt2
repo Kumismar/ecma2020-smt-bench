@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u2015\u3000\u30A1-\u30F6\u30FB-\u30FE]+$")))
+(assert (= x "<title onpaste=""alert(1)"" contenteditable>test</title>"))
+(check-sat)

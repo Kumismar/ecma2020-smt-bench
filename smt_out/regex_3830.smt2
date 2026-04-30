@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[А-Яа-яЁёs]+$")))
+(assert (= x "<em oncontextmenu=""alert(1)"">test</em>"))
+(check-sat)

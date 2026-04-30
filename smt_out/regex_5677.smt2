@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}")))
+(assert (= x "<svg:svg><svg:mask id=""maskForClickjacking"" maskUnits=""objectBoundingBox"" maskContentUnits=""objectBoundingBox""><svg:rect x=""0.0"" y=""0.0"" width=""0.373"" height=""0.3"" fill=""white""/><svg:circle cx=""0.45"" cy=""0.7"" r=""0.075"" fill=""white""/></svg:mask></svg:svg></body>"))
+(check-sat)

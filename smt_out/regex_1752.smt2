@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!-)[a-zA-Z0-9-]{1,63}")))
+(assert (= x "&lt;A HREF=\""http&#58;//www&#46;gohttp&#58;//www&#46;google&#46;com/ogle&#46;com/\""&gt;XSS&lt;/A&gt;"))
+(check-sat)

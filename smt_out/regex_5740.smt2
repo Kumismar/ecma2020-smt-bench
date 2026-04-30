@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z0-9._%+-]+@(?!(?:live|gmx|yahoo|outlook|msn|icloud|facebook|aol|zoho|yandex|lycox|inbox|myway|aim|goowy|juno|(?:hot|[gy]|google|short|at|proton|hush|lycos|fast)?mail)\.\w+$)[a-z0-9.-]+\.[a-z]{2,4}")))
+(assert (= x "<data onkeypress=""alert(1)"" contenteditable>test</data>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.*@(?!hotmail|gmail|yahoo|outlook).*\..{2,}$")))
+(assert (= x "<form><input formaction=javascript:alert(1) type=submit value=click>"))
+(check-sat)

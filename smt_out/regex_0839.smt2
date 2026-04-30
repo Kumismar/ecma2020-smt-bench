@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{1,2}\/\d{1,2}\/\d{2,4}")))
+(assert (= x "<style>@keyframes x{}</style><plaintext style=""animation-name:x"" onanimationend=""alert(1)""></plaintext>"))
+(check-sat)

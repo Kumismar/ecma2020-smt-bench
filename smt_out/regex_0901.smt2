@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[EXText.+#\-()\d\s]{7,25}")))
+(assert (= x "<td onmouseover=""alert(1)"">test</td>"))
+(check-sat)

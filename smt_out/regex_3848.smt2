@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^!@#$^&%*()+=[\]\/{}|:<>?,.\t]+$")))
+(assert (= x "<div id=""138""><link rel=""import"" href=""test.svg"" />//[""'`-->]]>]</div><div id=""139""><iframe srcdoc=""&lt;img src&equals;x:x onerror&equals;alert&lpar;1&rpar;&gt;"" />//[""'`-->]]>]</div>undefined"))
+(check-sat)

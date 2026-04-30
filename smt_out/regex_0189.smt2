@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^\d{5}$|^[A-Za-z0-9]{3} [A-Za-z0-9]{3}$)")))
+(assert (= x "<tfoot onmouseleave=""alert(1)"">test</tfoot>"))
+(check-sat)

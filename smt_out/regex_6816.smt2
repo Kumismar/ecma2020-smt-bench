@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\+7\s{2}\([0-9]{3}\)\s{2}[0-9]{3}\s{2}[0-9]{2}\s{2}[0-9]{2}")))
+(assert (= x "<figure draggable=""true"" ondrag=""alert(1)"">test</figure>"))
+(check-sat)

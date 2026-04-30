@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17)$")))
+(assert (= x "<svg><strike onload=alert(1)></strike>"))
+(check-sat)

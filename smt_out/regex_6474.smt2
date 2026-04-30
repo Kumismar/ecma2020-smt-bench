@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!000|666)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}")))
+(assert (= x "<div draggable=""true"" contenteditable>drag me</div><small ondrop=alert(1) contenteditable>drop here</small>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^AX\d{3,7}|AI\d{3,7}|PA\d{3,7}$")))
+(assert (= x "<ruby onkeydown=""alert(1)"" contenteditable>test</ruby>"))
+(check-sat)

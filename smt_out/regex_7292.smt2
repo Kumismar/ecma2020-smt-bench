@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[а-яА-ЯёЁ\s]+$")))
+(assert (= x "<script x> alert(1) </script 1=2"))
+(check-sat)

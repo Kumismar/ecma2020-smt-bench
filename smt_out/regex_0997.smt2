@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z|a-z|\s-]*")))
+(assert (= x "<t:set attributeName=""innerHTML"" targetElement=""x"" to=""&lt;img&#11;src=x:x&#11;onerror&#11;=alert(116)&gt;"">//[""'`-->]]>]</div>"))
+(check-sat)

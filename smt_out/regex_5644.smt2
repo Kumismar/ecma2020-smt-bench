@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(\+336|06|\+337|07)[0-9-., ]{8,12}")))
+(assert (= x "<nextid onmouseup=""alert(1)"">test</nextid>"))
+(check-sat)

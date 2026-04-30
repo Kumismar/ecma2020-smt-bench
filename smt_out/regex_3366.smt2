@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-ZáéíóúÁÉÍÓÚ ]{3,50}")))
+(assert (= x "<thead id=x tabindex=1 onfocus=alert(1)></thead>"))
+(check-sat)

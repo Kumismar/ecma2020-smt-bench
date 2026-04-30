@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[-_a-zA-Z0-9#&=\+]+(\.[-_a-zA-Z0-9#&=\+]+)*@(?!.*@.*)[a-zA-ZäÄöÖüÜ0-9-]+(\.[a-zA-ZäÄöÖüÜ0-9-]+)*\.[a-zA-Z]{2,}")))
+(assert (= x "<INPUT TYPE=""IMAGE"" SRC=""javascript:javascript:alert(1);"">"))
+(check-sat)

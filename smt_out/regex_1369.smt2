@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\D*([2-9]\d{2})(\D*)([2-9]\d{2})(\D*)(\d{4})\D*")))
+(assert (= x "<div draggable=""true"" contenteditable>drag me</div><embed ondragover=alert(1) contenteditable>drop here</embed>"))
+(check-sat)

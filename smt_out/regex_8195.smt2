@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{2,16}")))
+(assert (= x "<style>:target {color: red;}</style><header id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></header>"))
+(check-sat)

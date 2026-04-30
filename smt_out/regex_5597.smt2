@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^\s][A-Za-z -]+$")))
+(assert (= x "<html onMouseUp html onMouseUp=""javascript:javascript:alert(1)""></html onMouseUp>"))
+(check-sat)

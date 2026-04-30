@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[ァ-ンヴー0-9|　| ]+$")))
+(assert (= x "<strike onmouseover=""alert(1)"">test</strike>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!\s*$)[a-zA-Z\s]{1,45}$")))
+(assert (= x "<div onmouseover='alert&lpar;1&rpar;'>DIV</div>"))
+(check-sat)

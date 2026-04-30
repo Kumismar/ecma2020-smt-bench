@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^(1300|1800|1900|1902)(|)[0-9]{3}(|)[0-9]{3}$)|(((^[\+]*61[2|3|4|7|8]{1})|^0[2|3|7|8]{1})(|)[0-9]{4}(|)[0-9]{4}$)|(^014(|)([0-9]{5}|[0-9]{6}|[0-9]{7})$)|(^13(|)[0-9]{4}$)|(^04[0-9]{2}(|)[0-9]{3}(|)[0-9]{3}$)")))
+(assert (= x "<noembed onmouseover=""alert(1)"">test</noembed>"))
+(check-sat)

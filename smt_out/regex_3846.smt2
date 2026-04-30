@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\\$%\\^&\\*]))|((?=.*[a-z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*]))|((?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*]))).{8,}$")))
+(assert (= x "<;SCRIPT/XSS SRC="";http://ha.ckers.org/xss.js"";>;<;/SCRIPT>;"))
+(check-sat)

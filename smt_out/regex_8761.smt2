@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "1[345678]\d{9}$")))
+(assert (= x "<input/onmouseover=""javaSCRIPT&colon;confirm&lpar;1&rpar;"""))
+(check-sat)

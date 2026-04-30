@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-zÄÖÜäöüß a-z\-]{1,40}")))
+(assert (= x "<XML SRC=""http://ha.ckers.org/xsstest.xml"" ID=I></XML>"))
+(check-sat)

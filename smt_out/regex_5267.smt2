@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u3041-\u309F\u30A1-\u30FF]+$")))
+(assert (= x "<~/XSS STYLE=xss:expression(alert('XSS'))>"))
+(check-sat)

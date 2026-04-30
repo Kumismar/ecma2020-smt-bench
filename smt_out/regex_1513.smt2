@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]{0,1}\d{3}[\s.-]{0,1}\d{4}[\sextEXT]{0,5}\d{0,6}$")))
+(assert (= x "<embed src=%(jscript)s></embed>"))
+(check-sat)

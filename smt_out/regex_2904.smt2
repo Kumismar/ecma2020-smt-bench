@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "va")))
+(assert (= x "[<blockquote cite=""]"">["" onmouseover=""alert('RVRSH3LL_XSS');"" ]"))
+(check-sat)

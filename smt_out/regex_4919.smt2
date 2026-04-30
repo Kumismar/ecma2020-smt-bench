@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\w\s-]{9,15}")))
+(assert (= x "<div id=""113""><div id=""x"">XXX</div>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([a-zA-ZåäöÅÄÖ]{2,}\s[a-zA-zåäöÅÄÖ]{1,}'?-?[a-zA-ZåäöÅÄÖ]{2,}\s?([a-zA-ZåäöÅÄÖ]{1,})?)")))
+(assert (= x """></iframe><script>alert(`TEXT YOU WANT TO BE DISPLAYED`);</script><iframe frameborder=""0%EF%BB%BF"))
+(check-sat)

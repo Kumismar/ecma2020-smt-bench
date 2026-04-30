@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!test@test\.com$)[a-zA-Z0-9._%+-]{3,}@[a-zA-Z]{3,}\.[a-z]{2,}(?:\.[a-z]{2,})?")))
+(assert (= x "<svg><h1 onload=alert(1)></h1>"))
+(check-sat)

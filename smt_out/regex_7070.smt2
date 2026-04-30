@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\w\d]{4}")))
+(assert (= x "<!--#exec cmd=""/bin/echo '<SCRIPT SRC'""--><!--#exec cmd=""/bin/echo '=http://ha.ckers.org/xss.js></SCRIPT>'""-->"))
+(check-sat)

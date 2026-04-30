@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[A-Za-z0-9]+([\-\.]{1}[A-Za-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$")))
+(assert (= x "<base onkeyup=""alert(1)"" contenteditable>test</base>"))
+(check-sat)

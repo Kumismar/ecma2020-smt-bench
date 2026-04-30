@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([ \u00c0-\u01ffa-zA-Z0-9\-.'&]){2,128}$")))
+(assert (= x "<textarea draggable=""true"" ondrag=""alert(1)"">test</textarea>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w\u4e00-\u9fa5\-]{1,20}$")))
+(assert (= x "<em id=x tabindex=1 onbeforedeactivate=alert(1)></em><input autofocus>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.*(?<!gmail\.com|yahoo\.com|me\.com|hotmail\.com|outlook\.com|nodeficit\.org)$")))
+(assert (= x "}</style><script>a=eval;b=alert;a(b(/XSS/.source));</script>"))
+(check-sat)

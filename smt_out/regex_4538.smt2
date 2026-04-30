@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\sA-Za-zА-Яа-яЁё]*$")))
+(assert (= x "<body onmouseleave=""alert(1)"">test</body>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{3,}\w*[a-zA-Z]\w*")))
+(assert (= x "<script onLoad script onLoad=""javascript:javascript:alert(1)""></script onLoad>"))
+(check-sat)

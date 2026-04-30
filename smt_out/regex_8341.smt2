@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "phone2")))
+(assert (= x """'`><p><svg><script>a='hello\x27;javascript:alert(1)//';</script></p>"))
+(check-sat)

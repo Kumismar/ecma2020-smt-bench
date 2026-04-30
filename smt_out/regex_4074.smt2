@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+36\s)|^(\+36\s20\s/\s\d{3}-\d{4})|(\+36\s30\s/\s\d{3}-\d{4})|(\+36\s31\s/\s\d{3}-\d{4})|(\+36\s70\s/\s\d{3}-\d{4})|(\+36\s1\s/\s\d{3}-\d{4})|(\+36\s((?!20)(?!30)(?!31)(?!70)\d{2})\s/\s\d{3}-\d{3})$")))
+(assert (= x "<style>@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}</style><rtc id=x style=""position:absolute;"" onanimationcancel=""alert(1)""></rtc>"))
+(check-sat)

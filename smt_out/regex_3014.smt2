@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[_a-zA-Z0-9а-яА-ЯёЁ ]+$")))
+(assert (= x "<bdo onpaste=""alert(1)"" contenteditable>test</bdo>"))
+(check-sat)

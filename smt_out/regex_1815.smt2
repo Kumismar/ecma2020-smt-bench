@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "请填写您的电子邮件，填写后我司将通过电子邮件给您回复")))
+(assert (= x "&lt;scrscriptipt&gt;alert(1)&lt;/scrscriptipt&gt;"))
+(check-sat)

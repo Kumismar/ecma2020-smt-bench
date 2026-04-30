@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^LG\d{3,7}|AI\d{3,7}$")))
+(assert (= x "<map ondblclick=""alert(1)"">test</map>"))
+(check-sat)

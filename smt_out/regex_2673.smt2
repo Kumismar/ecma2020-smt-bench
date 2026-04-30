@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[1]+[3,8]+\d{9}$")))
+(assert (= x "<script itworksinallbrowsers>/*<script* */alert(1)</script ?"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{3,15}")))
+(assert (= x "<div id=""115""><!--[if]><script>alert(115)</script -->"))
+(check-sat)

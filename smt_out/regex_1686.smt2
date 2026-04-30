@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.*(?<!gmail\.com|yahoo\.com|me\.com|hotmail\.com|outlook\.com)$")))
+(assert (= x "<progress draggable=""true"" ondragstart=""alert(1)"">test</progress>"))
+(check-sat)

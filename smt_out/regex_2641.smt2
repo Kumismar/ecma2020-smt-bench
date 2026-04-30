@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[Pp]articulier|[Pp]rofessionnel")))
+(assert (= x "<shadow onmouseenter=""alert(1)"">test</shadow>"))
+(check-sat)

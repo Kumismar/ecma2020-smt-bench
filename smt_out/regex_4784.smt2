@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^EP\d{3,7}|IA\d{3,7}$")))
+(assert (= x "perl -e 'print ""<IMG SRC=java\0script:alert(\""XSS\"")>"";' > out"))
+(check-sat)

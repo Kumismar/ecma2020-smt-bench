@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "GALLEGO")))
+(assert (= x """><img src=x onerror=window.open('https://www.google.com/');>"))
+(check-sat)

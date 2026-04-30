@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*?[\u30A1-\u30FC])[\u30A1-\u30FC\s]*")))
+(assert (= x "<u onkeyup=""alert(1)"" contenteditable>test</u>"))
+(check-sat)

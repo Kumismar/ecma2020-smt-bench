@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^1((3|5|8){1}\d{1}|70|77)\d{8}$")))
+(assert (= x "<svg><rb onload=alert(1)></rb>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!^[0-9]*$)(?!^[a-zA-Z]*$)(?!^[!,%,&,@,#,$,^,*,?,_,~]*$)^([a-zA-Z0-9,!,%,&,@,#,$,^,*,?,_,~]{8,35})$")))
+(assert (= x "<caption onmouseover=""alert(1)"">test</caption>"))
+(check-sat)

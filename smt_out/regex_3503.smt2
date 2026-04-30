@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!\s)[a-zA-Z-\sĄąĆćĘęŁłÓóŃńŚśŹźŻż]\s?){2,}$")))
+(assert (= x "<img draggable=""true"" ondragleave=""alert(1)"">test</img>"))
+(check-sat)

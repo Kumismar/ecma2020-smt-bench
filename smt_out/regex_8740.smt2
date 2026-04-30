@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9ÆØÅæøåÜüÖöÄäa-zA-Z+-_@./)(!#&%  ]{2,999}")))
+(assert (= x "&lt;LINK REL=\""stylesheet\"" HREF=\""javascript&#058;alert('XSS');\""&gt;"))
+(check-sat)

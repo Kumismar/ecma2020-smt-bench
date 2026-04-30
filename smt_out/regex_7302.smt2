@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!.*(ymobile.ne.jp$|softbank.ne.jp$|i.softbank.jp$|ezweb.ne.jp$|docomo.ne.jp$|gmail.com$|yahoo.co.jp$|icloud.com$|outlook.jp$|outlook.com$|hotmail.com$|freeml.com$)).+$")))
+(assert (= x "<svg><rtc onload=alert(1)></rtc>"))
+(check-sat)

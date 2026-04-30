@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=(.*[\W]){1,})(?!.*\s).{8,}")))
+(assert (= x "<script> document.getElementById(%22safe123%22).setCapture(); document.getElementById(%22safe123%22).click(); </script>"))
+(check-sat)

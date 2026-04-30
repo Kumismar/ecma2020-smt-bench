@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "Penticton|Kelowna|Vernon|West Kelowna|Armstrong|Coldstream|Enderby|Lake Country|Lumby|Oliver|Osoyoos|Peachland|Spallumcheen|Summerland|")))
+(assert (= x "<embed code=""http://businessinfo.co.uk/labs/xss/xss.swf"" allowscriptaccess=always>?"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z0-9._%+-]{3,}@[a-zA-Z.-]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})")))
+(assert (= x "<math href=""javascript:javascript:alert(1)"">CLICKME</math>  <math> <maction actiontype=""statusline#http://google.com"" xlink:href=""javascript:javascript:alert(1)"">CLICKME</maction> </math>"))
+(check-sat)

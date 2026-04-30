@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{1,63}$")))
+(assert (= x "<html onmouseover html onmouseover=""javascript:javascript:alert(1)""></html onmouseover>"))
+(check-sat)

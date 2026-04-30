@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(0|(\+64(\s|-)?)){1}(20|21|22|24|26|27|28|29){1}(\s|-)?\d{3}(\s|-)?\d{3,5}$")))
+(assert (= x "<img[a][b][c]src[d]=x[e]onerror=[f]""alert(1)"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\w+[-\.\w]*@(?!((?:gmail|yahoo|hotmail|aol|msn|live|rediffmail|ymail|outlook|googlemail|bigpond|rocketmail|facebook|sky|qq|mail|ntlworld|juno|mac|aim\.com$)|(?:comcast|cox|sbcglobal|verizon|att|laposte|bellsouth|charter|earthlink|optonline|gmx|frontiernet|windstream|centurytel)\.net$)|(?:hotmail|yahoo|wanadoo|orange|free|sfr|live|neuf|aliceadsl|voila|club-internet\.fr)|(?:yahoo|uol|bol|ig|terra\.com.br)|(?:hotmail|yahoo|live|tiscali|blueyonder\.co.uk)|(?:gmx|web|yahoo|hotmail|freenet|t-online|arcor\.de)|(?:yahoo|shaw|sympatico|live\.ca)|(?:chello|hetnet|home|live|planet|zonnet|\.nl)|(?:alice|hotmail|libero|live|tin|tiscali|virgilio|yahoo\.it)|(?:mail|rambler|yandex\.ru)|(?:skynet|telenet\.be)|(?:bluewin\.ch)|(?:hotmail\.es)|(?:live|yahoo|optusnet\.com.au)|(?:yahoo\.co.id)|(?:yahoo\.co.jp)|(?:yahoo\.com.ar)|(?:yahoo\.com.mx)|(?:yahoo\.com.sg)|(?:yahoo\.es)|(?:yahoo\.in))\w+[-\.\w]*?\.\w{2,4}$")))
+(assert (= x "<iframe onLoad iframe onLoad=""javascript:javascript:alert(1)""></iframe onLoad>"))
+(check-sat)

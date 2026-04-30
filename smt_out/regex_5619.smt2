@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^AX\d{3,7}|AI\d{3,7}$")))
+(assert (= x "a="";get"";;&;#10;b="";URL("";"";;&;#10;c="";javascript:"";;&;#10;d="";alert(';XSS';);"";)"";;&#10;eval(a+b+c+d);"))
+(check-sat)

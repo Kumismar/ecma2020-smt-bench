@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "0*(1(0|1|2)*|2|3|4|5|6|7|8|9)")))
+(assert (= x "<style>@keyframes x{}</style><data style=""animation-name:x"" onanimationend=""alert(1)""></data>"))
+(check-sat)

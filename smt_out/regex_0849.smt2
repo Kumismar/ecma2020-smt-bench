@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9._+-]*@[a-zA-Z0-9._+-]+\.[a-z]{2,4}$")))
+(assert (= x "<video onerror=""javascript:javascript:alert(1)""><source>"))
+(check-sat)

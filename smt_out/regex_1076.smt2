@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "I AM WITH THEE AND WILL KEEP THEE IN ALL PLACES WHITHER THOU GOEST")))
+(assert (= x "<style>:target {color:red;}</style><acronym id=x style=""transition:color 1s"" ontransitionend=alert(1)></acronym>"))
+(check-sat)

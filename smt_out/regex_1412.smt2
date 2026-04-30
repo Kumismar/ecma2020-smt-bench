@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9Г§ГұГҮГ‘ВәВӘГЎГ©ГӯГіГәГ ГЁГ¬ГІГ№ГҒГүГҚГ“ГҡГҖГҲГҢГ’ГҷГӨГ«ГҜГ¶ГјГ„ГӢГҸГ–Гң ]+")))
+(assert (= x "<thead id=x tabindex=1 ondeactivate=alert(1)></thead><input id=y autofocus>"))
+(check-sat)

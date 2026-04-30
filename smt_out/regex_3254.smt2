@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(01[2689]|09)[0-9]{8}$")))
+(assert (= x "<progress onbeforecut=""alert(1)"" contenteditable>test</progress>"))
+(check-sat)

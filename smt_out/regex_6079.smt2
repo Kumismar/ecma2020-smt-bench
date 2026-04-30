@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "((0[1-9]|[12]\d|3[01])/(1[1-1]|1[1-2])/[2][0][1][8])")))
+(assert (= x "<center oncut=""alert(1)"" contenteditable>test</center>"))
+(check-sat)

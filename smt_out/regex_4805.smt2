@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([^x00-x20x22x28x29x2cx2ex3a-x3cx3ex40x5b-x5dx7f-xff]+|x22([^x0dx22x5cx80-xff]|x5c[x00-x7f])*x22)(x2e([^x00-x20x22x28x29x2cx2ex3a-x3cx3ex40x5b-x5dx7f-xff]+|x22([^x0dx22x5cx80-xff]|x5c[x00-x7f])*x22))*x40([^x00-x20x22x28x29x2cx2ex3a-x3cx3ex40x5b-x5dx7f-xff]+|x5b([^x0dx5b-x5dx80-xff]|x5c[x00-x7f])*x5d)(x2e([^x00-x20x22x28x29x2cx2ex3a-x3cx3ex40x5b-x5dx7f-xff]+|x5b([^x0dx5b-x5dx80-xff]|x5c[x00-x7f])*x5d))*(.w{2,})+$")))
+(assert (= x "<summary draggable=""true"" ondragenter=""alert(1)"">test</summary>"))
+(check-sat)

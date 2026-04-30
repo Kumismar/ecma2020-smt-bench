@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[A-zÀ-ÿ0-9]+([\-\.]{1,2}[A-zÀ-ÿ0-9]+)*\.[a-z]{2,20}(:[0-9]{1,5})?(\/.*)?$")))
+(assert (= x "<embed onfocusout=alert(1) tabindex=1 id=x></embed><input autofocus>"))
+(check-sat)

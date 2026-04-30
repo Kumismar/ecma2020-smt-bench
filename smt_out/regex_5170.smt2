@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\sZáaéeiíóúuñçÁAÉËÍLÓÚUÇ]{3,35}")))
+(assert (= x "<listing onbeforecut=""alert(1)"" contenteditable>test</listing>"))
+(check-sat)

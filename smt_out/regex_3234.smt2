@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "TS-\d{1,6}")))
+(assert (= x "<i onmouseenter=""alert(1)"">test</i>"))
+(check-sat)

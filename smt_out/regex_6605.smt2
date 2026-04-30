@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^( {0,}[A-Za-zÆæØøÅå'ÄäÖöÜüßÉéÀàÈèÙùÂâÊêÎîÔôÛûËëÏïŸÿÇçÁáÍíÓóÚú\-]{2,} {0,}){1,}$")))
+(assert (= x "<table onkeypress=""alert(1)"" contenteditable>test</table>"))
+(check-sat)

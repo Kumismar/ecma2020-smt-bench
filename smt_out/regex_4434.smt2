@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(([a-zA-ZñÑáéíóúÁÉÍÓÚ]{2,10}[\s]{1}[a-zA-ZñÑáéíóúÁÉÍÓÚ]{2,20})|([a-zA-ZñÑáéíóúÁÉÍÓÚ]{2,32}))$")))
+(assert (= x "<picture onbeforepaste=""alert(1)"" contenteditable>test</picture>"))
+(check-sat)

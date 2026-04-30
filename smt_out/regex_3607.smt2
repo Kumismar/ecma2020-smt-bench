@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.(\w{2}|(com|net|org|e|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$")))
+(assert (= x "&lt;IMG SRC=&quot;javascript:alert(&apos;XSS&apos;);&quot;&gt;"))
+(check-sat)

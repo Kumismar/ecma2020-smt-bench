@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([0-9\s]+([.,][0-9\s]*)?|[.,][0-9\s]+)")))
+(assert (= x "<link onreadystatechange=alert(1) rel=stylesheet href=1>"))
+(check-sat)

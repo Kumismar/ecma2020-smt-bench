@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^@]+@[^@]+\.(nl|com|net|nu|be|info|eu|cc)")))
+(assert (= x "<div id=""130""><math href=""javascript:alert(130)"">CLICKME</math>"))
+(check-sat)

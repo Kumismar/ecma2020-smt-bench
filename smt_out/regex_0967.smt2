@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=^.{0,40}$)^\+?(\d[\d\-\.\s]+)?(\([\d\-\.\s]+\))?[\d\-\.\s]+\d$")))
+(assert (= x "<pre id=x tabindex=1 onbeforeactivate=alert(1)></pre>"))
+(check-sat)

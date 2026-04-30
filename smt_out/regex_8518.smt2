@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u4e00-\u9fa5]{1,5}$")))
+(assert (= x "<!-- IE9+, FF4+, Opera 11.60+, Safari 4.0.4+, GC7+  -->"))
+(check-sat)

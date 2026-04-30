@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((\+?32)?(4)\s?\d\s?\d\s?\d\s?\d\s?\d\s?\d\s?\d\s?\d)|((04)\s?\d\s?\d\s?\d\s?\d\s?\d\s?\d\s?\d\s?\d)$")))
+(assert (= x "<svg><frameset onload=alert(1)></frameset>"))
+(check-sat)

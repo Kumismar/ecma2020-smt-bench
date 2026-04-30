@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u4e00-\u9fa5]+")))
+(assert (= x "&lt;STYLE&gt;li {list-style-image&#58; url(\""javascript&#058;alert('XSS')\"");}&lt;/STYLE&gt;&lt;UL&gt;&lt;LI&gt;XSS"))
+(check-sat)

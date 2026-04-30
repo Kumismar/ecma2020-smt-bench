@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!http).*$")))
+(assert (= x "<applet onreadystatechange applet onreadystatechange=""javascript:javascript:alert(1)""></applet onreadystatechange>"))
+(check-sat)

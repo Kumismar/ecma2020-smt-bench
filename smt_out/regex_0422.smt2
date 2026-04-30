@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[_@\.\-\+a-zA-Z0-9]+")))
+(assert (= x "<scr<script>ipt>alert('XSS');</scr</script>ipt>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^1[3|4|5|8][0-9]\d{4,8}$")))
+(assert (= x "<listing onbeforecopy=""alert(1)"" contenteditable>test</listing>"))
+(check-sat)

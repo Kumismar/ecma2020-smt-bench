@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{1,8}")))
+(assert (= x "<html onmousedown=""alert(1)"">test</html>"))
+(check-sat)

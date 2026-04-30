@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z A-Za-z]{2,30}")))
+(assert (= x "<audio oncontextmenu=""alert(1)"">test</audio>"))
+(check-sat)

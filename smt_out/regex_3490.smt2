@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{1,2}\/[0-9]{1,2}\/[0-9]{2,4}$")))
+(assert (= x "<param onbeforecut=""alert(1)"" contenteditable>test</param>"))
+(check-sat)

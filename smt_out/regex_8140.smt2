@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^@]+@[^@]+\.[a-zA-Z]{2,11}")))
+(assert (= x "<iframe src=""http://example.com/"" style=""width:800px; height:350px; border:none; mask: url(#maskForClickjacking);""/>"))
+(check-sat)

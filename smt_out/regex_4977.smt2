@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d[\]{};:=<>_+`~.,'()/|^#$@!%*?&\-]{8,}$")))
+(assert (= x "<img src=""blah""onmouseover=""document.vulnerable=true;"">"))
+(check-sat)

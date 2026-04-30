@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([^\s][A-z0-9À-ž\s]+)")))
+(assert (= x "<textarea id=ta onfocus=%22write('<script>alert(1)</script>')%22 autofocus></textarea>"))
+(check-sat)

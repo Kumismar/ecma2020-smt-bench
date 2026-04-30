@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[6-9]\d{9}$")))
+(assert (= x "<abbr ondblclick=""alert(1)"">test</abbr>"))
+(check-sat)

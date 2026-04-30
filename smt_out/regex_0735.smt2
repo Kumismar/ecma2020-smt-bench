@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!nikitagareev22iqn)(?!pashastepanov2fgq1r)(?!karleenkla5udj).)*$")))
+(assert (= x "<center draggable=""true"" ondrag=""alert(1)"">test</center>"))
+(check-sat)

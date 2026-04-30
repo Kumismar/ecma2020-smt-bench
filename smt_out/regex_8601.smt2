@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[ _A-zА-я0-9]{1,}$")))
+(assert (= x "Redirect 302 /a.jpg http://victimsite.com/admin.asp&;deleteuser"))
+(check-sat)

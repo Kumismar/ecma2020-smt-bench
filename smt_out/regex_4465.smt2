@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\(?[\d]{3}\)?[\s-]?[\d]{3}[\s-]?[\d]{4}$")))
+(assert (= x "<ol id=x tabindex=1 onactivate=alert(1)></ol>"))
+(check-sat)

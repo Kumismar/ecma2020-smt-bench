@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-z0-9]{1,}$")))
+(assert (= x "<XML ID=I><X><C><![<IMG SRC=""javas]]<![cript:document.vulnerable=true;"">]]</C></X></xml><SPAN DATASRC=#I DATAFLD=C DATAFORMATAS=HTML></span>"))
+(check-sat)

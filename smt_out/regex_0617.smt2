@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z\u4e00-\u9eff]{1,40}(\/[A-Za-z\u4e00-\u9eff]{0,40})?$")))
+(assert (= x "<dfn onbeforepaste=""alert(1)"" contenteditable>test</dfn>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[13][a-km-zA-HJ-NP-Z1-9]{25,34}(\+[13][a-km-zA-HJ-NP-Z1-9]{25,34})*")))
+(assert (= x "<style>:target {color: red;}</style><td id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></td>"))
+(check-sat)

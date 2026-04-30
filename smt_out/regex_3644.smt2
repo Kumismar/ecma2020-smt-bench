@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([0]?){1}([1-9]){1}(\d[\s]?){7,9}")))
+(assert (= x "<input autofocus onfocusin=alert(1)>"))
+(check-sat)

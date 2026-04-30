@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z][a-zA-Z \-\.]{0,14}$")))
+(assert (= x "<nextid onbeforepaste=""alert(1)"" contenteditable>test</nextid>"))
+(check-sat)

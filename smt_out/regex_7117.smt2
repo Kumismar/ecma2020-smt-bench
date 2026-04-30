@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "男||女")))
+(assert (= x "<dd id=x tabindex=1 onbeforedeactivate=alert(1)></dd><input autofocus>"))
+(check-sat)

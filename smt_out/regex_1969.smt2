@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(.+@)(?!online|alice|virgilio|tin|tim|aol|me|mac|icloud|arcor|bluewin|blueyonder|bbox|btinternet|comcast|email|facebook|free|aliceadsl|infonie|libertysurf|freesbee|alicepro|worldonline|freenet|gmx|caramail|gmail|googlemail|home|laposte|libero|blu|giallo|mail|bk|hotmail|live|msn|outlook|windowslive|dbmail|hotmail|live|msn|telefonica|movistar|numericable|noos|o2|orange|wanadoo|skynet|rambler|lenta|autorambler|myrambler|ro|r0|sfr|neuf|9online|9business|cegetel|club-internet|cario|guideo|mageos|fnac|waika9|sky|telenet|tiscali|t-online|verizon|ono|voila|web|wp|yahoo|ymail|rocketmail|yandex|talktalk)(.+\.).+$")))
+(assert (= x "<style>@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}</style><pre id=x style=""position:absolute;"" onanimationcancel=""alert(1)""></pre>"))
+(check-sat)

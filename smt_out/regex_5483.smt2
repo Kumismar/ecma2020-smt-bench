@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".*\[[A-Za-z]{3}\].*")))
+(assert (= x "<A HREF=""htt\u{9}p://6\u{9}6.000146.0x7.147/"">XSS</A>"))
+(check-sat)

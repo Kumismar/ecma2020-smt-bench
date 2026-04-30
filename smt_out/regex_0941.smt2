@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^04[56789]\d{7}$")))
+(assert (= x """><script>alert(1337)</script>""><script>alert(""XSS by \nxss</h1></marquee>"))
+(check-sat)

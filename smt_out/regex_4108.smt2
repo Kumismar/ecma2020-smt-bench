@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^@]+@[^.]+\..+$")))
+(assert (= x "ABC<div style=""x:\xE2\x80\x8Aexpression(javascript:alert(1)"">DEF"))
+(check-sat)

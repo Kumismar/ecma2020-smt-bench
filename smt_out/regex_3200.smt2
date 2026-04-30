@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "O.P.R.G.")))
+(assert (= x "<code ondblclick=""alert(1)"">test</code>"))
+(check-sat)

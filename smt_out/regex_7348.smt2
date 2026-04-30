@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w]{2,64}$")))
+(assert (= x "<body onMouseMove body onMouseMove=""javascript:javascript:alert(1)""></body onMouseMove>"))
+(check-sat)

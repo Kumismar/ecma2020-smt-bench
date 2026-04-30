@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$")))
+(assert (= x "><h1><IFRAME width=""420"" height=""315"" frameborder=""0"" onmouseover=""document.location.href='https://www.youtube.com/channel/UC9Qa_gXarSmObPX3ooIQZr"))
+(check-sat)

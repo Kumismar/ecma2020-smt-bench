@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\D0-9]{3,20}|$")))
+(assert (= x "<p id=x tabindex=1 ondeactivate=alert(1)></p><input id=y autofocus>"))
+(check-sat)

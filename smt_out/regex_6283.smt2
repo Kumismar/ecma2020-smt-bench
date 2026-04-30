@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[012])[\/]\d{4}\s([0-1]?[0-9]|2[0-3]):[0-5][0-9]$")))
+(assert (= x "<canvas onblur=alert(1) tabindex=1 id=x></canvas><input autofocus>"))
+(check-sat)

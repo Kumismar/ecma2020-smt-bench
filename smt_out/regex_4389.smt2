@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!1234567)(?!1{5})(?!2{5})(?!3{5})(?!4{5})(?!5{5})(?!6{5})(?!7{5})(?!8{5})(?!9{5})(?!0{5})[0-9]{11}")))
+(assert (= x "<style>@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}</style><progress id=x style=""position:absolute;"" onanimationcancel=""alert(1)""></progress>"))
+(check-sat)

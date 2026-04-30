@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9\s\-\+\(\)\.]+")))
+(assert (= x "<object classid=""clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"" onqt_error=""alert(126)"" style=""behavior:url(#x);""><param name=postdomevents /></object>//[""'`-->]]>]</div>"))
+(check-sat)

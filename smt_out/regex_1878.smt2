@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "https?://.+")))
+(assert (= x "<svg><sub onload=alert(1)></sub>"))
+(check-sat)

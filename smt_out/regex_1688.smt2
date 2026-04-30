@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\S.*([\s]).*\S$")))
+(assert (= x "&lt;HEAD&gt;&lt;META HTTP-EQUIV=\""CONTENT-TYPE\"" CONTENT=\""text/html; charset=UTF-7\""&gt; &lt;/HEAD&gt;+ADw-SCRIPT+AD4-alert('XSS');+ADw-/SCRIPT+AD4-"))
+(check-sat)

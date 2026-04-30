@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([a-zěščřžýáíéťňďůúóA-ZĚŠČŘŽÝÁÍÉŤŇĎŮÚÓ]{2,50}(\s[a-zěščřžýáíéťňďůúóA-ZĚŠČŘŽÝÁÍÉŤŇĎŮÚÓ]{2,50})?)")))
+(assert (= x "<template ondblclick=""alert(1)"">test</template>"))
+(check-sat)

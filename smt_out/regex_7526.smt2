@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(N/A|n/a|N/a|n/A|((http|https)://)?(www.)?(youtube\.com\/(channel)/(.+)|youtube\.com\/(user)/(.+)))$")))
+(assert (= x "<IMG SRC=javascrscriptipt:alert('XSS')>"))
+(check-sat)

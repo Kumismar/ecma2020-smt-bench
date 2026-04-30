@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^[1][3578][0-9]{9}$)|(^0\d{2,3}\d{7,8}$)")))
+(assert (= x "<div id=""94""><svg xmlns=""http://www.w3.org/2000/svg"">"))
+(check-sat)

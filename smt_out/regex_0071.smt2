@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((https?|ftp)://)?[^\s/$.?#]*\.[^\s]*$")))
+(assert (= x "<link onmouseup=""alert(1)"">test</link>"))
+(check-sat)

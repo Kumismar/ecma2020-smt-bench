@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\w\w+)+(\s\w+)*")))
+(assert (= x "<frameset onload=javascript:alert(1)>"))
+(check-sat)

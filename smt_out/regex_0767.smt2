@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\+?\d{0,13}")))
+(assert (= x "javascript:alert%281%29;"))
+(check-sat)

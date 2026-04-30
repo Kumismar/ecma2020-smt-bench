@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$")))
+(assert (= x "<audio onkeyup=""alert(1)"" contenteditable>test</audio>"))
+(check-sat)

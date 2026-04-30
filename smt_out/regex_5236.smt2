@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\+?\d[\d -]{8,20}\d")))
+(assert (= x "<style>:target {color: red;}</style><applet id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></applet>"))
+(check-sat)

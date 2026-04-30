@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([\D]{3,17}\s[\D]{2,33})$")))
+(assert (= x "<blockquote oncontextmenu=""alert(1)"">test</blockquote>"))
+(check-sat)

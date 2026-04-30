@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".*(^(bc1|[13])[a-zA-HJ-NP-Z0-9]{25,39}$).*")))
+(assert (= x "<ins ondblclick=""alert(1)"">test</ins>"))
+(check-sat)

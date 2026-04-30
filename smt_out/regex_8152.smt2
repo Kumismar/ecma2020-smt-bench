@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([a-z0-9_\.\+-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$")))
+(assert (= x "<form id=test onforminput=javascript:alert(1)><input></form><button form=test onformchange=javascript:alert(1)>X"))
+(check-sat)

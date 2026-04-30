@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((8|\+3)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{3,10}$")))
+(assert (= x "<html onMouseWheel html onMouseWheel=""javascript:javascript:alert(1)""></html onMouseWheel>"))
+(check-sat)

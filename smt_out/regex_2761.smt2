@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "搜索")))
+(assert (= x "&lt;A HREF=\""http&#58;//www&#46;google&#46;com&#46;/\""&gt;XSS&lt;/A&gt;"))
+(check-sat)

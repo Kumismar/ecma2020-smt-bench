@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9_ ]+$")))
+(assert (= x "&lt;SCRIPT SRC=//ha&#46;ckers&#46;org/&#46;js&gt;"))
+(check-sat)

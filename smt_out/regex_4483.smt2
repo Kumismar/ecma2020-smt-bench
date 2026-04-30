@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".+@globex.com")))
+(assert (= x "<picture><source srcset=""validimage.png""><img onload=alert(1)></picture>"))
+(check-sat)

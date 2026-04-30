@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([0-9]{2})")))
+(assert (= x "<div id=""54""><script>[{'a':Object.prototype.__defineSetter__('b',function(){alert(arguments[0])}),'b':['secret']}]</script>//[""'`-->]]>]</div><div id=""55""><video><source onerror=""alert(55)"">//[""'`-->]]>]</div><div id=""56""><video onerror=""alert(56)""><source></source></video>//[""'`-->]]>]</div><div id=""57""><b <script>alert(57)//</script>0</script></b>//[""'`-->]]>]</div><div id=""58""><b><script<b></b><alert(58)</script </b></b>//[""'`-->]]>]</div><div id=""59""><div id=""div1""><input value=""``onmouseover=alert(59)""></div> <div id=""div2""></div><script>document.getElementById(""div2"").innerHTML = document.getElementById(""div1"").innerHTML;</script>//[""'`-->]]>]</div><div id=""60""><div style=""[a]color[b]:[c]red"">XXX</div>//[""'`-->]]>]</div>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w\.]+@[a-zA-Z_]+\.[a-zA-Z]{1,4}$")))
+(assert (= x "<samp onkeydown=""alert(1)"" contenteditable>test</samp>"))
+(check-sat)

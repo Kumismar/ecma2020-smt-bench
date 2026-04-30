@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-z ]{3,100}")))
+(assert (= x "<script>Object.__noSuchMethod__ = Function,[{}][0].constructor._('alert(1)')()</script>"))
+(check-sat)

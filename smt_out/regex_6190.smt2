@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^\s*]([a-zA-ZñÑÀ-ÿ.,\s]+){0,30}$")))
+(assert (= x "`""'><img src=xxx:x onerror\x0D=javascript:alert(1)>"))
+(check-sat)

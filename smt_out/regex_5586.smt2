@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".*^\d{2,4}-?\d{2,4}-?\d{4}$.*")))
+(assert (= x "<track onmouseup=""alert(1)"">test</track>"))
+(check-sat)

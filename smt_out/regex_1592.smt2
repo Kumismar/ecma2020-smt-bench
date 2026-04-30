@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\+?1?\s?\([0-9]{3}\) [0-9]{3} [0-9]{4}")))
+(assert (= x "&lt;DIV STYLE=&quot;width: expression(alert(&apos;XSS&apos;));&quot;&gt;"))
+(check-sat)

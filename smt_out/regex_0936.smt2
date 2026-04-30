@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\w\.\-]+\@[\w\.\-]+\.[a-z|A-Z][a-z|A-Z]+$")))
+(assert (= x "<blockquote onmouseout=""alert(1)"">test</blockquote>"))
+(check-sat)

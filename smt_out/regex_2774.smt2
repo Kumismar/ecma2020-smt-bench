@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u4e00-\u9fa5]{2,5}$")))
+(assert (= x "<nextid onmousemove=""alert(1)"">test</nextid>"))
+(check-sat)

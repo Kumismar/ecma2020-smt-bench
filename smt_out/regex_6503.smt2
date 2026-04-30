@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ',.-]+( [a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ',.-]+)*){2,30}")))
+(assert (= x "<li id=x tabindex=1 onbeforeactivate=alert(1)></li>"))
+(check-sat)

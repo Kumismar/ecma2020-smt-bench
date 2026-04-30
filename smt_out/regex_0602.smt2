@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!\b(\d)\1+-(\d)\1+-(\d)\1+\b)(?!123-45-6789|987-65-4321)(?!666|000|9\d{2})\d{3}-(?!00)\d{2}-(?!0{4})\d{4}$")))
+(assert (= x "<style>:target {color: red;}</style><optgroup id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></optgroup>"))
+(check-sat)

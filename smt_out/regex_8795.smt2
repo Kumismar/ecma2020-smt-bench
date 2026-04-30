@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z-]+\.)+[a-zA-Z]{2,3}$")))
+(assert (= x "<div id=""84""><x xmlns:ev=""http://www.w3.org/2001/xml-events"" ev:event=""load"" ev:handler=""javascript:alert(84)//#x""/>//[""'`-->]]>]</div><div id=""85""><x xmlns:ev=""http://www.w3.org/2001/xml-events"" ev:event=""load"" ev:handler=""test.evt#x""/>//[""'`-->]]>]</div><div id=""86""><body oninput=alert(86)><input autofocus>//[""'`-->]]>]</div>"))
+(check-sat)

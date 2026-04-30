@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9\+\-\(\)\s]+")))
+(assert (= x "</script><img/*%00/src=""worksinchrome&colon;prompt&#x28;1&#x29;""/%00*/onerror='eval(src)'>"))
+(check-sat)

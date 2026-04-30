@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([0-9a-zA-Z]([\+\-_\.][0-9a-zA-Z]+)*)+@(([0-9a-zA-Z][-\w]*[0-9a-zA-Z]*\.)+[a-zA-Z0-9]{2,4})$")))
+(assert (= x "<div draggable=""true"" contenteditable>drag me</div><sub ondragover=alert(1) contenteditable>drop here</sub>"))
+(check-sat)

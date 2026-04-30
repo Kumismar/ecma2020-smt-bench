@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(06[0-9]{7,8})$")))
+(assert (= x "<td draggable=""true"" ondragend=""alert(1)"">test</td>"))
+(check-sat)

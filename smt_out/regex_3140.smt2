@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$")))
+(assert (= x "<style>@keyframes x{}</style><bdo style=""animation-name:x"" onanimationend=""alert(1)""></bdo>"))
+(check-sat)

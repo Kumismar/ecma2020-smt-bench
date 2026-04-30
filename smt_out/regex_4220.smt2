@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\b\d{3}\.\d{3}\.\d{3}-\d{2}\b|\b(\d{11})\b|\b[a-z]{5}-ldpa[0-9]{1}\b|\b[a-z]{5}\b-[a-z]{6}\b")))
+(assert (= x "<textarea draggable=""true"" ondrag=""alert(1)"">test</textarea>"))
+(check-sat)

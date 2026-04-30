@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-z0-9!?]{6,30}")))
+(assert (= x "<form><button formaction=""javascript:alert(123)"">crosssitespt"))
+(check-sat)

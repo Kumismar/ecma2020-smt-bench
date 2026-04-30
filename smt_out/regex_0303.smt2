@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^()/\\\x40\\\x21\\\x26\\\x24\\\x25\\\x3C\\\x3E\.\][\\\x22,;|]+")))
+(assert (= x "<!DOCTYPE doc ["))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9ûÏûÝûûô¤ôˆûÀûˋûÙû°û¤û û´û˜ûýû¿ûûûûûûûûûûûÊû¨û₤ûÑû¥ûûûûû ]+")))
+(assert (= x "<scrscriptipt>alert(1)</scrscriptipt>"))
+(check-sat)

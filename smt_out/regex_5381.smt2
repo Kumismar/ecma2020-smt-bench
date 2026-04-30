@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\d{1,10}")))
+(assert (= x "<a style=""pointer-events:none;position:absolute;""><a style=""position:absolute;"" onclick=""javascript:alert(1);"">XXX</a></a><a href=""javascript:javascript:alert(1)"">XXX</a>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{3,100} required")))
+(assert (= x """`'><script>\xF0\x90\x96\x9Ajavascript:alert(1)</script>"))
+(check-sat)

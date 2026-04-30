@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[6-9]\d*|0$")))
+(assert (= x "<noframes id=x tabindex=1 onfocus=alert(1)></noframes>"))
+(check-sat)

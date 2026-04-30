@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{2,15}")))
+(assert (= x "<style>@keyframes x{}</style><rb style=""animation-name:x"" onanimationend=""alert(1)""></rb>"))
+(check-sat)

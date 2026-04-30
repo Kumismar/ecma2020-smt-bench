@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-ZÄÖÜ\-]+(\s*[A-Za-zÄÖÜäöüß.-]+)*$")))
+(assert (= x "<mark ondblclick=""alert(1)"">test</mark>"))
+(check-sat)

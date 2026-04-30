@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$")))
+(assert (= x """><script src=//brutelogic.com.br&sol;1.js&num;"))
+(check-sat)

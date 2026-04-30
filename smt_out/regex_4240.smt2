@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(9999|([1-4][0-9][0-9][0-9])|([1-9][0-9][0-9])|([1-9][0-9])|[1-9])")))
+(assert (= x "<script src=""http://code.jquery.com/jquery-1.4.4.js""></script>"))
+(check-sat)

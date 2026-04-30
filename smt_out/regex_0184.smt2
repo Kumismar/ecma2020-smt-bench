@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*\d).{8,}")))
+(assert (= x "<script ~~~>alert(0%0)</script ~~~>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^[1-9]$|0[1-9]|1[0-2])")))
+(assert (= x "<;IMG SRC=`javascript:alert("";RSnake says, ';XSS';"";)`>;"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".*@\w{2,}(\.\w{2,}){1,2}")))
+(assert (= x "&lt;?xml&#58;namespace prefix=\""t\"" ns=\""urn&#58;schemas-microsoft-com&#58;time\""&gt;"))
+(check-sat)

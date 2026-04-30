@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-zÄÖÜäöüß | \b | -]{2,25}")))
+(assert (= x "<dir oncopy=""alert(1)"" contenteditable>test</dir>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\+?\d{10,12}$")))
+(assert (= x "<style></style\x09<img src=""about:blank"" onerror=javascript:alert(1)//></style>"))
+(check-sat)

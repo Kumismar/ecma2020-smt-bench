@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "THEREFORE BEING JUSTIFIED BY FAITH WE HAVE PEACE WITH GOD")))
+(assert (= x "<style>:target {color: red;}</style><noembed id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></noembed>"))
+(check-sat)

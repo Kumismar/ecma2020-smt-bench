@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^IG.+")))
+(assert (= x "<script>if(""x\\xEE\xA9\x93"".length==2) { javascript:alert(1);}</script>"))
+(check-sat)

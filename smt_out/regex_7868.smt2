@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!info@|sales@|administratie@|management@|inkoop@|verkoop@).)*$")))
+(assert (= x "<form onmouseleave=""alert(1)"">test</form>"))
+(check-sat)

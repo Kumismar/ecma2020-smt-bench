@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w\u0391-\uFFE5]{2,20}$")))
+(assert (= x "<article onmouseleave=""alert(1)"">test</article>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?)")))
+(assert (= x "&lt;DIV STYLE=\""background-image&#58; url(javascript&#058;alert('XSS'))\""&gt;"))
+(check-sat)

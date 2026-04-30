@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z0-9._%+-]+@(?!hotmail|gmail|yahoo|live|msn|outlook|verizon|aol|icloud|mail|ymail|att|HOTMAIL|GMAIL|YAHOO|LIVE|MSN|OUTLOOK|VERIZON|AOL|ICLOUD|MAIL|YMAIL|ATT|Hotmail|Gmail|Yahoo|Live|Msn|Outlook|Verizon|Aol|Icloud|Mail|Ymail|Att|GMail|gMail|iCloud)[a-zA-Z0-9_-]+\.[a-zA-Z0-9-.]{2,61}$")))
+(assert (= x "<td onbeforecut=""alert(1)"" contenteditable>test</td>"))
+(check-sat)

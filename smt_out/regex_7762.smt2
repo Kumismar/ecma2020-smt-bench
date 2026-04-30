@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(11\) [1-7][0-9]{3}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$")))
+(assert (= x "<;? echo(';<;SCR)';;"))
+(check-sat)

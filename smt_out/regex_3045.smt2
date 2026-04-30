@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0]*[1-9][0-9]{4,5}$")))
+(assert (= x "<dfn oncontextmenu=""alert(1)"">test</dfn>"))
+(check-sat)

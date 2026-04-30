@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[æøåa-zÆØÅA-Z0-9 ]{2,7}")))
+(assert (= x "<IMG SRC=x onoffline=""alert(String.fromCharCode(88,83,83))"">"))
+(check-sat)

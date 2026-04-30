@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{1,2}|[0-1][0-7]\d|180")))
+(assert (= x "<figcaption draggable=""true"" ondragenter=""alert(1)"">test</figcaption>"))
+(check-sat)

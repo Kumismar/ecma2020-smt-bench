@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^()+^#|§ƒ!ÑÐ¾{}))°*$µ`£E%´`=?;@><\][\\\x22,;|]+")))
+(assert (= x "<iframe %00 src=""&Tab;javascript:prompt(1)&Tab;""%00>"))
+(check-sat)

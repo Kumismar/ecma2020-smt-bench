@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-za-z0-9]{17}")))
+(assert (= x "<META HTTP-EQUIV=""refresh"" CONTENT=""0; URL=http://;URL=javascript:javascript:alert(1);"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\W|\d]{14,14}")))
+(assert (= x "<;DIV STYLE="";width: expression(alert(';XSS';));"";>;"))
+(check-sat)

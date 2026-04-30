@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[1-9]{2}$")))
+(assert (= x "<time onpaste=""alert(1)"" contenteditable>test</time>"))
+(check-sat)

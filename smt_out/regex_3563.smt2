@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9]{3,6} [A-Za-z0-9]{3,6}/[0-9]{1,6}")))
+(assert (= x "<samp onblur=alert(1) tabindex=1 id=x></samp><input autofocus>"))
+(check-sat)

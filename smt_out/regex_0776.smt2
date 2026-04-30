@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(\d{5}(-\d{4})?|[A-CEGHJ-NPRSTVXYa-ceghj-nprstvwy]\d[A-CEGHJ-NPRSTV-Za-ceghj-nprstv-z] ?\d[A-CEGHJ-NPRSTV-Za-cegj-nprstv-z]\d)$")))
+(assert (= x """`'><script>\xE1\xA0\x8Ejavascript:alert(1)</script>"))
+(check-sat)

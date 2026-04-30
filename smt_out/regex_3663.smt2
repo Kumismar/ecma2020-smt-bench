@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-ZÃ-ãÊ-êÁ-áÀ-àÉ-éÓ-óÔ-ôÕ-õ]+\s?[a-zA-ZÃ-ãÊ-êÁ-áÀ-àÉ-éÓ-óÔ-ôÕ-õ]+\s?[a-zA-ZÃ-ãÊ-êÁ-áÀ-àÉ-éÓ-óÔ-ôÕ-õ]+\s?[a-zA-ZÃ-ãÊ-êÁ-áÀ-àÉ-éÓ-óÔ-ôÕ-õ]+\s?[a-zA-ZÃ-ãÊ-êÁ-áÀ-àÉ-éÓ-óÔ-ôÕ-õ]+\s?[a-zA-ZÃ-ãÊ-êÁ-áÀ-àÉ-éÓ-óÔ-ôÕ-õ]+$")))
+(assert (= x "<sup draggable=""true"" ondrag=""alert(1)"">test</sup>"))
+(check-sat)

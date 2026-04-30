@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([0-9]{0,3})$")))
+(assert (= x "<xsl:stylesheet id=""stylesheet"" version=""1.0"" xmlns:xsl=""http://www.w3.org/1999/XSL/Transform"">        <xsl:template match=""/""><iframe xmlns=""http://www.w3.org/1999/xhtml"" src=""javascript:alert(125)""></iframe>        </xsl:template></xsl:stylesheet><circle fill=""red"" r=""40""></circle></svg>//[""'`-->]]>]</div>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(10)$")))
+(assert (= x "<iframe<?php echo chr(11)?> onload=alert('XSS')></iframe>"))
+(check-sat)

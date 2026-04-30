@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z0-9_ -ÖÜäöüß]{0,20}$")))
+(assert (= x "<a id=""x""><rect fill=""white"" width=""1000"" height=""1000""/></a>"))
+(check-sat)

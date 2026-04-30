@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([A-Z,a-z,İ,ı,Ş,ş,Ü,ü,Ç,ç,Ö,ö,ğ,Ğ, ]){2,20}$")))
+(assert (= x "<LAYER SRC=""%(scriptlet)s""></LAYER>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([\u4E00-\u9FA5]+|[a-zA-Z]+)$")))
+(assert (= x "<isindex id=x tabindex=1 onactivate=alert(1)></isindex>"))
+(check-sat)

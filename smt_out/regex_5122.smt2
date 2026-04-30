@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[+]?[\s./0-9]*[(]?[0-9]{1,4}[)]?[-\s./0-9]*")))
+(assert (= x "<svg><progress onload=alert(1)></progress>"))
+(check-sat)

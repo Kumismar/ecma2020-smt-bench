@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z]{0,100}")))
+(assert (= x "<HTML xmlns:xss><?import namespace=""xss"" implementation=""%(htc)s""><xss:xss>XSS</xss:xss></HTML>"""""",""XML namespace.""),(""""""<XML ID=""xss""><I><B>&lt;IMG SRC=""javas<!-- -->cript:javascript:alert(1)""&gt;</B></I></XML><SPAN DATASRC=""#xss"" DATAFLD=""B"" DATAFORMATAS=""HTML""></SPAN>"))
+(check-sat)

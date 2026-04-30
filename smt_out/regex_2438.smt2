@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.{6,})(?=.*[^a-zA-Z0-9]).*$")))
+(assert (= x "<image style='filter:url(""data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><script>parent.alert(129)</script></svg>"")'>"))
+(check-sat)

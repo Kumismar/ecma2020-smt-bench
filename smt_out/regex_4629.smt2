@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-zŔÁÂĂÄĹĆÇČÉĘËĚÍÎĎĐŃŇÓÔŐÖŘŮÚŰÜÝŢßŕáâăäĺćçčéęëěíîďđńňóôőöřůúűüýţ˙ \t\r\n\fś, ć, ł, ó, ń, ż, ź, ą, ę]*$")))
+(assert (= x "<svg onbeforecopy=""alert(1)"" contenteditable>test</svg>"))
+(check-sat)

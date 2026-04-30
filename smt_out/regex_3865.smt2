@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-zÄÖÜäöüß.,-_'ÀàÁáÈèÉéÚúÙùÂâÊêÛûÇçÄäËë]{2,}")))
+(assert (= x "<style>@keyframes x{}</style><marquee style=""animation-name:x"" onanimationend=""alert(1)""></marquee>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\w+[\w ,\.'\-]+")))
+(assert (= x "<figcaption onclick=""alert(1)"">test</figcaption>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\d)(?!\1+$)\d{10}$")))
+(assert (= x "&lt;META HTTP-EQUIV=\""Link\"" Content=\""&lt;http&#58;//ha&#46;ckers&#46;org/xss&#46;css&gt;; REL=stylesheet\""&gt;"))
+(check-sat)

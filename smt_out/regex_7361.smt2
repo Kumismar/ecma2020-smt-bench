@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*\d)(?=.*[!@#\$%\^&\*])(?=.*[a-z])(?=.*[A-Z]).{8,}")))
+(assert (= x """><h1><IFRAME SRC=# onmouseover=""alert(document.cookie)""></IFRAME>123</h1>"))
+(check-sat)

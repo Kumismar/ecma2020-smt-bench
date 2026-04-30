@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^<>]+")))
+(assert (= x "&lt;t&#58;set attributeName=\""innerHTML\"" to=\""XSS&lt;SCRIPT DEFER&gt;alert(&quot;XSS&quot;)&lt;/SCRIPT&gt;\""&gt;"))
+(check-sat)

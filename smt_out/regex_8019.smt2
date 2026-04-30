@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z]{1,11}")))
+(assert (= x "<option id=x tabindex=1 onfocus=alert(1)></option>"))
+(check-sat)

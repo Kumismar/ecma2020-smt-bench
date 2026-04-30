@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\+\d+$")))
+(assert (= x """><h1><iframe width=""420"" height=""315"" src=""http://www.youtube.com/embed/sxvccpasgTE"" frameborder=""0"" allowfullscreen></iframe>123</h1>"))
+(check-sat)

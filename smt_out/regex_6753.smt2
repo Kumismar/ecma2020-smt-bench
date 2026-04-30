@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z|a-z|\s-]{3,3}")))
+(assert (= x ">%22%27><img%20src%3d%22javascript:alert(%27%20XSS%27)%22>"))
+(check-sat)

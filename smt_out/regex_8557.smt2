@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "0([7-9]0\D\d{4}|\d\D\d{4}|\d{2}\D\d{3}|\d{3}\D\d{2}|\d{4}\D\d)\D\d{4}")))
+(assert (= x "<frameset onkeyup=""alert(1)"" contenteditable>test</frameset>"))
+(check-sat)

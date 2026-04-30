@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\+,\s,0-9]*")))
+(assert (= x "<img alt='%></xmp><img src=xx:x onerror=aler"))
+(check-sat)

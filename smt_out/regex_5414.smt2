@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z][a-zA-Z ]{3,}")))
+(assert (= x "<script/&Tab; src='https://dl.dropbox.com/u/13018058/js.js' /&Tab;></script>"))
+(check-sat)

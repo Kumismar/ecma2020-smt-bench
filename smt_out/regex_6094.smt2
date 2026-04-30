@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z\d\-_\.]+@[a-zA-Z\d\.\-]+\.[a-zA-Z]{2,6}$")))
+(assert (= x "<svg><set onbegin=alert(1) attributename=x dur=1s>"))
+(check-sat)

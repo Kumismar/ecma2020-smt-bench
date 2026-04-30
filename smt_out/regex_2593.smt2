@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$")))
+(assert (= x "<! foo=""[[[Inception]]""><x foo=""]foo><script>javascript:alert(1)</script>"">"))
+(check-sat)

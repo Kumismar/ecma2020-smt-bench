@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{10}|[A-Z]{2}[0-9]{2,13}")))
+(assert (= x "<audio ondblclick=""alert(1)"">test</audio>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^[1][358][0-9]{9}$)|(^[9][1235678][0-9]{7}$)")))
+(assert (= x "<iframe id=x tabindex=1 onactivate=alert(1)></iframe>"))
+(check-sat)

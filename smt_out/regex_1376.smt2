@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{1,2}.\d{1,2}.\d{4}")))
+(assert (= x "<sVg><scRipt %00>alert&lpar;1&rpar; {Opera}"))
+(check-sat)

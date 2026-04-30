@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(\+?\d[- .]*){5,15}")))
+(assert (= x "<tbody draggable=""true"" ondragenter=""alert(1)"">test</tbody>"))
+(check-sat)

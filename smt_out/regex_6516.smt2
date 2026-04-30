@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[А-Яа-яёЁ\s\-]{1,30}")))
+(assert (= x "<ins draggable=""true"" ondragleave=""alert(1)"">test</ins>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z]{1}[a-z]{2,19}")))
+(assert (= x "<footer onmouseleave=""alert(1)"">test</footer>"))
+(check-sat)

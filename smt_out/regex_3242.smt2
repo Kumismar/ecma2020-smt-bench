@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(([ |\t])*[r|R][s|S]\d+([ |\t])*|([ |\t])*[c|C][h|H][r|R][\d|x|X|y|Y]\d?:\d+([ |\t])*)$")))
+(assert (= x "<div draggable=""true"" contenteditable>drag me</div><area ondragover=alert(1) contenteditable>drop here</area>"))
+(check-sat)

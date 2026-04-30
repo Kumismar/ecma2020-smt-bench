@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^3$")))
+(assert (= x "<thead onfocusout=alert(1) tabindex=1 id=x></thead><input autofocus>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([()+\s-]*[0-9][()+\s-]*){10}$")))
+(assert (= x "<template id=x tabindex=1 ondeactivate=alert(1)></template><input id=y autofocus>"))
+(check-sat)

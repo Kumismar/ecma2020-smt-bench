@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(https://www\.youtube\.com\/(.+))|(https://vimeo.com\/(.+))")))
+(assert (= x "<plaintext id=x tabindex=1 onbeforedeactivate=alert(1)></plaintext><input autofocus>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{4}-\d{2}-\d{2}(\s+\d{4}-\d{2}-\d{2})*")))
+(assert (= x "<h1 oncontextmenu=""alert(1)"">test</h1>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9-_!*]{3,20}")))
+(assert (= x "&lt;LAYER SRC=\""http&#58;//ha&#46;ckers&#46;org/scriptlet&#46;html\""&gt;&lt;/LAYER&gt;"))
+(check-sat)
