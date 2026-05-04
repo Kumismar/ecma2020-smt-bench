@@ -3,7 +3,7 @@
 DIR="smt_out"
 EXEC_TYPE=$1
 EXEC="./z3-$EXEC_TYPE"
-TIMEOUT="5s"
+TIMEOUT="10s"
 
 if [ ! -d $DIR ]; then
     echo "Testbed folder does not exist"
@@ -18,6 +18,8 @@ TIMED_OUT=0
 
 rm -rf test_output
 mkdir -p test_output
+mkdir -p test_output/unknown
+mkdir -p test_output/failed
 
 for file in "$DIR"/*; do
     REAL_SAT=$(cat "$file" | grep -c "(set-info :status sat)")
@@ -45,8 +47,11 @@ for file in "$DIR"/*; do
     if [ "$RESULT" != "$EXPECTED" ]; then
         if [ "$RESULT" != "unknown" ]; then
             SUFFIX="_failed"
-            echo "$(cat "$file")" > "test_output/$(basename "$file")$SUFFIX"
-            echo "$OUTPUT" >> "test_output/$(basename "$file")$SUFFIX"
+            echo "$(cat "$file")" > "test_output/failed/$(basename "$file")$SUFFIX"
+            echo "$OUTPUT" >> "test_output/failed/$(basename "$file")$SUFFIX"
+        else
+            echo "$(cat "$file")" > "test_output/unknown/$(basename "$file")"
+            echo "$OUTPUT" >> "test_output/unknown/$(basename "$file")"
         fi
     fi
 
