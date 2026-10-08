@@ -15,6 +15,14 @@ The benchmarks are created by 'randomly' assigning an XSS payload from `xss-payl
 
 Each pair (regex, payload) is then matched by JavaScript regex engine and classified as `sat`/`unsat` based on the result.
 
+## How to run
+The benchmarks can be run with the `run.sh` script from the repository root, where the `smt_out/` folder is located.
+The script expects a Z3 binary named `z3-<suffix>` in the current directory, and the suffix is given as the first argument (e.g., `./run.sh release` runs `./z3-release`).
+Each formula is solved with a 10-second timeout, and the solver result is compared with the expected `:status` value.
+At the end, the script prints the number of passed, failed, timed-out and unknown results.
+Formulae with a wrong result are saved to `test_output/failed/`, and formulae for which the solver returned neither `sat` nor `unsat` are saved to `test_output/unknown/`; each file contains the original formula followed by the solver output.
+Note that the `test_output/` folder is deleted at the start of every run.
+
 ## The benchmark generator
 In this repository, there is `make_smt_random.js` script that takes care of the benchmark generation.
 As mentioned earlier, it takes regex patterns one by one, assigns a 'random' XSS payload and verifies the satisfiability of the given combination.
