@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\t-\r \x2D0-9A-Z\xA0\u{5c}u1680\u{5c}u2000-\u{5c}u200A\u{5c}u2028\u{5c}u2029\u{5c}u202F\u{5c}u205F\u{5c}u3000\u{5c}uFEFF]{3,10}$")))
+(assert (= x "<basefont onbeforecut=""alert(1)"" contenteditable>test</basefont>"))
+(check-sat)

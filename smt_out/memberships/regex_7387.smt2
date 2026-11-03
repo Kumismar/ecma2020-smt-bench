@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{e1}\u{e9}\u{ed}\u{142}\u{f3}\u{fa}\u{fc}\u{173}\u{16b}\u{f1}\u{e7}\u{dc}\u{d1}\u{c7}\u{f0} ,.'-]{2,40}")))
+(assert (= x "<!--[if<img src=x onerror=javascript:alert(1)//]> -->"))
+(check-sat)

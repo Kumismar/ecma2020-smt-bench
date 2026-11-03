@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9-_.]{3,}")))
+(assert (= x "&lt;XML SRC=\""xsstest&#46;xml\"" ID=I&gt;&lt;/XML&gt;"))
+(check-sat)

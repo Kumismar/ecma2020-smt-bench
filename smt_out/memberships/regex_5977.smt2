@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Z\u{c5}\u{c4}\u{d6}\u{c6}\u{d8}\u{cb}\u{c9}\u{c8}\u{ca}\u{db}\u{dc}a-z\u{e5}\u{e4}\u{f6}\u{e6}\u{f8}\u{eb}\u{e9}\u{e8}\u{ea}\u{fb}\u{fc}\s\-]{1,50}$")))
+(assert (= x "<cite onmouseover=""alert(1)"">test</cite>"))
+(check-sat)

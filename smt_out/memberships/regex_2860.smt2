@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[_0-9]{1,}$")))
+(assert (= x "<embed code=%(scriptlet)s></embed>"))
+(check-sat)

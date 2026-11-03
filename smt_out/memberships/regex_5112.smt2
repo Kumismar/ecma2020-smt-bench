@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{e4}\u{fc}\u{f6}\u{c4}\u{dc}\u{d6}\u{df} ]+")))
+(assert (= x "ABC<div style=""x:\xEF\xBB\xBFexpression(javascript:alert(1)"">DEF"))
+(check-sat)

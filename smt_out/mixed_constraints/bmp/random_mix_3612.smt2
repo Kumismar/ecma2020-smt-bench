@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<;BODY onload!#$%&;()*~+-_.,:;?@[/|\]^`=alert("";XSS"";)>;") (= x "<noscript draggable=""true"" ondrag=""alert(1)"">test</noscript>") (= x "<plaintext onkeyup=""alert(1)"" contenteditable>test</plaintext>")))
+(assert (or (= z "(';XSS';);"";>;") (= z "ex=1 onfocusin=alert(1)></meta>") (= z ")"" contenteditable>test</bdo>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.prefixof "<plai" y) (= (str.indexof x ";BOD" 0) 1)))
+(assert (or (not (str.contains x "\]^`=alert")) (not (str.in_re z ((_ re.from_regex ecma2020) "^[\u{430}-\u{44f}\u{410}-\u{42f}\u{451}\u{401}\s]+$"))) (not (str.in_re x ((_ re.from_regex ecma2020) "[0-9-?]+$")))))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020) "(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,30}"))) (not (str.prefixof "ex=1 " z)) (not (str.suffixof "lockquote>" z))))
+(check-sat)

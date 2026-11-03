@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z \u{e4}\u{f6}\u{fc}\u{dc}\u{d6}\u{c4}\u{df}-]{2,}")))
+(assert (= x "<title onpropertychange=javascript:alert(1)></title><title title=>"))
+(check-sat)

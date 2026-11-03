@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<div draggable=""true"" contenteditable>drag me</div><blockquote ondrop=alert(1) contenteditable>drop here</blockquote>") (= x "<keygen id=x tabindex=1 onbeforedeactivate=alert(1)></keygen><input autofocus>")))
+(assert (or (= z """ contenteditable>test</bdo>") (= z "contenteditable>test</hr>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.prefixof "<scri" y) (not (str.in_re x ((_ re.from_regex ecma2020 u) "^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$"))) (not (str.in_re y ((_ re.from_regex ecma2020 u) "[0-9A-Za-z]{0,10}")))))
+(assert (or (not (= "conte<b>table>test</hr>" (str.replace z "ntedi" "<b>"))) (not (str.prefixof "<keygen id" x)) (str.contains z "est<")))
+(assert (or (not (str.contains z "tentedit")) (= (str.at y 73) "r") (str.suffixof ">" z)))
+(check-sat)

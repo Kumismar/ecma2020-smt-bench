@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z-\u{e0}\u{e2}\u{e9}\u{e8}\u{ea}\u{eb}\u{ee}\u{ef}\u{f4}\u{f6}\u{f9}\u{fb}\u{fc}\u{c0}\u{c2}\u{c9}\u{c8}\u{ca}\u{cb}\u{ce}\u{cf}\u{d4}\u{d6}\u{d9}\u{db}\u{dc} ]{3,}")))
+(assert (= x "<xmp onbeforecopy=""alert(1)"" contenteditable>test</xmp>"))
+(check-sat)

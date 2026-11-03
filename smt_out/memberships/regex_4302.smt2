@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!gmail)(?!yahoo)(?!hotmail)(?!outlook)(?!aol).)*$")))
+(assert (= x "<DIV STYLE=""background-image: url(javascript:alert('XSS'))"">"))
+(check-sat)

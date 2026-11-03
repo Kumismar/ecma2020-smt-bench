@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0-9A-Za-z!@#$%]{8,16}$")))
+(assert (= x "<video onkeypress=""alert(1)"" contenteditable>test</video>"))
+(check-sat)

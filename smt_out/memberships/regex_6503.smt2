@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([a-zA-Z\u{17c}\u{17a}\u{107}\u{144}\u{f3}\u{142}\u{119}\u{105}\u{15b}\u{17b}\u{179}\u{106}\u{104}\u{15a}\u{118}\u{141}\u{d3}\u{143}',.-]+( [a-zA-Z\u{17c}\u{17a}\u{107}\u{144}\u{f3}\u{142}\u{119}\u{105}\u{15b}\u{17b}\u{179}\u{106}\u{104}\u{15a}\u{118}\u{141}\u{d3}\u{143}',.-]+)*){2,30}")))
+(assert (= x "<nobr onfocusout=alert(1) tabindex=1 id=x></nobr><input autofocus>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z][a-zA-Z-_\.]{1,50}")))
+(assert (= x "<select onchange=alert(1)><option>change me</option><option>XSS</option></select>"))
+(check-sat)

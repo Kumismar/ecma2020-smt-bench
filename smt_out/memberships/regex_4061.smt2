@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([0-9]{11})?$")))
+(assert (= x "<;XML ID="";xss"";>;<;I>;<;B>;<;IMG SRC="";javas<;!-- -->;cript:alert(';XSS';)"";>;<;/B>;<;/I>;<;/XML>;"))
+(check-sat)

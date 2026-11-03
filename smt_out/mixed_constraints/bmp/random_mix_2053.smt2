@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<menu onmousedown=""alert(1)"">test</menu>") (= x "<IMG SRC=x onplay=""alert(String.fromCharCode(88,83,83))"">")))
+(assert (or (= z ">") (= z "#46;org/xss&#46;js&gt;&lt;/SCRIPT&gt;")))
+(assert (= y (str.++ x z)))
+(assert (or (= "&gt" (str.substr z 33 3)) (not (= "style=display:b<b>k>" (str.replace z "loc" "<b>"))) (= (str.indexof z "js&g" 0) 16)))
+(assert (or (= (str.at y 37) "h") (not (= (str.len y) 41))))
+(assert (or (= (str.at z 26) "l") (not (= "\u{20000}<b>>" (str.replace z "l" "<b>"))) (not (str.in_re x ((_ re.from_regex ecma2020) "([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$)")))))
+(check-sat)

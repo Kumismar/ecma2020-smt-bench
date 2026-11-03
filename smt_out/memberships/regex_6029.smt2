@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?:((([^0-9_!\u{a1}?\u{f7}?\u{bf}/\\+=@#$%\u{2c6}&*(){}|~<>;:[\]'\u{2019},\-.\s])){1,}(['\u{2019},\-\.]){0,1}){2,}(([^0-9_!\u{a1}?\u{f7}?\u{bf}/\\+=@#$%\u{2c6}&*(){}|~<>;:[\]'\u{2019},\-. ]))*(([ ]+){0,1}(((([^0-9_!\u{a1}?\u{f7}?\u{bf}/\\+=@#$%\u{2c6}&*(){}|~<>;:[\]'\u{2019},\-\.\s])){1,})(['\u{2019}\-,\.]){0,1}){2,}((([^0-9_!\u{a1}?\u{f7}?\u{bf}/\\+=@#$%\u{2c6}&*(){}|~<>;:[\]'\u{2019},\-\.\s])){2,})?)*)$")))
+(assert (= x "<style>@keyframes x{}</style><rtc style=""animation-name:x"" onanimationend=""alert(1)""></rtc>"))
+(check-sat)

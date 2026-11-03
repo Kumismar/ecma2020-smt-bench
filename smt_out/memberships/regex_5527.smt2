@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[!-~\u{c0}-\u{ff} ]{0,25}")))
+(assert (= x "<sup onbeforecut=""alert(1)"" contenteditable>test</sup>"))
+(check-sat)

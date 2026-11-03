@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z \u{5c}u00E0-\u{5c}u00FC\u{5c}u00d1\u{5c}u00f1]{1,200}")))
+(assert (= x "<button draggable=""true"" ondragleave=""alert(1)"">test</button>"))
+(check-sat)

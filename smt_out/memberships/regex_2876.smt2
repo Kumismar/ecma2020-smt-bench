@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\s*[0-9- ]{9,}$")))
+(assert (= x "<script>if(""x\\xE0\xB9\x92"".length==2) { javascript:alert(1);}</script>"))
+(check-sat)

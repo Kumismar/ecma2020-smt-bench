@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([a-z\u{11b}\u{161}\u{10d}\u{159}\u{17e}\u{fd}\u{e1}\u{ed}\u{e9}\u{165}\u{148}\u{10f}\u{16f}\u{fa}\u{f3}A-Z\u{11a}\u{160}\u{10c}\u{158}\u{17d}\u{dd}\u{c1}\u{cd}\u{c9}\u{164}\u{147}\u{10e}\u{16e}\u{da}\u{d3}]{2,50}(\s[a-z\u{11b}\u{161}\u{10d}\u{159}\u{17e}\u{fd}\u{e1}\u{ed}\u{e9}\u{165}\u{148}\u{10f}\u{16f}\u{fa}\u{f3}A-Z\u{11a}\u{160}\u{10c}\u{158}\u{17d}\u{dd}\u{c1}\u{cd}\u{c9}\u{164}\u{147}\u{10e}\u{16e}\u{da}\u{d3}]{2,50})?)")))
+(assert (= x "<title id=x tabindex=1 onactivate=alert(1)></title>"))
+(check-sat)

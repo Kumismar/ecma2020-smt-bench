@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<center onmousemove=""alert(1)"">test</center>") (= x "<style>:target {color: red;}</style><col id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></col>") (= x "<col onkeypress=""alert(1)"" contenteditable>test</col>")))
+(assert (or (= z "color 1s"" ontransitionend=alert(1)></font>") (= z "t(1)></blockquote>") (= z " {color:red;}</style><dir id=x style=""transition:color 1s"" ontransitionend=alert(1)></dir>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= (str.at x 2) "t")) (= "r" (str.substr y 20 1)) (not (str.in_re y ((_ re.from_regex ecma2020) "^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$")))))
+(assert (or (not (str.suffixof "autofocus>" x)) (not (str.in_re y ((_ re.from_regex ecma2020) "[A-z0-9._%+-]+@[A-z0-9-]+\.[A-z]{2,6}$"))) (not (str.in_re z ((_ re.from_regex ecma2020) "([a-z0-9]+[._-]){0,}?[a-z0-9]+@[a-z0-9]+[.]{1}[a-z]{2,4}$")))))
+(assert (or (not (>= (str.len z) 38)) (not (= (str.at y 21) "t"))))
+(check-sat)

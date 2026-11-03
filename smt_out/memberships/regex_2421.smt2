@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{5c}u2015\u{5c}u3000\u{5c}u30A1-\u{5c}u30F6\u{5c}u30FB-\u{5c}u30FE]+$")))
+(assert (= x "<hgroup draggable=""true"" ondragend=""alert(1)"">test</hgroup>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<iframe src=""http://example.org/""></iframe>") (= x "<caption onmouseout=""alert(1)"">tes\u{1d400}t</caption>")))
+(assert (or (= z "ith(document.g\u{1f600}etElementById(""d""))innerHTML=innerHTML</script>//[""'`-->]]>]</div>") (= z "est</rp>") (= z "est</pre>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.prefixof "ith(docum" z)) (not (str.in_re x ((_ re.from_regex ecma2020 u) "(^[ABCEGHJKLMNPRSTVXYabceghjklmnprstvxy]{1}\d{1}[A-Za-z]{1} *\d{1}[A-Za-z]{1}\d{1}$)"))) (= "ion>" (str.substr x 42 10))))
+(assert (or (= (str.at z 23) "e") (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[67]{1}[0-9]{8}$"))) (= "<<b>tion onmouseout=""alert(1)"">tes\u{1d400}t</caption>ith(document.g\u{1f600}etElementById(""d""))innerHTML=innerHTML</script>//[""'`-->]]>]</div>" (str.replace y "cap" "<b>"))))
+(assert (or (not (str.suffixof "/caption>" x)) (= "/" (str.substr y 18 1))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?:\D*\d){3,}\D*$")))
+(assert (= x "<div id=""28"">1<animate/xmlns=urn:schemas-microsoft-com:time style=behavior:url(#default#time2)  attributename=innerhtml values=&lt;img/src=&quot;.&quot;onerror=alert(28)&gt;>//[""'`-->]]>]</div>"))
+(check-sat)

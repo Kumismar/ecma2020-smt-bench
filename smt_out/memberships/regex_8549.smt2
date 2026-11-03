@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,40}$")))
+(assert (= x "<script>({set/**/$($){_/**/setter=$,_=javascript:alert(1)}}).$=eval</script>"))
+(check-sat)

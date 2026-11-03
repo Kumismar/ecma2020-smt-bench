@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+36)([0-9]{8,9})$")))
+(assert (= x "}</style><script>a=eval;b=alert;a(b(/XSS/.source));</script>"))
+(check-sat)

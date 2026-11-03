@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<frameset onkeypress=""alert(1)"" contenteditable>test</frameset>") (= x "<listing id=x tabindex=1 ondeactivate=alert(1)></listing><input id=y autofocus>")))
+(assert (or (= z "1 onactivate=alert(1)></datalist>") (= z "k id=x tabindex=1 onfocus=alert(1)></mark>") (= z "wn>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020) "^[\d+#\-*]{12}$"))) (str.prefixof "<framese" y) (str.in_re y ((_ re.from_regex ecma2020) "^[a-zA-Z][a-zA-Z0-9-_]{3,20}$"))))
+(assert (or (not (<= (str.len z) 24)) (not (str.in_re y ((_ re.from_regex ecma2020) "[a-zA-Z0-9._%+-]+\.[a-zA-Z]{2,10}$")))))
+(assert (or (= "ttp" (str.substr z 14 3)) (str.prefixof "<fram" x) (not (= (str.indexof x "/lis" 0) 48))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9 \u{f1}\u{d1}]{1,20}")))
+(assert (= x "<bdi onmouseup=""alert(1)"">test</bdi>"))
+(check-sat)

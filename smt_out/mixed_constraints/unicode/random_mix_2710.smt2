@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<wbr onbeforecut=""alert(1)"" contenteditable>test</wbr>") (= x "<dl draggable=""true"" ondragstart=""alert(1)"">test</dl>") (= x "&#X3c")))
+(assert (or (= z "x=1 onbeforeactivate=alert(1)></mark>") (= z "st")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.at x 40) "b") (str.contains x "X3") (str.contains (str.replace z "st" "javascript:") "javascript:")))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020 u) "^[A-Za-z\u{410}-\u{42f}\u{430}-\u{44f}\u{401}\u{451}]{1,15}"))) (str.in_re x ((_ re.from_regex ecma2020 u) "^[A-Za-z0-9\u{f1}\u{d1}. _]*[A-Za-z0-9\u{f1}\u{d1}.][A-Za-z0-9\u{f1}\u{d1}. _]*$")) (str.suffixof "/div>" z)))
+(assert (or (not (str.contains (str.replace y "83;" "x") "#x&#")) (= "st" (str.substr y 5 10))))
+(check-sat)

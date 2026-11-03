@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<--`<iMG/srC=` onerror=confirm``> --!>") (= x "<param onblur=alert(1) tabindex=1 id=x></param><input autofocus>") (= x "<figcaption draggable=""true"" ondragenter=""alert(1)"">test</figcaption>")))
+(assert (or (= z "e\u{1f600}"" ondragleave=""alert(1)"">test</tbody>") (= z "adstart=alert(1)></picture>")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.len x) 57) (not (<= (str.len x) 65)) (str.prefixof "<main onk" x)))
+(assert (or (not (= (str.len z) 27)) (str.suffixof "/picture>" y) (not (str.in_re x ((_ re.from_regex ecma2020 u) "[0-9]{3,16}")))))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020 u) "^[0-9]{1,3}"))) (not (str.in_re z ((_ re.from_regex ecma2020 u) "[0-9]+[\.]{0,1}[0-9]*")))))
+(check-sat)

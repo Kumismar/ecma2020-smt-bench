@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(0|\+33)[1-9]([-.\u{a0}]?[0-9]{2}){4}$")))
+(assert (= x "<feImage><set attributeName=""xlink:href"" to=""data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxzY3JpcHQ%2BYWxlcnQoMSk8L3NjcmlwdD48L3N2Zz4NCg%3D%3D""/></feImage>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<summary ondblclick=""alert(1)"">test</summary>") (= x "<section ondblclick=""alert(1)"">test</section>")))
+(assert (or (= z "=""alert(1)""></ruby>") (= z "ocus>") (= z "ee onmouseover=""alert(1)"">test</marquee>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.suffixof "t(1)></ul>" y)) (= (str.at y 41) "a") (not (= (str.indexof x """ale" 0) 20))))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020 u) "[A-Za-z0-9]{3,}"))) (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[_A-Za-z0-9-\+-]+(\.[_A-Za-z0-9-\+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-\+-]+)*(\.[A-Za-z]{2,})$")))))
+(assert (or (not (str.suffixof "ocus>" z)) (= (str.indexof x "mma" 0) 3) (= "ndblcli" (str.substr x 10 7))))
+(check-sat)

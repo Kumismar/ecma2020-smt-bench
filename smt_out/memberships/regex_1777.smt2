@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z][a-zA-Z\u{139}\u{17a}\u{102}\u{13d}\u{102}\u{b6}\u{c4}\u{b1}\u{c4}\u{17a}\u{102}\u{a7}\u{139}\u{17e}\u{102}\u{15b}\u{102}\u{2013}\u{c4}\u{b0}\u{c4}\u{17e}\u{102}\u{2021}0-9-_\.]{1,15}$")))
+(assert (= x "<source ondblclick=""alert(1)"">test</source>"))
+(check-sat)

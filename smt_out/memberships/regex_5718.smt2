@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "d{0,1}e{0,1}[ ]{0,1}[A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}\u{df}-]{1,35}[ ]{0,1}d{0,1}e{0,1}[ ]{0,1}[-A-Z\u{c4}\u{d6}\u{dc}]{0,1}[a-z\u{e4}\u{f6}\u{fc}\u{df}-]{0,35}[ ]{0,5}")))
+(assert (= x "<// style=x:expression\28javascript:alert(1)\29>"))
+(check-sat)

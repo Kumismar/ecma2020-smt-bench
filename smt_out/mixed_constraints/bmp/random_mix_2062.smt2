@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<select oncopy=""alert(1)"" contenteditable>test</select>") (= x "<noframes onmousedown=""alert(1)"">test</noframes>")))
+(assert (or (= z "r</script>ipt>") (= z "st</tfoot>") (= z "able>test</xmp>")))
+(assert (= y (str.++ x z)))
+(assert (or (= "r</xcript>ipt>" (str.replace z "s" "x")) (str.in_re y ((_ re.from_regex ecma2020) "^[0-9a-zA-Z\u{c0}-\u{ff}\u{105}\u{107}\u{119}\u{142}\u{144}\u{f3}\u{15b}\u{17a}\u{17c}\u{104}\u{106}\u{118}\u{141}\u{143}\u{d3}\u{15a}\u{179}\u{17b}\u{1e9e}\u{100}\u{101}\u{102}\u{103}\u{10c}\u{10d}\u{110}\u{111}\u{10e}\u{10f}\u{112}\u{113}\u{115}\u{116}\u{117}\u{11a}\u{11b}\u{122}\u{123}\u{12a}\u{12b}\u{12e}\u{12f}\u{136}\u{137}\u{139}\u{13a}\u{13b}\u{13c}\u{13d}\u{13e}\u{145}\u{146}\u{147}\u{148}\u{14c}\u{14d}\u{150}\u{151}\u{152}\u{153}\u{155}\u{156}\u{157}\u{158}\u{159}\u{15e}\u{15f}\u{160}\u{161}\u{162}\u{163}\u{165}\u{170}\u{171}\u{172}\u{173}\u{178}\u{17d}\u{17e}][0-9a-zA-Z\u{c0}-\u{ff}\u{105}\u{107}\u{119}\u{142}\u{144}\u{f3}\u{15b}\u{17a}\u{17c}\u{104}\u{106}\u{118}\u{141}\u{143}\u{d3}\u{15a}\u{179}\u{17b}\u{1e9e}\u{100}\u{101}\u{102}\u{103}\u{10c}\u{10d}\u{110}\u{111}\u{10e}\u{10f}\u{112}\u{113}\u{115}\u{116}\u{117}\u{11a}\u{11b}\u{122}\u{123}\u{12a}\u{12b}\u{12e}\u{12f}\u{136}\u{137}\u{139}\u{13a}\u{13b}\u{13c}\u{13d}\u{13e}\u{145}\u{146}\u{147}\u{148}\u{14c}\u{14d}\u{150}\u{151}\u{152}\u{153}\u{155}\u{156}\u{157}\u{158}\u{159}\u{15e}\u{15f}\u{160}\u{161}\u{162}\u{163}\u{165}\u{170}\u{171}\u{172}\u{173}\u{178}\u{17d}\u{17e}\- ]{2,100}$")) (str.contains x "</inp")))
+(assert (or (= (str.len x) 48) (not (str.contains z "<inpu")) (not (str.contains z "ble>test"))))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,6})+$"))) (not (str.prefixof "st" z)) (= (str.at x 27) "t")))
+(check-sat)

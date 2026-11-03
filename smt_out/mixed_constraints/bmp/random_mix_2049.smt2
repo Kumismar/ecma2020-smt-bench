@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "exp/*<XSS STYLE='no\xss:noxss(""*//*"");") (= x "<li onmouseenter=""alert(1)"">test</li>") (= x "<div style=""binding: url(http://www.securitycompass.com/xss.js);""> [Mozilla]")))
+(assert (or (= z "ascript:javascript:alert(1)"">") (= z "bindex=1 onbeforeactivate=alert(1)></keygen>") (= z "cript:alert(1)"">DEF")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "^\w+([.-]?\w+)*@\w+([.-]?\w+)*(.\w{2,3})+$"))) (not (str.suffixof "t(1)"">" y)) (= ")"">" (str.substr z 26 4))))
+(assert (or (not (= "st</" (str.substr z 18 4))) (not (str.prefixof "cript:al" z)) (>= (str.len y) 94)))
+(assert (or (str.suffixof "]" x) (= (str.len x) 38)))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w\u{5c}u4e00-\u{5c}u9fa5\-]{1,20}$")))
+(assert (= x "<div id=""42""><head><base href=""javascript://""/></head><body><a href=""/. /,alert(42)//#"">XXX</a></body>//[""'`-->]]>]</div>"))
+(check-sat)

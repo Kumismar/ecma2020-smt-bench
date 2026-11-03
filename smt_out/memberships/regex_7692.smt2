@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0-3][0-7][0-7]|[0-7]{1,2}$")))
+(assert (= x "<bgsound src=""javascript:document.vulnerable=true;"">"))
+(check-sat)

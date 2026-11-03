@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<scr<script>ipt>alert(1)</scr</script>ipt>") (= x "<bgsound onbeforecopy=""aler\u{1f600}t(\u{20000}1)"" contenteditable>test</bgsound>") (= x "<svg onmousedown=""alert(1)"">test</svg>")))
+(assert (or (= z "rt(1)"">test</figure>") (= z "test</image>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "^\S+@\S+\.\S+"))) (str.in_re x ((_ re.from_regex ecma2020) "^(http:)(.)")) (str.prefixof "<s" y)))
+(assert (or (str.prefixof "<bgsound " x) (= (str.at y 48) "i") (str.in_re z ((_ re.from_regex ecma2020) "[a-z0-9._%+-]+@(?!(gmail\.|yahoo\.))[a-z0-9.-]+\.[a-z]{2,}$"))))
+(assert (or (<= (str.len y) 52) (not (= "est<" (str.substr z 1 4)))))
+(check-sat)

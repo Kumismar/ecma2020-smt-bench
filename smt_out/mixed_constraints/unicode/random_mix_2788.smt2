@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<track onbeforecopy=""alert(1)"" contenteditable>test</track>") (= x "<source onbeforecopy=""alert(1)"" contenteditable>test</source>")))
+(assert (or (= z "1)"">test</dfn>") (= z "eta>") (= z ">@keyframes x{}</style><link style=""animation-name:x"" onanimationend=""alert(1)""></link>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.contains (str.replace z "a>" """") "et""") (str.suffixof "ack>" x)))
+(assert (or (= (str.indexof y "o" 0) 2) (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[a-zA-Z0-9_\.\-]+@(?:[a-zA-Z0-9\-]+\.)+[a-z]{2,4}$"))) (not (= (str.at x 95) "="))))
+(assert (or (str.in_re z ((_ re.from_regex ecma2020 u) "^[a-zA-Z0-9]{2}[-]?[0-9]{8}$")) (= (str.at z 7) "t") (not (str.suffixof "t</header>" x))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\d\d\d\d)|([\u{ff10}-\u{ff19}][\u{ff10}-\u{ff19}][\u{ff10}-\u{ff19}][\u{ff10}-\u{ff19}])$")))
+(assert (= x "<style onkeydown=""alert(1)"" contenteditable>test</style>"))
+(check-sat)

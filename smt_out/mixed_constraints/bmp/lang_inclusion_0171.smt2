@@ -1,0 +1,6 @@
+; lang_inclusion, BMP mode: is the language of a regex A included in the language of a regex B, both built from ECMAScript regexes: a string x in A and not in B, or an equation (re.inter A B) = A or (re.union A B) = B
+; construction: optional_literal, inclusion holds, encoding: inter_equation
+(set-logic QF_SLIA)
+(set-info :status sat)
+(assert (= (re.inter ((_ re.from_regex ecma2020) "(?:[A-Za-z0-9 \u{414}\u{2026}\u{414}\u{4ae}\u{414}\u{4b7}\u{415}\u{4ee}\u{415}\u{201e}\u{413}\u{456}\u{415}\u{4e3}\u{415}\u{4d9}\u{415}\u{458}\u{414}\u{201e}\u{414}\u{4b6}\u{414}\u{4b3}\u{415}\u{492}\u{415}\u{493}\u{413}\u{201c}\u{415}\u{4a1}\u{415}\u{bb}\u{415}\u{2116}/.]{2,})(?: ondr)?") ((_ re.from_regex ecma2020) "[A-Za-z0-9 \u{414}\u{2026}\u{414}\u{4ae}\u{414}\u{4b7}\u{415}\u{4ee}\u{415}\u{201e}\u{413}\u{456}\u{415}\u{4e3}\u{415}\u{4d9}\u{415}\u{458}\u{414}\u{201e}\u{414}\u{4b6}\u{414}\u{4b3}\u{415}\u{492}\u{415}\u{493}\u{413}\u{201c}\u{415}\u{4a1}\u{415}\u{bb}\u{415}\u{2116}/.]{2,}")) ((_ re.from_regex ecma2020) "(?:[A-Za-z0-9 \u{414}\u{2026}\u{414}\u{4ae}\u{414}\u{4b7}\u{415}\u{4ee}\u{415}\u{201e}\u{413}\u{456}\u{415}\u{4e3}\u{415}\u{4d9}\u{415}\u{458}\u{414}\u{201e}\u{414}\u{4b6}\u{414}\u{4b3}\u{415}\u{492}\u{415}\u{493}\u{413}\u{201c}\u{415}\u{4a1}\u{415}\u{bb}\u{415}\u{2116}/.]{2,})(?: ondr)?")))
+(check-sat)

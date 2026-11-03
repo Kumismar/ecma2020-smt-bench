@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z0-9._+-]{1,64}@(?=.{1,255}$)(?:[A-Za-z0-9-]+\.)*[A-Za-z0-9_+-]+$")))
+(assert (= x "<figure onmousemove=""alert(1)"">test</figure>"))
+(check-sat)

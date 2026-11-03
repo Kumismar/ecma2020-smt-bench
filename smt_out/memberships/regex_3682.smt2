@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{410}-\u{42f}\u{430}-\u{44f}]{1}[\u{410}-\u{42f}\u{430}-\u{44f}\W]*\s[\u{410}-\u{42f}\u{430}-\u{44f}]{1}[\u{410}-\u{42f}\u{430}-\u{44f}\W][ \u{410}-\u{42f}\u{430}-\u{44f}\W]*")))
+(assert (= x "<rt onmouseout=""alert(1)"">test</rt>"))
+(check-sat)

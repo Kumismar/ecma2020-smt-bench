@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\S\s]{3,}")))
+(assert (= x "<a onmouseover=""alert(document.cookie)"">xxs link</a>"))
+(check-sat)

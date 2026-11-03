@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<title onmouseover=""alert(1)"">test</title>") (= x "<address id=x tabindex=1 onbeforede\u{1f600}activate=alert(1)></address><input autofocu\u{10348}s>") (= x "<header onbeforecopy=""alert(1)"" contenteditable>test</header>")))
+(assert (or (= z "lert(1)"">test</applet>") (= z "raggable=""true"" ondragend=""alert(1)"">test</dialog>")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.at x 32) "a") (not (= "/" (str.substr z 12 1))) (not (str.contains y "te"))))
+(assert (or (str.prefixof "<s" x) (= "<title onmouseover=""alert(1)"">tesxitle>raggable=""true"" ondragend=""alert(1)"">test</dialog>" (str.replace y "t</t" "x")) (not (str.in_re y ((_ re.from_regex ecma2020 u) "^\d*(\.\d{0,7})?$")))))
+(assert (or (str.in_re x ((_ re.from_regex ecma2020 u) "^[276][0-9]{7}")) (not (str.in_re z ((_ re.from_regex ecma2020 u) "[ a-zA-Z\u{e4}\u{f6}\u{fc}\u{c4}\u{d6}\u{dc}\u{df}]{3,}"))) (str.contains (str.replace z "l" "") "gabe=")))
+(check-sat)

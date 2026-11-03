@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([cbCB]{2})([0123456789]{10})")))
+(assert (= x "<dir oncontextmenu=""alert(1)"">test</dir>"))
+(check-sat)

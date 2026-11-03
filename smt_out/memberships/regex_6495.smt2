@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[- _.A-z0-9\u{c0}-\u{ff}]{2,}$")))
+(assert (= x "<XSS STYLE=""xss:expression(javascript:alert(1))"">"))
+(check-sat)

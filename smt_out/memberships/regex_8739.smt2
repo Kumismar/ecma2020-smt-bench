@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9\u{c6}\u{d8}\u{c5}\u{e6}\u{f8}\u{e5}\u{dc}\u{fc}\u{d6}\u{f6}\u{c4}\u{e4}a-zA-Z+-_@./)(!#&% ]{1,150}")))
+(assert (= x "<img/src=@&#32;&#13; onerror = prompt('&#49;')"))
+(check-sat)

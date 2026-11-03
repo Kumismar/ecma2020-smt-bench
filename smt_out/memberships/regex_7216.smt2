@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "BLESSED BE THE LORD WHO DAILY LOADETH US WITH BENEFITS")))
+(assert (= x "<strike oncut=""alert(1)"" contenteditable>test</strike>"))
+(check-sat)

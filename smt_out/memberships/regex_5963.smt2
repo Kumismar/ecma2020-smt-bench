@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(([X-Z]{1})(\d{7})([A-Z]{1}))|((\d{8})([A-Z]{1}))|(([A-Z]{1})(\d{8}))$")))
+(assert (= x "<style>:target {color:red;}</style><nextid id=x style=""transition:color 1s"" ontransitionend=alert(1)></nextid>"))
+(check-sat)

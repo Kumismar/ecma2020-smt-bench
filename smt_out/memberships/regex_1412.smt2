@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9\u{413}\u{a7}\u{413}\u{4b1}\u{413}\u{4ae}\u{413}\u{2018}\u{412}\u{4d9}\u{412}\u{4d8}\u{413}\u{40e}\u{413}\u{a9}\u{413}\u{4ef}\u{413}\u{456}\u{413}\u{4d9}\u{413}\u{a0}\u{413}\u{401}\u{413}\u{ac}\u{413}\u{406}\u{413}\u{2116}\u{413}\u{492}\u{413}\u{4af}\u{413}\u{49a}\u{413}\u{201c}\u{413}\u{4a1}\u{413}\u{496}\u{413}\u{4b2}\u{413}\u{4a2}\u{413}\u{2019}\u{413}\u{4b7}\u{413}\u{4e8}\u{413}\u{ab}\u{413}\u{49c}\u{413}\u{b6}\u{413}\u{458}\u{413}\u{201e}\u{413}\u{4e2}\u{413}\u{4b8}\u{413}\u{2013}\u{413}\u{4a3} ]+")))
+(assert (= x "<thead id=x tabindex=1 ondeactivate=alert(1)></thead><input id=y autofocus>"))
+(check-sat)

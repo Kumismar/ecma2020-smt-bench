@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>:target {color: red;}</style><bgsound id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></bgsound>") (= x "<div draggable=""true"" contenteditable>drag me</div><summary ondrop=alert(1) contenteditable>drop here</summary>") (= x "<embed onmouseout=""alert(1)"">test</embed>")))
+(assert (or (= z "on:color 10s"" ontransitioncancel=alert(1)></section>") (= z "ncel=alert(1)></span>") (= z "VydCgnWFNTJyk8L3NjcmlwdD4K"";>;")))
+(assert (= y (str.++ x z)))
+(assert (or (= "on:coloralert(1)s"" ontransitioncancel=alert(1)></section>" (str.replace z " 10" "alert(1)")) (str.in_re x ((_ re.from_regex ecma2020) "^[A-Za-z0-9._+-]{1,64}@(?=.{1,255}$)(?:[A-Za-z0-9-]+\.)*[A-Za-z0-9_+-]+$")) (= "<<b>mbed onmouseout=""alert(1)"">test</embed>" (str.replace x "e" "<b>"))))
+(assert (or (not (str.prefixof "<embed" x)) (not (= "t" (str.substr x 13 1)))))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "\(\d\d\) \d\d\d\d-\d\d\d\d$"))) (not (= (str.indexof x "=""ale" 0) 20)) (>= (str.len y) 137)))
+(check-sat)

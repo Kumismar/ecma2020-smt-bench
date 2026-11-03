@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([\u{410}-\u{44f}A-z0-9_.-]{1,})@([\u{410}-\u{44f}A-z0-9_.-]{1,}).([\u{410}-\u{44f}A-z]{2,8})$")))
+(assert (= x "<optgroup onbeforecopy=""alert(1)"" contenteditable>test</optgroup>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<body onfocus body onfocus=""javascript:javascript:alert(1)""></body onfocus>") (= x "<style>:target {color: red;}</style><map id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></map>") (= x "<div draggable=""true"" contenteditable>drag me</div><source ondrop=alert(1) contenteditable>drop here</source>")))
+(assert (or (= z "-image: url("";javascript:alert(&#39;XSS&#39;)"";);}<;/STYLE>;<;UL>;<;LI>;XSS") (= z "aggable=""true"" ondragleave=""alert(1)"">test</summary>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= ";" (str.substr z 16 8))) (str.contains (str.replace y "-imag" "alert(1)") ">alert(1)e: ur") (not (str.contains (str.replace z "ge:" "alert(1)") "-imaalert(1) url"))))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "^([_A-z0-9]){3,10}$"))) (not (= "e" (str.substr z 25 1))) (= "s>" (str.substr z 22 4))))
+(assert (or (not (str.prefixof "<isindex " x)) (not (= (str.indexof y """tr" 0) 52))))
+(check-sat)

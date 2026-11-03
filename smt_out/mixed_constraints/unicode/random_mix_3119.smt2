@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>@keyframes x{}</style><optgroup style=""animation-name:x"" onanimationend=""alert(1)""></optgroup>") (= x "<SCRIPT/XSS SRC=""http://ha.ckers.org/xss.js""></SCRIPT>")))
+(assert (or (= z "true"" ondragleave=""alert(1)"">test</tr>") (= z "over=""alert(1)"">test</rp>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020 u) "^[A-Za-z0-9 _\.]*[A-Za-z0-9\.][A-Za-z0-9 _\.]*"))) (not (= (str.indexof x "SCRI" 0) 1)) (not (str.prefixof "le>@keyf" z))))
+(assert (or (not (str.contains x "s x{}</st")) (not (= (str.at x 51) "x")) (not (str.contains x "SRC=""http"))))
+(assert (or (not (= (str.at x 32) ".")) (str.in_re z ((_ re.from_regex ecma2020 u) "^.{9,10}$"))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{1,99}")))
+(assert (= x "&lt;IMG STYLE=\""xss&#58;expr/*XSS*/ession(alert('XSS'))\""&gt;"))
+(check-sat)

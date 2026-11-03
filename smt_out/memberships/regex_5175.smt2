@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\da-fA-F\s:\-]+")))
+(assert (= x "1script3document.vulnerable=true;1/script3"))
+(check-sat)

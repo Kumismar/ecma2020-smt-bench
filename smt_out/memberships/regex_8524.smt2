@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[(A-Za-z  \u{e1}\u{e9}\u{ed}\u{f3}\u{fa}A\u{c9}\u{cd}\u{d3}\u{da}\u{d1}\u{f1})]{3,50}$")))
+(assert (= x "<img onmouseout=""alert(1)"">test</img>"))
+(check-sat)

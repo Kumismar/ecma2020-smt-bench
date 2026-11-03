@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0][3|5|7|8|9]\d{8}$")))
+(assert (= x """/><img/onerror=\x60javascript:alert(1)\x60src=xxx:x />"))
+(check-sat)

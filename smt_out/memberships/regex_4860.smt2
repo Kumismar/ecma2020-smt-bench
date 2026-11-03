@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z\u{e1}\u{e9}\u{ed}\u{f3}\u{f6}\u{151}\u{fc}\u{171}\u{fa}A-Z\u{c1}\u{c9}\u{cd}\u{d3}\u{d6}\u{150}\u{dc}\u{170}\u{da}\. ]{3,}")))
+(assert (= x "&#x00003c"))
+(check-sat)

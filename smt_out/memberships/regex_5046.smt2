@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*[a-z])(?=.*[A-Z]).{6,}")))
+(assert (= x "&lt;HTML xmlns&#58;xss&gt;&lt;?import namespace=\""xss\"" implementation=\""http&#58;//ha&#46;ckers&#46;org/xss&#46;htc\""&gt;&lt;xss&#58;xss&gt;XSS&lt;/xss&#58;xss&gt;&lt;/HTML&gt;"))
+(check-sat)

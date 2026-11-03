@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<datalist draggable=""true"" ondrag=""alert(1)"">test</datalist>") (= x "<iframe  src=j&Tab;a&Tab;v&Tab;a&Tab;s&Tab;c&Tab;r&Tab;i&Tab;p&Tab;t&Tab;:a&Tab;l&Tab;e&Tab;r&Tab;t&Tab;%28&Tab;1&Tab;%29></iframe>")))
+(assert (or (= z ">test</area>") (= z " onmouseenter=""alert(1)"">test</abbr>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= (str.at z 11) ">")) (not (>= (str.len z) 5)) (not (= (str.indexof y "next" 0) 52))))
+(assert (or (= " onmouseenterxalert(1)"">test</abbr>" (str.replace z "=""" "x")) (not (str.contains z "st</are"))))
+(assert (or (= (str.len x) 45) (not (= (str.indexof y ";i&T" 0) 54)) (not (str.in_re y ((_ re.from_regex ecma2020) "^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$")))))
+(check-sat)

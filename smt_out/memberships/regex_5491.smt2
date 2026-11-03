@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\w\u{5c}u0391-\u{5c}uFFE5]{1,40}")))
+(assert (= x "<style>@keyframes x{}</style><embed style=""animation-name:x"" onanimationstart=""alert(1)""></embed>"))
+(check-sat)

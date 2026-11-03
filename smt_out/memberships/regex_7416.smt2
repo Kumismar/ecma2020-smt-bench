@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z\u{c0}-\u{ff}\u{5c}u00f1\u{5c}u00d1]+(\s*[a-zA-Z\u{c0}-\u{ff}\u{5c}u00f1\u{5c}u00d1]*)*[a-zA-Z\u{c0}-\u{ff}\u{5c}u00f1\u{5c}u00d1]+$")))
+(assert (= x "<datalist onbeforecopy=""alert(1)"" contenteditable>test</datalist>"))
+(check-sat)

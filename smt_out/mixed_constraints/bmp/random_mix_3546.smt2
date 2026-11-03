@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<;SCRIPT a="";blah""; ';'; SRC="";http://ha.ckers.org/xss.js"";>;<;/SCRIPT>;") (= x "<listing id=x tabindex=1 ondeactivate=alert(1)></listing><input id=y autofocus>") (= x "<meta charset=""x-imap4-modified-utf7"">&ADz&AGn&AG0&AEf&ACA&AHM&AHI&AGO&AD0&AGn&ACA&AG8Abg&AGUAcgByAG8AcgA9AGEAbABlAHIAdAAoADEAKQ&ACAAPABi")))
+(assert (or (= z "rue)"">") (= z "#x0D;ascript:alert(&apos;XSS&apos;);&quot;&gt;") (= z " tabindex=1 id=x></figure><input autofocus>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.contains (str.replace z "ue)" """") "r"""">")) (str.suffixof "ot;&gt;" y)))
+(assert (or (not (= (str.at y 46) ".")) (str.in_re z ((_ re.from_regex ecma2020) "(?=.{5,}).*")) (str.contains y "deac")))
+(assert (or (not (= (str.indexof y "T " 0) 7)) (= (str.at y 19) "d") (str.contains x "kers")))
+(check-sat)

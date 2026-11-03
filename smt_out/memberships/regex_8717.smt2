@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\+375\s[0-9]{2}\s[0-9]{3}-[0-9]{2}-[0-9]{2}")))
+(assert (= x "http://www.simpatie.ro/index.php?page=top_movies&cat=13&p=2 p=2 ??XSS??"))
+(check-sat)

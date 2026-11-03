@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<footer id=x tabindex=1 onbeforeactivate=alert(1)></footer>") (= x "<footer oncut=""alert(1)"" contenteditable>test</footer>")))
+(assert (or (= z "d=x tabindex=1 onbeforedeactivate=alert(1)></th><input autofocus>") (= z ">") (= z "est</command>")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.len y) 124) (not (str.prefixof "<footer id" y))))
+(assert (or (not (= "<footjavascript: oncut=""alert(1)"" contenteditable>test</footer>" (str.replace x "er" "javascript:"))) (= "icol sty" (str.substr z 13 8)) (not (str.contains (str.replace y "y" """") "mmar"" "))))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020 u) "[a-z0-9._%+-]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!hotmail.co.il)(?!walla.co.il)(?!mail.ru)(?!outlook.com)(?!email.com)[a-z0-9.-]+\.[a-z]{2,}$"))) (= "<frameset id=x tabindex=1 ondeacxate=alert(1)></frameset><input id=y autofocus>(1)></center>" (str.replace y "tiv" "x")) (str.in_re y ((_ re.from_regex ecma2020 u) "^(?=.*\d)(?=.*[\D]).{8,256}$"))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(([+]{1,2}[0-9]{2,3})|[0]{1})[0-9]{0,10}[(]{0,1}[0-9]{1,10}[)]{0,1}[0-9]{1,10}[\s|\/|-]{0,1}[0-9]{2,10}[\s|\/|-]{0,1}[0-9]{0,10}$")))
+(assert (= x "<META HTTP-EQUIV=""Link"" Content=""<http://ha.ckers.org/xss.css>; REL=stylesheet"">"))
+(check-sat)

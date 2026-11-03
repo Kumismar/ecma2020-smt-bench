@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\w+[-.+&%])*\w+@([-0-9a-zA-Z]+[.])+[a-zA-Z]{2,6}$")))
+(assert (= x "<script charset=""\x22>javascript:alert(1)</script>"))
+(check-sat)

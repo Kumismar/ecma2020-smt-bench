@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w\s\x22\x27\u{e0}\u{f2}\u{e8}\u{ec}\u{e9}@\.-]+$")))
+(assert (= x "<p onmousemove=""alert(1)"">test</p>"))
+(check-sat)

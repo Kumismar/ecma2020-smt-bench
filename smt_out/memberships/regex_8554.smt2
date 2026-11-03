@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{5c}u0374-\u{5c}u03FF\. ]{3,}")))
+(assert (= x "&lt;A HREF=\""javascript&#058;document&#46;location='http&#58;//www&#46;google&#46;com/'\""&gt;XSS&lt;/A&gt;"))
+(check-sat)

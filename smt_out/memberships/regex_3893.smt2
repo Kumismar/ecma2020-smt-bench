@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(https?:\/\/)?([a-zA-Z0-9]([a-zA-Z\u{e4}\u{f6}\u{fc}\u{c4}\u{d6}\u{dc}0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$")))
+(assert (= x "<marquee onmousemove=""alert(1)"">test</marquee>"))
+(check-sat)

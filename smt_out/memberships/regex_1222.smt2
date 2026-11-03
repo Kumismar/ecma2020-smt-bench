@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z0-9\u{410}-\u{42f}\u{430}-\u{44f}\u{401}\u{451}\s]+$")))
+(assert (= x "<set attributeName=""xlink:href"" begin=""accessKey(b)"" to=""//example.com/?b"" />"))
+(check-sat)

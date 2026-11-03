@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[1][3,4,5,6,7,8,9][0-9]{9}$")))
+(assert (= x "<datalist id=x tabindex=1 onfocusin=alert(1)></datalist>"))
+(check-sat)

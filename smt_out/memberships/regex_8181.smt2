@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[6-9,0]{1}[0-9]{9}")))
+(assert (= x "<isindex onmouseleave=""alert(1)"">test</isindex>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}")))
+(assert (= x "<area id=x tabindex=1 onbeforeactivate=alert(1)></area>"))
+(check-sat)

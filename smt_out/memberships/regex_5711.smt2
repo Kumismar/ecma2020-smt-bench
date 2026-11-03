@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{119}\u{f3}\u{142}\u{105}\u{15b}\u{17c}\u{17a}\u{107}\u{144}\u{118}\u{d3}\u{141}\u{104}\u{17b}\u{179}\u{106}\u{143}\u{15a}]{2,}")))
+(assert (= x "<style>:target {color:red;}</style><head id=x style=""transition:color 1s"" ontransitionend=alert(1)></head>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<;IMG SRC="";jav&;#x0A;ascript:alert(';XSS';);"";>;") (= x "<input id=x tabinde\u{1d400}x=1 onact\u{10348}ivate=alert(1)></input>") (= x "<style>:target {transform: rotate(180deg);}</style><plaintext id=x style=""transition:transform 2s"" ontransitionrun=alert(1)></plaintext>")))
+(assert (or (= z ")></data>") (= z "rue"" ondrag=""alert(1)"">test</bgsound>") (= z ") contenteditable>drop here</span>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (<= (str.len y) 64)) (not (str.in_re x ((_ re.from_regex ecma2020 u) "[V][0-9]{16}"))) (= (str.at x 43) ")")))
+(assert (or (not (= (str.at x 19) "\u{1d400}")) (= (str.len z) 39)))
+(assert (or (str.in_re z ((_ re.from_regex ecma2020 u) "^\d{8,10}$")) (not (str.prefixof "<style>" y)) (not (= "<;IMG SRC="";jav&;#x0A;ascrip rt(';XSS';);"";>;" (str.replace x "t:ale" " ")))))
+(check-sat)

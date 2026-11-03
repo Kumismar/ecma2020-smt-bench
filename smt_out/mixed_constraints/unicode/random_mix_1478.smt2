@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<a href=""jav&#97ascript:javascript:alert(1)"">test1</a>") (= x "<blockquote draggable=""true"" ondrag=""alert(1)"">test</blockquote>")))
+(assert (or (= z "ddress oncut=""alert(1)"" contenteditable>test</address>") (= z "t;A HREF=\""http&#58;//1113982867/\""&gt;XSS&lt;/A&gt;") (= z "t</figcaption>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.contains z "/figc") (= """;"">XXX" (str.replace z "d" """")) (= "t;A HREF=\""http&#58;//1113982867javascript:gt;XSS&lt;/A&gt;" (str.replace z "/\""&" "javascript:"))))
+(assert (or (str.in_re x ((_ re.from_regex ecma2020 u) "[^\u{a7}$%&=?@<>(){}]+")) (= (str.indexof z "867/\" 0) 29)))
+(assert (or (not (str.suffixof ";" y)) (not (str.contains (str.replace x "drag" "<b>") "e <b>g")) (not (str.suffixof ">" z))))
+(check-sat)

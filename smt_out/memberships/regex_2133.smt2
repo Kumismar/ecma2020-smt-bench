@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{2,10}")))
+(assert (= x "&lt;!&#91;endif&#93;--&gt;"))
+(check-sat)

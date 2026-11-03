@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9._%+-]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!hotmail.co.il)(?!walla.co.il)(?!mail.ru)(?!outlook.com)(?!email.com)(?!icloud.com)(?!me.com)[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$")))
+(assert (= x "<blockquote oncontextmenu=""alert(1)"">test</blockquote>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{4}[\-/\s]?[0-9]{3}[A-z\u{c0}-\u{17e}\s]{0,}")))
+(assert (= x "ABC<div style=""x:\x09expression(javascript:alert(1)"">DEF"))
+(check-sat)

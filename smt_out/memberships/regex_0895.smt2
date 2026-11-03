@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^\u{5c}u0026\u{5c}u003C\u{b1}!@\u{a3}$%^*_+\u{a7}\u{a1}\u{20ac}#\u{a2}\u{a7}\u{b6}\u{2022}\u{aa}\u{ba}\u{ab}\\/>?:;|=,\d]+$")))
+(assert (= x "<header onkeyup=""alert(1)"" contenteditable>test</header>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z0-9._+-]+\x40[a-zA-Z0-9.-]+\.[a-zA-Z]{2,20}$")))
+(assert (= x "<div id=""dropbox"" style=""height: 360px;width: 500px;border: 5px solid #000;position: relative;"" ondragover=""event.preventDefault()"">+ Drop Box +</div>//[""'`-->]]>]</div>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<rtc onbe\u{10348}forepaste=""alert(\u{1f600}1)"" contenteditable>test</rtc>") (= x "<menuitem onmouseleave=""alert(1)"">test</menuitem>") (= x "<code onbeforepaste=""alert(1)"" contenteditable>test</code>")))
+(assert (or (= z "=y autofocus>") (= z "uee onmouseover=""alert(1)"">test</marquee>") (= z "pt:alert(1)</script>")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.indexof z "r" 0) 14) (str.prefixof "<" y) (str.prefixof "=y a" z)))
+(assert (or (= (str.indexof z "=" 0) 0) (not (str.contains y "ode ")) (not (str.in_re z ((_ re.from_regex ecma2020) "^[0][1-9]\d{9}$|^[1-9]\d{9}$")))))
+(assert (or (str.suffixof "e>" z) (not (str.in_re z ((_ re.from_regex ecma2020) "[A-Za-z\u{c3}\u{20ac}\u{c3}\u{81}\u{c3}\u{201a}\u{c3}\u{192}\u{c3}\u{201e}\u{c3}\u{2026}\u{c3}\u{2020}\u{c3}\u{2021}\u{c3}\u{2c6}\u{c3}\u{2030}\u{c3}\u{160}\u{c3}\u{2039}\u{c3}\u{152}\u{c3}\u{8d}\u{c3}\u{17d}\u{c3}\u{8f}\u{c3}\u{90}\u{c3}\u{2018}\u{c3}\u{2019}\u{c3}\u{201c}\u{c3}\u{201d}\u{c3}\u{2022}\u{c3}\u{2013}\u{c3}\u{2dc}\u{c3}\u{2122}\u{c3}\u{161}\u{c3}\u{203a}\u{c3}\u{153}\u{c3}\u{9d}\u{c3}\u{17e}\u{c3}\u{178}\u{c3}\u{a0}\u{c3}\u{a1}\u{c3}\u{a2}\u{c3}\u{a3}\u{c3}\u{a4}\u{c3}\u{a5}\u{c3}\u{a6}\u{c3}\u{a7}\u{c3}\u{a8}\u{c3}\u{a9}\u{c3}\u{aa}\u{c3}\u{ab}\u{c3}\u{ac}\u{c3}\u{ad}\u{c3}\u{ae}\u{c3}\u{af}\u{c3}\u{b0}\u{c3}\u{b1}\u{c3}\u{b2}\u{c3}\u{b3}\u{c3}\u{b4}\u{c3}\u{b5}\u{c3}\u{b6}\u{c3}\u{b8}\u{c3}\u{b9}\u{c3}\u{ba}\u{c3}\u{bb}\u{c3}\u{bc}\u{c3}\u{bd}\u{c3}\u{be}\u{c3}\u{bf}]*$")))))
+(check-sat)

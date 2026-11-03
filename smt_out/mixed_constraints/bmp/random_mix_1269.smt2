@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<option onkeyup=""alert(1)"" contenteditable>test</option>") (= x "<fieldset onmouseover=""alert(1)"">test</fieldset>")))
+(assert (or (= z "(1) cont\u{1f4a9}enteditable>drop here</isindex>") (= z "colgroup>") (= z "{color:red;}</style><b id=x style=""transition:color 1s"" ontransitionend=alert(1)></b>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020) "^[A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}]{1,20} [A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}]{1,20}"))) (str.prefixof "<sub onke" y) (not (str.in_re y ((_ re.from_regex ecma2020) "[a-z0-9.%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")))))
+(assert (or (str.contains z "t(1)>") (not (>= (str.len x) 26)) (not (= ">drop " (str.substr y 68 6)))))
+(assert (or (<= (str.len y) 151) (not (str.in_re y ((_ re.from_regex ecma2020) "^Full name$")))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\s*(?:[A-Za-z]\d[A-Za-z]\s?\d[A-Za-z]\d|\d{5})\s*")))
+(assert (= x "<video onmousedown=""alert(1)"">test</video>"))
+(check-sat)

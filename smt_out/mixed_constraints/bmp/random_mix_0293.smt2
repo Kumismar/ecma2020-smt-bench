@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<q id=x tabindex=1 onfocusin=alert(1)></q>") (= x "<frameset onload=javascript:javascript:alert(1)></frameset>") (= x "<ol oncontextmenu=""alert(1)"">test</ol>")))
+(assert (or (= z ",PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K"">") (= z "ick=""alert(1)"">test</isindex>") (= z "xx=1")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= (str.at z 31) "N")) (not (str.suffixof "K"">" y))))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "^[0-9a-z._-]+@{1}[0-9a-z.-]{2,}[.]{1}[a-z]{2,5}$"))) (not (= (str.at y 38) "e")) (str.in_re z ((_ re.from_regex ecma2020) "^1([358][0-9]|4[579]|66|7[0135678]|9[89])\d{8}$"))))
+(assert (or (not (= "<ol oncontextmenu=""alert(1)"">test</ol>,PHNjcmlwdD5hbGVydCgnFNTJyk8L3NjcmlwdD4K"">" (str.replace y "W" ""))) (not (= (str.at y 30) "e")) (str.prefixof "<frames" x)))
+(check-sat)

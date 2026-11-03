@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<track oncontextmenu=""alert(1)"">test</track>") (= x "<applet id=x tabindex=1 onfocusin=alert(1)></applet>")))
+(assert (or (= z " onfocusin=alert(1)></time>") (= z "</meter>") (= z "ipt id=x tabindex=1 onfocusin=alert(1)></noscript>")))
+(assert (= y (str.++ x z)))
+(assert (or (= ">" (str.substr x 36 9)) (not (str.prefixof "<track" y)) (not (= (str.indexof z "t" 0) 2))))
+(assert (or (= (str.indexof x "rack" 0) 2) (not (str.in_re z ((_ re.from_regex ecma2020) "^[a-zA-Z0-9_-]{20}$"))) (not (= (str.indexof x "n" 0) 5))))
+(assert (or (= (str.at x 2) "t") (not (= "t</track>" (str.substr x 35 10))) (not (str.prefixof " onfo" z))))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<table onmouseup=""alert(1)"">test</table>") (= x "&lt;!&#91;endif&#93;--&gt;")))
+(assert (or (= z ">test</strike>") (= z "er=""alert(1)"">test</frame>") (= z "script:alert(88)""/>")))
+(assert (= y (str.++ x z)))
+(assert (or (= "<iv draggable=""true"" contenteditable>drag me</div><param ondrop=alert(1) contenteditable>drop here</param>" (str.replace x "d" "")) (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[-\w]+@(?:[\w]{2,})(?:\.[\w]{2,})?(?:\.[a-zA-Z]{2,6})$"))) (not (= (str.at y 26) """"))))
+(assert (or (not (= (str.len y) 52)) (not (= "<table on<b>eup=""alert(1)"">test</table>" (str.replace x "mous" "<b>"))) (not (<= (str.len y) 57))))
+(assert (or (str.contains (str.replace z "er=""" "<b>") "<b>aler") (= "rt" (str.substr z 10 2)) (>= (str.len z) 19)))
+(check-sat)

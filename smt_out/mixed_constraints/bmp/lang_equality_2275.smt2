@@ -1,0 +1,6 @@
+; lang_equality, BMP mode: are the languages of two regexes A and B built from ECMAScript regexes equal: an equation A = B, its negation, or a string x in exactly one of them
+; construction: literal_after_lookahead, languages differ, encoding: disequation
+(set-logic QF_SLIA)
+(set-info :status sat)
+(assert (not (= ((_ re.from_regex ecma2020) "(?=(\(0[0-9]{1,3}\)|0[0-9]{1,3})?[ \-]?([0-9 \.\-\/]{5,9})((#|x|ext|extension)[ ]?[0-9]{1,4})?)rt\(") ((_ re.from_regex ecma2020) "(\(0[0-9]{1,3}\)|0[0-9]{1,3})?[ \-]?([0-9 \.\-\/]{5,9})((#|x|ext|extension)[ ]?[0-9]{1,4})?"))))
+(check-sat)

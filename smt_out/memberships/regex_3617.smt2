@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "min:4 | max:16 | special:0")))
+(assert (= x "<th onkeyup=""alert(1)"" contenteditable>test</th>"))
+(check-sat)

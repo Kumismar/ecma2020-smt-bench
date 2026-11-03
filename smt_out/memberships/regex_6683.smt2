@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{c0}-\u{ff}\s]{1,25}")))
+(assert (= x "<label id=x tabindex=1 onfocus=alert(1)></label>"))
+(check-sat)

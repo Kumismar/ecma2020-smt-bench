@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.(\w{2}|(com|net|org|e|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$")))
+(assert (= x "<track id=x tabindex=1 onactivate=alert(1)></track>"))
+(check-sat)

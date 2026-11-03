@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z\sa-z]{1,60}")))
+(assert (= x "='><script>alert(""xss"")</script>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<com\u{1d400}mand oncopy=""\u{20000}alert(1)"" contenteditable>test</command>") (= x "<body onbeforeprint=alert(1)>")))
+(assert (or (= z "(1)></rp><input id=y autofocus>") (= z "roup>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.contains z "(1)><")) (str.contains (str.replace y "mou" "alert(1)") "onalert(1)sel") (not (= "t id=" (str.substr z 14 5)))))
+(assert (or (not (str.contains y "efor")) (= (str.indexof z "oup" 0) 1)))
+(assert (or (str.suffixof "us>" z) (not (str.in_re x ((_ re.from_regex ecma2020 u) "\d+(-\d+)*$"))) (not (= "te=""alert" (str.substr z 10 9)))))
+(check-sat)

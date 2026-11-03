@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+86)?1[3-9]\d{9}$")))
+(assert (= x "<embed id=x onfocus=alert(1) type=text/html>"))
+(check-sat)

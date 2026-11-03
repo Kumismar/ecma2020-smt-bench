@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\u{c1}\u{c4}\u{c9}\u{cb}\u{11a}\u{cd}\u{d3}\u{d6}\u{d4}\u{da}\u{16e}\u{dc}\u{dd}\u{10c}\u{10e}\u{147}\u{158}\u{160}\u{164}\u{17d}\u{139}\u{13d}\u{e1}\u{e4}\u{e9}\u{eb}\u{11b}\u{ed}\u{f3}\u{f6}\u{f4}\u{fa}\u{16f}\u{fc}\u{fd}\u{10d}\u{10f}\u{148}\u{159}\u{161}\u{165}\u{17e}\u{13a}\u{13e}]{2,}[\s,_,-][A-Za-z\u{c1}\u{c4}\u{c9}\u{cb}\u{11a}\u{cd}\u{d3}\u{d6}\u{d4}\u{da}\u{16e}\u{dc}\u{dd}\u{10c}\u{10e}\u{147}\u{158}\u{160}\u{164}\u{17d}\u{139}\u{13d}\u{e1}\u{e4}\u{e9}\u{eb}\u{11b}\u{ed}\u{f3}\u{f6}\u{f4}\u{fa}\u{16f}\u{fc}\u{fd}\u{10d}\u{10f}\u{148}\u{159}\u{161}\u{165}\u{17e}\u{13a}\u{13e}]{2,}")))
+(assert (= x "<style>:target {color: red;}</style><command id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></command>"))
+(check-sat)

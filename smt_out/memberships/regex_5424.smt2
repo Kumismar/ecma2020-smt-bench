@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[@_\u{f6}\u{e4}\u{fc}\u{f6}\u{c4}\u{dc}\u{df}\w\s\.]{3,30}$")))
+(assert (= x "<isindex id=x tabindex=1 onfocus=alert(1)></isindex>"))
+(check-sat)

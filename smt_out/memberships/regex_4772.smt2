@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[7896][0-9]{9}")))
+(assert (= x "http://www.google<script .com>alert(document.location)</script"))
+(check-sat)

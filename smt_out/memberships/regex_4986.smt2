@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\d{2,4}-?\d{1,4}-?\d{3,4}")))
+(assert (= x "&lt;EMBED SRC=\""http&#58;//ha&#46;ckers&#46;org/xss&#46;swf\"" AllowScriptAccess=\""always\""&gt;&lt;/EMBED&gt;"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<meta onmouseup=""alert(1)"">test</meta>") (= x "<style>:target {color:red;}</style><picture id=x style=""transition:color 1s"" ontransitionend=alert(1)></picture>")))
+(assert (or (= z "lert('XSS');</SCRIPT>") (= z "able>drop here</ruby>")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.at z 19) "y") (= "'XSS')" (str.substr z 5 6)) (not (= "ub" (str.substr z 17 2)))))
+(assert (or (not (= "<onmouseup=""alert(1)"">test</meta>able>drop here</ruby>" (str.replace y "meta " ""))) (not (str.contains z ");<")) (str.in_re z ((_ re.from_regex ecma2020) "^[a-zA-Z0-9._%+-]+@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,4}$"))))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020) "^(\([0-9]{2}\)|[0-9]{2}-)[0-9]{10}$"))) (not (str.contains y "1)></pic"))))
+(check-sat)

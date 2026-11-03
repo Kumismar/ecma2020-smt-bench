@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "UJI|V\u{c3}\u{a8}rtebres|vertebres|v\u{c3}\u{a8}rtebres|v\u{c3}\u{a9}rtebres|V\u{c3}\u{a9}rtebres|uji")))
+(assert (= x "<param id=x tabindex=1 onactivate=alert(1)></param>"))
+(check-sat)

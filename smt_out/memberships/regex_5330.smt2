@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\s\S]{6,16}$")))
+(assert (= x "<style>@keyframes slidein {}</style><script style=""animation-duration:1s;animation-name:slidein;animation-iteration-count:2"" onanimationiteration=""alert(1)""></script>"))
+(check-sat)

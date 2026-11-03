@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\u{7537}||\u{5973}")))
+(assert (= x "<time oncopy=""alert(1)"" contenteditable>test</time>"))
+(check-sat)

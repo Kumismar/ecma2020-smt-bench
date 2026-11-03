@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z\-\\'\u{2019}\u{201b}\u{2018}\u{201d}\u{201f}\u{201c}"" ]*$")))
+(assert (= x "<body onkeydown=""alert(1)"" contenteditable>test</body>"))
+(check-sat)

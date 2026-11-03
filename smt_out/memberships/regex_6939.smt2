@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,10}|[\d]{1,3})){1,2})$")))
+(assert (= x "xmlns:svg=""http://www.w3.org/2000/svg"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([A-z\u{c0}-\u{17e}\s]){0,}")))
+(assert (= x "<legend onbeforepaste=""alert(1)"" contenteditable>test</legend>"))
+(check-sat)

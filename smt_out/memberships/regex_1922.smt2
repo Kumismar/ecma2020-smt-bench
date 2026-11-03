@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9\u{e23}\u{e07}\u{e23}\u{e11}\u{e23}\u{87}\u{e23}\u{91}\u{e22}\u{e1a}\u{e22}\u{e0a}\u{e23}\u{e01}\u{e23}\u{e09}\u{e23}\u{e0d}\u{e23}\u{e13}\u{e23}\u{e1a}\u{e23}\u{a0}\u{e23}\u{e08}\u{e23}\u{e0c}\u{e23}\u{e12}\u{e23}\u{e19}\u{e23}\u{81}\u{e23}\u{89}\u{e23}\u{8d}\u{e23}\u{93}\u{e23}\u{9a}\u{e23}\u{80}\u{e23}\u{88}\u{e23}\u{8c}\u{e23}\u{92}\u{e23}\u{99}\u{e23}\u{e04}\u{e23}\u{e0b}\u{e23}\u{e0f}\u{e23}\u{e16}\u{e23}\u{e1c}\u{e23}\u{84}\u{e23}\u{8b}\u{e23}\u{8f}\u{e23}\u{96}\u{e23}\u{9c} ]+")))
+(assert (= x "&lt;XML ID=\""xss\""&gt;&lt;I&gt;&lt;B&gt;&lt;IMG SRC=\""javas&lt;!-- --&gt;cript&#58;alert('XSS')\""&gt;&lt;/B&gt;&lt;/I&gt;&lt;/XML&gt;"))
+(check-sat)

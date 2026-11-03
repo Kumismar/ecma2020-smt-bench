@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.*[a-z].*)(?=.*[A-Z].*)(?=.*[0-9].*)(?=.*[^A-Za-z0-9].*)(?=[^\s]+$).{8,20}$")))
+(assert (= x "<svg><path><animateMotion onbegin=alert(1) dur=""1s"" repeatCount=""1"">"))
+(check-sat)

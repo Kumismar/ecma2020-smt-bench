@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<rb onpaste=""alert(1)"" contenteditable>test</rb>") (= x "<rt onpaste=""alert(1)"" contenteditable>test</rt>")))
+(assert (or (= z "ils>") (= z "let>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.suffixof "b>" x) (not (str.in_re z ((_ re.from_regex ecma2020 u) "^(\+\d{1,4}|0+\d{1,5}|\(\d{1,5})[\d\s\/\(\)-]*\d+$")))))
+(assert (or (str.contains z "et") (not (= (str.indexof z "t" 0) 2)) (str.prefixof "<canvas on" y)))
+(assert (or (not (str.contains (str.replace z "et" " ") "l >")) (not (str.prefixof "<rb onpas" x)) (= "le>tes" (str.substr x 36 6))))
+(check-sat)

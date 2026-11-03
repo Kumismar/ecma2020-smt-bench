@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9\u{e4}\u{f6}\u{fc}\u{df}_]+")))
+(assert (= x "<maction actiontype=""statusline"" xlink:href=""javascript:alert(3)"">CLICKME<mtext>http://http://google.com</mtext></maction>"))
+(check-sat)

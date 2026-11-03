@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((13[0-9])|147|(15[0-35-9])|180|182|(18[5-9]))[0-9]{8}$")))
+(assert (= x "<font onpaste=""alert(1)"" contenteditable>test</font>"))
+(check-sat)

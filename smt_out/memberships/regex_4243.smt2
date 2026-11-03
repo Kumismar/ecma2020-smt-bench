@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u{e6}\u{f8}\u{e5}a-z\u{c6}\u{d8}\u{c5}A-Z0-9 ]{2,7}")))
+(assert (= x "<DIV STYLE=""background-image: url(javascript:javascript:alert(1))"">"))
+(check-sat)

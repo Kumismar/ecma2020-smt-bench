@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{623}-\u{64a}]+[ ]{0,1}[a-zA-Z]*")))
+(assert (= x "<style>:target {transform: rotate(180deg);}</style><progress id=x style=""transition:transform 2s"" ontransitionrun=alert(1)></progress>"))
+(check-sat)

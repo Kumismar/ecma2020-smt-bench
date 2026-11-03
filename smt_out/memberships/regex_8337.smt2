@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^http(s)?://[a-z0-9-]+(.[a-z0-9-]*)(.[a-z0-9-]*)")))
+(assert (= x "<body onmouseenter=""alert(1)"">test</body>"))
+(check-sat)

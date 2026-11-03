@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z]{3}([1-9]\d{0,3})?")))
+(assert (= x "<video onfocusout=alert(1) tabindex=1 id=x></video><input autofocus>"))
+(check-sat)

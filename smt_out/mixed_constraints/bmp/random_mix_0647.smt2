@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<dialog oncopy=""alert(1)"" contenteditable>test</dialog>") (= x "<style>:target {color:red;}</style><tt id=x style=""transition:color 1s"" ontransitionend=alert(1)></tt>")))
+(assert (or (= z "arCode(88,83,83))"">") (= z "t(1) tabindex=1 id=x></area><input autofocus>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= "e=alert(1)" (str.substr x 34 10))) (not (= (str.indexof y "le>dr" 0) 35))))
+(assert (or (not (str.prefixof "ar" z)) (= "er" (str.substr x 38 2)) (= (str.at y 69) "1")))
+(assert (or (= "javast:alert(1)"" id=""fuzzelement1"">test</a>" (str.replace z "crip" "")) (not (str.in_re x ((_ re.from_regex ecma2020) "[\s\(]*((?!1)\d{1})((?!11)\d{2})[-\s\).,]*((?!1)\d{1})\d{2}[-\s.,]*\d{4}[\s]*"))) (str.contains z "</sp")))
+(check-sat)

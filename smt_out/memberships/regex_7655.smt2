@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u{5c}u00C0-\u{5c}u1FFF\u{5c}u2C00-\u{5c}uD7FF\w\- ]{2,8}")))
+(assert (= x "<div style=""font-family:'foo&#10;;color:red;';"">LOL"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<img src=1 href=1 onerror=""javascript:alert(1)""></img>") (= x "<blockquote oncut=""alert(1)"" contenteditable>test</blockquote>")))
+(assert (or (= z "put autofocus>") (= z "itable>drop here</table>") (= z "tiveXObject('htmlfile').parentWindow.alert(2)""></if>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.suffixof ")""></if>" z)) (not (str.in_re y ((_ re.from_regex ecma2020) "(|.+)([\u{665}][\u{660}-\u{669}]{8}|[5]([0-9](| |-|_)+){8})(| )+$"))) (<= (str.len x) 59)))
+(assert (or (not (str.suffixof "</table>" y)) (not (str.in_re x ((_ re.from_regex ecma2020) "^.{5,16}$"))) (not (= "<blockquote oncut=""alert(1)"" contentedi""le>test</blockquote>" (str.replace x "tab" """")))))
+(assert (or (not (>= (str.len x) 118)) (<= (str.len y) 96) (str.suffixof "tofocus>" y)))
+(check-sat)

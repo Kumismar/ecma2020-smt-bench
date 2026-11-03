@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?:(\(?(0|\+44)[1-9]{1}\d{2,4}?\)?\s?\d{3,4}\s?\d{3,4}))?$")))
+(assert (= x "<kbd draggable=""true"" ondragend=""alert(1)"">test</kbd>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{2,150}")))
+(assert (= x "<style>.XSS{background-image:url(""javascript:document.vulnerable=true"");}</STYLE><A CLASS=XSS></a>"))
+(check-sat)

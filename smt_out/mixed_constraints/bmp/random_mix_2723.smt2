@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<p draggable=""true"" ondragstart=""alert(1)"">test</p>") (= x "'>""><script src = 'http://www.site.com/XSS.js'></script>") (= x "<img id=x tabindex=1 onactivate=alert(1)></img>")))
+(assert (or (= z "red}   /* all UA */") (= z "s>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.in_re z ((_ re.from_regex ecma2020) "^[\u{410}-\u{42f}\u{430}-\u{44f}\u{401}\u{451}\s]{1,25}")) (= "e=""tr" (str.substr x 11 5))))
+(assert (or (= (str.indexof x "o" 0) 20) (not (str.contains z """></body")) (str.contains y """t")))
+(assert (or (>= (str.len z) 54) (not (= (str.at x 37) "m")) (not (= (str.indexof y "ex=1 " 0) 16))))
+(check-sat)

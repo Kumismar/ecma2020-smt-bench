@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[ +-1234567890//]{0,50}")))
+(assert (= x "<multicol oncut=""alert(1)"" contenteditable>test</multicol>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/")))
+(assert (= x "<a href=""javascript:javascript:alert(1)""><event-source src=""data:application/x-dom-event-stream,Event:click%0Adata:XXX%0A%0A"">"))
+(check-sat)

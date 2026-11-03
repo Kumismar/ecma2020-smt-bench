@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9 \u{5c}u00C0-\u{5c}u00ff]+")))
+(assert (= x "<div id=""130""><math href=""javascript:alert(130)"">CLICKME</math>"))
+(check-sat)

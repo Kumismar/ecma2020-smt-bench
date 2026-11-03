@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\u{c0}-\u{fa}0-9\s]+$")))
+(assert (= x "<svg><multicol onload=alert(1)></multicol>"))
+(check-sat)

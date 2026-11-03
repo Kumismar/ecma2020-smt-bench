@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$")))
+(assert (= x "<center id=x tabindex=1 onbeforeactivate=alert(1)></center>"))
+(check-sat)

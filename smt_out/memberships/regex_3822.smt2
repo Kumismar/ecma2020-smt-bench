@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([\+]{0,1}\d{8,15}(-{1,1}\d{3,5}){0,1})((,{1,1}\d{8,15}(-{1,1}\d{3,5}){0,1}){0,15})")))
+(assert (= x "<ul onclick=""alert(1)"">test</ul>"))
+(check-sat)

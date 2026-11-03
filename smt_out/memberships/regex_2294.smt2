@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[ \u{3000}\u{3041}-\u{3096}\u{309d}\u{309e}\u{30fc}]+$")))
+(assert (= x "<plaintext onbeforecopy=""alert(1)"" contenteditable>test</plaintext>"))
+(check-sat)

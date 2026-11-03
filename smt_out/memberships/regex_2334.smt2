@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!00)[0-1][0-9]")))
+(assert (= x "<iframe onmouseleave=""alert(1)"">test</iframe>"))
+(check-sat)

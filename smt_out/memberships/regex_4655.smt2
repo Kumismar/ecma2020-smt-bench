@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0-9a-zA-Z\u{e4}\u{c4}\u{f6}\u{d6}\u{fc}\u{dc}\-]*\.[0-9A-Za-z]*$")))
+(assert (= x "\u{201c}><ScRiPt>alert(document.cookie)</script>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[789]\d{9}$")))
+(assert (= x "<svg><spacer onload=alert(1)></spacer>"))
+(check-sat)

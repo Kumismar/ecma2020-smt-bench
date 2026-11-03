@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "((\+420|00420) ?)?\d{3}( |-)?\d{3}( |-)?\d{3}")))
+(assert (= x "<div id=""62""><!-- IE 6-8 -->"))
+(check-sat)

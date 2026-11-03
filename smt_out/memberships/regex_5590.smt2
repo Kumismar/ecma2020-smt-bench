@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".[0-9]{6,}")))
+(assert (= x "<EMBED SRC=""http://ha.ckers.org/xss.swf"" AllowScriptAccess=""always""></EMBED>"))
+(check-sat)

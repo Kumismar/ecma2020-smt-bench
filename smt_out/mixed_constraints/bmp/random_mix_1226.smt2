@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<b draggable=""true"" ondrag=""alert(1)"">test</b>") (= x "<u oncut=""alert(1)"" contenteditable>test</u>") (= x "<IMG SRC=x onpaste=""alert(String.fromCharCode(88,83,83))"">")))
+(assert (or (= z "=""alert(1)"" contenteditable>test</template>") (= z """>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020) "^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,9}$"))) (= (str.len y) 101)))
+(assert (or (str.suffixof "83))"">" x) (not (<= (str.len y) 87)) (not (str.in_re y ((_ re.from_regex ecma2020) "^[a-zA-Z\u{e1}\u{e0}\u{e2}\u{e3}\u{e9}\u{e8}\u{ea}\u{ed}\u{ef}\u{f3}\u{f4}\u{f5}\u{f6}\u{fa}\u{e7}\u{f1}\u{c1}\u{c0}\u{c2}\u{c3}\u{c9}\u{c8}\u{cd}\u{cf}\u{d3}\u{d4}\u{d5}\u{d6}\u{da}\u{c7}0-9\s]+$")))))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "\(?(\d{3})\)?[-\. ]?(\d{3})[-\. ]?(\d{4})$"))) (not (<= (str.len x) 49)) (str.contains x "ditable>te")))
+(check-sat)

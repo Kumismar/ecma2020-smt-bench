@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([0][1-9]|[1-2][0-9]|30|31)/([0][1-9]|10|11|12)/(19[0-9][0-9]|20[0-1][0-9]|2020)")))
+(assert (= x "<colgroup draggable=""true"" ondragleave=""alert(1)"">test</colgroup>"))
+(check-sat)

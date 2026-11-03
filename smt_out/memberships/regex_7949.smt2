@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\w\u{e0}-\u{fa}\u{c0}-\u{da} ]+[\s]{1,}/?[\w\u{e0}-\u{fa}\u{c0}-\u{da} ]*")))
+(assert (= x "<button onfocusout=alert(1) id=x></button><input autofocus>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\u{5c}u00C0-\u{5c}u00D6\u{5c}u00D8-\u{5c}u00F8\u{5c}u00D8-\u{5c}u01BF\u{5c}u01C4-\u{5c}u0280|\s|']+")))
+(assert (= x "<textarea id=x tabindex=1 onactivate=alert(1)></textarea>"))
+(check-sat)

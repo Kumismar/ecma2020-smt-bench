@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Z|a-z|\s-]{0,51}")))
+(assert (= x "perl -e ';print "";&;<;SCR\0IPT>;alert("";XSS"";)<;/SCR\0IPT>;"";;'; >; out"))
+(check-sat)

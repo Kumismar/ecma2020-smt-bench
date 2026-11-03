@@ -1,0 +1,6 @@
+; lang_inclusion, BMP mode: is the language of a regex A included in the language of a regex B, both built from ECMAScript regexes: a string x in A and not in B, or an equation (re.inter A B) = A or (re.union A B) = B
+; construction: diff_in_operand, inclusion holds, encoding: inter_equation
+(set-logic QF_SLIA)
+(set-info :status sat)
+(assert (= (re.inter (re.diff ((_ re.from_regex ecma2020) "^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:(\s*\(?([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\)?\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})$") ((_ re.from_regex ecma2020) "^1([358][0-9]|4[579]|66|7[0135678]|9[89])\d{8}$")) ((_ re.from_regex ecma2020) "^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:(\s*\(?([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\)?\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})$")) (re.diff ((_ re.from_regex ecma2020) "^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:(\s*\(?([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\)?\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})$") ((_ re.from_regex ecma2020) "^1([358][0-9]|4[579]|66|7[0135678]|9[89])\d{8}$"))))
+(check-sat)

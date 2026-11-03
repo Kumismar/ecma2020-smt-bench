@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\u{a3}?[0-9]+(\.[0-9]{0,2})??")))
+(assert (= x "<element onmouseover=""alert(1)"">test</element>"))
+(check-sat)

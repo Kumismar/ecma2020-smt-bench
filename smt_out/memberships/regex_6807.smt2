@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-z0-9\u{5c}u00C0-\u{5c}u00FF_ \-]{3,45}")))
+(assert (= x "\\'); alert(\'xss\');var x=\'"))
+(check-sat)

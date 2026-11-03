@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\u{8bf7}\u{586b}\u{5199}\u{60a8}\u{7684}\u{7535}\u{5b50}\u{90ae}\u{4ef6}\u{ff0c}\u{586b}\u{5199}\u{540e}\u{6211}\u{53f8}\u{5c06}\u{901a}\u{8fc7}\u{7535}\u{5b50}\u{90ae}\u{4ef6}\u{7ed9}\u{60a8}\u{56de}\u{590d}")))
+(assert (= x "&lt;scrscriptipt&gt;alert(1)&lt;/scrscriptipt&gt;"))
+(check-sat)

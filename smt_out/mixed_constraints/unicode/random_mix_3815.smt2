@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>@keyframes x{}</style><time style=""animation-name:x"" onanimationstart=""alert(1)""></time>") (= x """><img src=x onerror=javascript:alert(('A'))>") (= x "<div id=""108""><!-- IE 5-8 standards mode -->")))
+(assert (or (= z "mousemove=""alert(1)"">test</meta>") (= z "art=""alert(1)"">test</cod\u{1d400}e>") (= z "tivate=alert(1)></menuitem><input id=y autofocus>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.suffixof ">" z)) (str.suffixof "e -->" x) (not (str.in_re y ((_ re.from_regex ecma2020 u) "^([a-zA-Z0-9_-]+\.)*[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)*\.[a-zA-Z]{2,6}$")))))
+(assert (or (not (= (str.len y) 144)) (= "<div id=""108""><!-- IE 5-8 tandards mode -->mousemove=""alert(1)"">test</meta>" (str.replace y " s" " ")) (= (str.at y 43) "n")))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020 u) "^[IOQioq]{17}"))) (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[0-9]{1,5}")))))
+(check-sat)

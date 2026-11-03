@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([0-9A-HJ-NPQRTUWXY]{2}\d{6}[0-9A-HJ-NPQRTUWXY]{10}|[1-9]\d{14})$")))
+(assert (= x "<xml id=""xss"" src=""%(htc)s""></xml> <label dataformatas=""html"" datasrc=""#xss"" datafld=""payload""></label>"))
+(check-sat)

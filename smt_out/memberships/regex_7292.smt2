@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{430}-\u{44f}\u{410}-\u{42f}\u{451}\u{401}\s]+$")))
+(assert (= x "<div id=""68""><doc xmlns:xlink=""http://www.w3.org/1999/xlink"" xmlns:html=""http://www.w3.org/1999/xhtml"">   <html:style /><x xlink:href=""javascript:alert(68)"" xlink:type=""simple"">XXX</x></doc>//[""'`-->]]>]</div>"))
+(check-sat)

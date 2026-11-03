@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z]{3,}\s+[a-zA-Z]{3,}")))
+(assert (= x "<body id=x tabindex=1 onbeforedeactivate=alert(1)></body><input autofocus>"))
+(check-sat)

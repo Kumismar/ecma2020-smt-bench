@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<form draggable=""true"" ondrag=""alert(1)"">test</form>") (= x "<body onload!#$%&()*~+-_.,:;?@[/|\]^`=document.vulnerable=true;>")))
+(assert (or (= z "{color: red;}</style><progress id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></progress>") (= z "able>test</multicol>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= (str.at x 10) "o")) (not (= (str.len y) 84))))
+(assert (or (= "<form dra" (str.substr x 0 9)) (not (= (str.indexof x "pt:a" 0) 35)) (not (str.suffixof "multicol>" y))))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020) "^([\w.-]+)@(\[(\d{1,3}\.){3}|(?!live\.fr|mail\.ru|hotmail\.fr|arcor\.de|inbox\.ru|yams08|eric\.jones|abdulah\.xyz)(([a-zA-Z\d-]+\.)+))([a-zA-Z]{2,4}|\d{1,3})(\]?)$"))) (not (str.contains x "form drag")) (not (str.prefixof "<body " y))))
+(check-sat)

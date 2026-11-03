@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9\u{e4}\u{f6}\u{fc}\u{df}\u{c4}\u{d6}\u{dc}]*")))
+(assert (= x "<form><textarea &#13; onkeyup='\u{5c}u0061\u{5c}u006C\u{5c}u0065\u{5c}u0072\u{5c}u0074&#x28;1&#x29;'>"))
+(check-sat)

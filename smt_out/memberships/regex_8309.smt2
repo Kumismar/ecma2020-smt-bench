@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\u{201c}[A-Za-z0-9]\u{201d}/")))
+(assert (= x "<caption id=x tabindex=1 onactivate=alert(1)></caption>"))
+(check-sat)

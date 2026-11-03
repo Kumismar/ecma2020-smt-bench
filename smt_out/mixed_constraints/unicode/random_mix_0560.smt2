@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "&lt;IMG LOWSRC=\""javascript&#058;alert('XSS')\""&gt;") (= x "&lt;SCRIPT SRC=&quot;http://ha.ckers.org/xss.jpg&quot;&gt;&lt;/SCRIPT&gt;")))
+(assert (or (= z ";ckers&#46;org/xss&#46;js\""&gt;&lt;/SCRIPT&gt;") (= z "orepaste=""alert(1)"" contenteditable>test</noscript>")))
+(assert (= y (str.++ x z)))
+(assert (or (= "=&quot;htt" (str.substr x 14 10)) (not (= (str.indexof x "</f" 0) 52)) (not (str.in_re y ((_ re.from_regex ecma2020 u) "^1[3-9][0-9]{9}$")))))
+(assert (or (str.suffixof "t;" y) (not (= (str.indexof x ";" 0) 3)) (not (str.contains z "ockquote>"))))
+(assert (or (not (<= (str.len z) 46)) (not (str.contains (str.replace x "T&g" " ") "IP t;")) (not (= "quee>t>" (str.substr y 43 8)))))
+(check-sat)

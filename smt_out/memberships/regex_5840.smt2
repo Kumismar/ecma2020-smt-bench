@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(([AF]\d{7}[0-8AaBbCcDdSsTtWwXxYyZz])?(\u{2022}{8}[0-8AaBbCcDdSsTtWwXxYyZz])?(\u{2022}{9})?)")))
+(assert (= x "<frameset oncut=""alert(1)"" contenteditable>test</frameset>"))
+(check-sat)

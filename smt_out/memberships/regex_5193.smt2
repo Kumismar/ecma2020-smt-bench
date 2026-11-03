@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([a-z\u{e4}\u{f6}\u{fc}A-Z\u{c4}\u{d6}\u{dc}\u{df}0-9\-\.]{0,70})$")))
+(assert (= x "<import namespace=""t"" implementation=""#default#time2"">"))
+(check-sat)

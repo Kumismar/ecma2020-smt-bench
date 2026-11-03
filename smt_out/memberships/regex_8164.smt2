@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{151}\u{150}\u{f6}\u{d6}\u{fc}\u{dc}\u{f3}\u{d3}\u{171}\u{170}\u{e1}\u{c1}\u{ed}\u{e9}\u{c9}\u{fa}\u{da}]{2,}$")))
+(assert (= x "<isindex draggable=""true"" ondragend=""alert(1)"">test</isindex>"))
+(check-sat)

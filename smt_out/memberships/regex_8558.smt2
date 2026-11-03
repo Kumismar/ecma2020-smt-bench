@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{8,100}")))
+(assert (= x "<div id=d><div style=""font-family:'sans\27\3B color\3Ared\3B'"">X</div></div> <script>with(document.getElementById(""d""))innerHTML=innerHTML</script>"))
+(check-sat)

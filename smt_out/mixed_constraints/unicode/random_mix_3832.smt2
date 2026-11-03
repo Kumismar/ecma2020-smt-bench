@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "\u{1f600}<style>@keyframes x{}</style><wbr style=""animation-name:x"" onanimationstart=""alert(1)""></wbr>") (= x "`""'><img src=xxx:x \x22onerror=javascript:alert(1)>")))
+(assert (or (= z " formaction=""javascript:javascript:alert(1)"">X") (= z "alert&lpar;1)&gt;>") (= z "ript>")))
+(assert (= y (str.++ x z)))
+(assert (or (= "\u{1f600}<style>@keyframes x{}</style><wbr style=""animatxn-name:x"" onanimationstart=""alert(1)""></wbr>ript>" (str.replace y "io" "x")) (not (str.suffixof ";1)&gt;>" y))))
+(assert (or (not (str.prefixof " form" z)) (not (= "'>" (str.substr x 2 2))) (not (str.contains x "va"))))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020 u) "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,128}$"))) (not (str.contains (str.replace z "le" "alert(1)") "aalert(1)rt&lp")) (str.contains y "t(1")))
+(check-sat)

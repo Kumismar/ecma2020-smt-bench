@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\+[0-9]{10,16}|")))
+(assert (= x "<option onfocusout=alert(1) tabindex=1 id=x></option><input autofocus>"))
+(check-sat)

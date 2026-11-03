@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "/\d+\/[2-9]\d*/")))
+(assert (= x "<col onmouseup=""alert(1)"">test</col>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{410}-\u{42f}\u{430}-\u{44f}\u{401}\u{451}\u{2018}'\u{2019}\u{b4}`\u{454}\u{404}\u{457}\u{407}\u{406}i\u{490}\u{491}\s]+$")))
+(assert (= x "<img LOWSRC=""javascript:document.vulnerable=true;"">"))
+(check-sat)

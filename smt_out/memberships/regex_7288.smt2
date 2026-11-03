@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\u{410}-\u{42f}\u{430}-\u{44f}]{1,20}")))
+(assert (= x "exp/*&lt;A STYLE='no\xss&#58;noxss(\""*//*\"");"))
+(check-sat)

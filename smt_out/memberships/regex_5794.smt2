@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[^\x21-\x2C\x2E\x2F\x3A-\x40\x5B-\x60\x7B-\x7E]*")))
+(assert (= x "<script>Object.defineProperties(window, {Safe: {value: {get: function() {return document.cookie}}}});alert(Safe.get())</script>"))
+(check-sat)

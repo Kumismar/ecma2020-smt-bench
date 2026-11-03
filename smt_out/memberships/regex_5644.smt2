@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(\+336|06|\+337|07)[0-9-., ]{8,12}")))
+(assert (= x "&lt;IMG SRC=javascript:alert(&amp;quot;XSS&amp;quot;)&gt;"))
+(check-sat)

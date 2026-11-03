@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "Est-ce qu'elle adore les cr\u{ea}pes?")))
+(assert (= x "<frameset onBlur frameset onBlur=""javascript:javascript:alert(1)""></frameset onBlur>"))
+(check-sat)

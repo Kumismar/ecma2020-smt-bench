@@ -1,0 +1,6 @@
+; lang_inclusion, BMP mode: is the language of a regex A included in the language of a regex B, both built from ECMAScript regexes: a string x in A and not in B, or an equation (re.inter A B) = A or (re.union A B) = B
+; construction: operand_in_union, inclusion holds, encoding: union_disequation
+(set-logic QF_SLIA)
+(set-info :status unsat)
+(assert (not (= (re.union ((_ re.from_regex ecma2020) "^[A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}]{1,20} [A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}]{1,20}") (re.union ((_ re.from_regex ecma2020) "^[A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}]{1,20} [A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}]{1,20}") ((_ re.from_regex ecma2020) "^[\u{410}-\u{42f}\u{401}][\u{430}-\u{44f}\u{451}]+(-[\u{410}-\u{42f}\u{401}][\u{430}-\u{44f}\u{451}]+)? [\u{410}-\u{42f}\u{401}][\u{430}-\u{44f}\u{451}]+( [\u{410}-\u{42f}\u{401}][\u{430}-\u{44f}\u{451}]+)?$"))) (re.union ((_ re.from_regex ecma2020) "^[A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}]{1,20} [A-Z\u{c4}\u{d6}\u{dc}]{1}[a-z\u{e4}\u{f6}\u{fc}]{1,20}") ((_ re.from_regex ecma2020) "^[\u{410}-\u{42f}\u{401}][\u{430}-\u{44f}\u{451}]+(-[\u{410}-\u{42f}\u{401}][\u{430}-\u{44f}\u{451}]+)? [\u{410}-\u{42f}\u{401}][\u{430}-\u{44f}\u{451}]+( [\u{410}-\u{42f}\u{401}][\u{430}-\u{44f}\u{451}]+)?$")))))
+(check-sat)

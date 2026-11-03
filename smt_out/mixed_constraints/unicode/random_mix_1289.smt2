@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<img src=""javascript:alert('XSS')"">") (= x "<frameset onmouseout=""alert(1)"">test</frameset>") (= x "<style>@keyframes x{}</style><xmp style=""animation-name:x"" onanimationstart=""alert(1)""></xmp>")))
+(assert (or (= z "yup=""alert(1)"" contenteditable>test</pre>") (= z " here</meta>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.in_re z ((_ re.from_regex ecma2020 u) "^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$")) (str.suffixof "></t\u{1f600}rack>" x) (not (str.prefixof "<fr" x))))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020 u) "^(\+?\d{1,2})?[\s.-]?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"))) (not (str.contains (str.replace y " s" """") "mp""tyle=")) (str.contains (str.replace z "meta" "<b>") "</<b>>")))
+(assert (or (str.contains (str.replace z "e" "<b>") " h<b>r") (not (str.suffixof "XSS')"">" x))))
+(check-sat)

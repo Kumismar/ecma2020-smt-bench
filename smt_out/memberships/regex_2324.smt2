@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9\u{251c}\u{a6}\u{251c}\u{2592}\u{251c}\u{107}\u{251c}\u{e6}\u{252c}\u{2551}\u{252c}\u{ac}\u{251c}\u{12a}\u{251c}\u{ae}\u{251c}\u{141}\u{251c}\u{2502}\u{251c}\u{2551}\u{251c}\u{100}\u{251c}\u{a9}\u{251c}\u{bc}\u{251c}\u{2593}\u{251c}\u{2563}\u{251c}\u{fc}\u{251c}\u{113}\u{251c}\u{179}\u{251c}\u{14d}\u{251c}\u{dc}\u{251c}\u{106}\u{251c}\u{142}\u{251c}\u{12b}\u{251c}\u{c6}\u{251c}\u{d6}\u{251c}\u{17c}\u{251c}\u{bd}\u{251c}\u{bb}\u{251c}\u{10c}\u{251c}\u{255d}\u{251c}\u{e4}\u{251c}\u{157}\u{251c}\u{c5}\u{251c}\u{a2}\u{251c}\u{a3} ]+")))
+(assert (= x "<blockquote onmouseout=""alert(1)"">test</blockquote>"))
+(check-sat)

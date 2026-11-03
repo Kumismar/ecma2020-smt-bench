@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{410}-\u{44f}- ]+")))
+(assert (= x "&lt;A HREF=\""http&#58;//66&#46;102&#46;7&#46;147/\""&gt;XSS&lt;/A&gt;"))
+(check-sat)

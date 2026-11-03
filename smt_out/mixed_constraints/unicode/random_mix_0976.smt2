@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<frame onblur=alert(1) tabindex=1 id=x></frame><input autofocus>") (= x "<iframe oncontextmenu=""alert(1)"">test</iframe>") (= x "<dt onmouseenter=""alert(1)"">test</dt>")))
+(assert (or (= z "st</li>") (= z "est</slot>") (= z "nbeforedeactivate=alert(1)></rb><input autofocus>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.contains (str.replace x "aler" """") """""t")) (not (str.contains x "}</st"))))
+(assert (or (not (= (str.at z 2) "t")) (not (= "<dt""mouseenter=""alert(1)"">test</dt>" (str.replace x " on" """"))) (not (= "pp" (str.substr z 7 2)))))
+(assert (or (= (str.at x 0) "<") (not (str.in_re x ((_ re.from_regex ecma2020 u) "^[A-Za-z0-9_-]*@[A-Za-z0-9_-]*\.[A-Za-z]*$"))) (str.in_re x ((_ re.from_regex ecma2020 u) "[a-z\s]+$"))))
+(check-sat)

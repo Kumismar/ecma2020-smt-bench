@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-\u{17c}A-\u{17b}]{2,}\s[a-\u{17c}A-\u{17b}]{2,}")))
+(assert (= x "<;IMG SRC="";jav&;#x0A;ascript:alert(';XSS';);"";>;"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!\s)[a-zA-Z-\s\u{104}\u{105}\u{106}\u{107}\u{118}\u{119}\u{141}\u{142}\u{d3}\u{f3}\u{143}\u{144}\u{15a}\u{15b}\u{179}\u{17a}\u{17b}\u{17c}]\s?){2,}$")))
+(assert (= x "<body onpageshow=alert(1)>"))
+(check-sat)

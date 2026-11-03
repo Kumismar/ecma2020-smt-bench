@@ -1,0 +1,6 @@
+; lang_equality, Unicode mode: are the languages of two regexes A and B built from ECMAScript regexes equal: an equation A = B, its negation, or a string x in exactly one of them
+; construction: union_commutes, languages equal, encoding: equation
+(set-logic QF_SLIA)
+(set-info :status sat)
+(assert (= (re.union ((_ re.from_regex ecma2020 u) "[0-9]{1,3}$") ((_ re.from_regex ecma2020 u) "[a-zA-Z\u{c3}\u{a7}\u{e7}\u{c3}\u{2021}\u{c7}\u{c3}\u{a3}\u{e3}\u{c3}\u{192}\u{c3}\u{c3}\u{a9}\u{e9}\u{c3}\u{2030}\u{c9}\u{c3}\u{ad}\u{ed}\u{c3}\u{8d}\u{cd}\u{c3}\u{b3}\u{f3}\u{c3}\u{201c}\u{d3}\u{c3}\u{ba}\u{fa}\u{c3}\u{161}\u{da}\u{c3}\u{a1}\u{e1}\u{c3}\u{81}\u{c1}\u{c3}\u{a2}\u{e2}\u{c3}\u{201a}\u{c2}\u{c3}\u{aa}\u{ea}\u{c3}\u{160}\u{ca}\u{c3}\u{b4}\u{f4}\u{c3}\u{201d}\u{d4} ]+$")) (re.union ((_ re.from_regex ecma2020 u) "[a-zA-Z\u{c3}\u{a7}\u{e7}\u{c3}\u{2021}\u{c7}\u{c3}\u{a3}\u{e3}\u{c3}\u{192}\u{c3}\u{c3}\u{a9}\u{e9}\u{c3}\u{2030}\u{c9}\u{c3}\u{ad}\u{ed}\u{c3}\u{8d}\u{cd}\u{c3}\u{b3}\u{f3}\u{c3}\u{201c}\u{d3}\u{c3}\u{ba}\u{fa}\u{c3}\u{161}\u{da}\u{c3}\u{a1}\u{e1}\u{c3}\u{81}\u{c1}\u{c3}\u{a2}\u{e2}\u{c3}\u{201a}\u{c2}\u{c3}\u{aa}\u{ea}\u{c3}\u{160}\u{ca}\u{c3}\u{b4}\u{f4}\u{c3}\u{201d}\u{d4} ]+$") ((_ re.from_regex ecma2020 u) "[0-9]{1,3}$"))))
+(check-sat)

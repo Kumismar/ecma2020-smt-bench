@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?!1234567)(?!1{5})(?!2{5})(?!3{5})(?!4{5})(?!5{5})(?!6{5})(?!7{5})(?!8{5})(?!9{5})(?!0{5})[0-9]{7,10}")))
+(assert (= x "`""'><img src=xxx:x \x20onerror=javascript:alert(1)>"))
+(check-sat)

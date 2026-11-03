@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^[0-9][1-9][ ]?[0-9]{3}[ -][0-9]{4,7}$)|(^\+[0-9]{9,}$)")))
+(assert (= x "<dir onmouseleave=""alert(1)"">test</dir>"))
+(check-sat)

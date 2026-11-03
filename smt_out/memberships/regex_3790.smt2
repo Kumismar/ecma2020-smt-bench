@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^0[1-7][0-9]{7}$")))
+(assert (= x "<script>~'\u{5c}u0061' ;  \u{5c}u0074\u{5c}u0068\u{5c}u0072\u{5c}u006F\u{5c}u0077 ~ \u{5c}u0074\u{5c}u0068\u{5c}u0069\u{5c}u0073.  \u{5c}u0061\u{5c}u006C\u{5c}u0065\u{5c}u0072\u{5c}u0074(~'\u{5c}u0061')</script U+"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style onbeforecut=""alert(1)"" contenteditable>test</style>") (= x "<article oncut=""alert(1)"" contenteditable>test</article>") (= x "<style>@keyframes x{}</style><ins style=""animation-name:x"" onanimationend=""alert(1)""></ins>")))
+(assert (or (= z "ncontextmenu=""alert(1)"">test</map>") (= z "us/onfocus=alert(1)//")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.contains z "focus=ale")) (>= (str.len z) 10) (= (str.at x 14) "e")))
+(assert (or (= (str.at z 1) "s") (not (str.in_re y ((_ re.from_regex ecma2020) "^\+7\(\d\d\d\) \d\d\d-\d\d\d\d$"))) (not (str.suffixof ">" y))))
+(assert (or (not (<= (str.len y) 98)) (= "e><" (str.substr x 27 3)) (= "<articl<b> oncut=""alert(1)"" contenteditable>test</article>us/onfocus=alert(1)//" (str.replace y "e" "<b>"))))
+(check-sat)

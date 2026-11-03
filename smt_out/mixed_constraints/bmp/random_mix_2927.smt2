@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<svg><![CDATA[><image xlink:href=""]]><img src=xx:x onerror=alert(2)//""></svg>//[""'`-->]]>]</div>") (= x "<th onbeforecut=""alert(1)"" contenteditable>test</th>")))
+(assert (or (= z "or: red\u{10348};}</style><rt id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></rt>") (= z "template>") (= z "alert(127)</handler>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.suffixof ">" y) (not (str.in_re y ((_ re.from_regex ecma2020) "^([a-zA-Z]{5})(\d{4})([a-zA-Z]{1})|([a-zA-Z]{1})(\d{5})([a-zA-Z]{2})(\d{4})([a-zA-Z]{3})(\d{6})$"))) (not (str.in_re y ((_ re.from_regex ecma2020) ".{3,20}")))))
+(assert (or (str.in_re x ((_ re.from_regex ecma2020) "^1[1-9]\d{9}$")) (not (= "<img src" (str.substr x 37 8))) (not (str.prefixof "<th onbefo" y))))
+(assert (or (= "error=" (str.substr y 53 6)) (str.prefixof "a" z) (= "t(127)</" (str.substr z 4 8))))
+(check-sat)

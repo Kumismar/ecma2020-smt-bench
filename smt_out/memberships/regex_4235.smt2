@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\u{7487}\u{760b}\u{7ded}\u{934f}\u{30e5}\u{53e7}\u{95bf}\u{e1bc}\u{74e7}")))
+(assert (= x "<noembed id=x tabindex=1 onfocusin=alert(1)></noembed>"))
+(check-sat)

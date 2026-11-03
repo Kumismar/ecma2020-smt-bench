@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+\d{1,2}\s)?\(?\d{1,4}\)?[\s.-]?\d{2,4}[\s.-]?(\d{1}[\s.-]?)*$")))
+(assert (= x "<circle r=""400""></circle>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!.*(^\u{30c6}\u{30b9}\u{30c8}\u{682a}\u{5f0f}\u{4f1a}\u{793e}$|^\u{30c6}\u{30b9}\u{30c8}$|^\u{5408}\u{540c}\u{4f1a}\u{793e}$|^\u{6709}\u{9650}\u{4f1a}\u{793e}$|^\u{4f1a}\u{793e}$|^\u{682a}\u{5f0f}\u{4f1a}\u{793e}$|^-$|^\u{30e9}\u{30f3}\u{30b5}\u{30fc}\u{30ba}\u{682a}\u{5f0f}\u{4f1a}\u{793e}$|^\u{25cb}\u{25cb}\u{682a}\u{5f0f}\u{4f1a}\u{793e}$|^\u{25cb}$|^\u{25cb}\u{25cb}$|^d$|^dd$|^\u{3042}\u{3044}\u{3046}\u{3048}\u{304a}$|^\u{3042}\u{3044}\u{3046}$|^z$|^zz$|^s$|^ss$|^q$|^qq$|^k$|^kk$|^a$|^aa$|^\u{3042}$|^\u{3042}\u{3042}$|^\u{3042}\u{3042}\u{3042}$|^\u{3042}\u{3042}\u{3042}$|^\u{3042}\u{3042}\u{3042}\u{3042}$)).+$")))
+(assert (= x "<mark onmouseup=""alert(1)"">test</mark>"))
+(check-sat)

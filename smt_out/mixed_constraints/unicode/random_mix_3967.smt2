@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<\u{1d400}rb on\u{10348}dblclick=""alert(1)"">test</rb>") (= x "<body id=x tabindex=1 onfocusin=alert(1)></body>")))
+(assert (or (= z "1)></em>") (= z "able>test</address>") (= z "ert('XSS')%253C%252Fscript%253E")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= "2Fscript%" (str.substr z 18 9))) (= "l" (str.substr x 10 1))))
+(assert (or (= "ipt%25" (str.substr y 60 6)) (str.in_re z ((_ re.from_regex ecma2020 u) "^[1-9][\d]{0,}$")) (str.prefixof "<isindex o" y)))
+(assert (or (<= (str.len x) 41) (not (str.prefixof "able>tes" z)) (not (= "<\u{1d400}rb on\u{10348}dblcjavascript:k=""alert(1)"">test</rb>" (str.replace x "lic" "javascript:")))))
+(check-sat)

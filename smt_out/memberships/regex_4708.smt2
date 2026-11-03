@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0-9a-zA-Z]*$")))
+(assert (= x "<div id=""92""><div style=""background:url(http://foo.f/f oo/;color:red/*/foo.jpg);"">X</div>//[""'`-->]]>]</div><div id=""93""><div style=""list-style:url(http://foo.f)\20url(javascript:alert(93));"">X</div>//[""'`-->]]>]</div>"))
+(check-sat)

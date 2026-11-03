@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9._%+-]{2,}@(?!gmail\.com)(?!yahoo\.com)(?!hotmail\.com)(?!mail\.ru)(?!g\.co)(?!yandex\.ru)(?!mail\.com)(?!iillii\.org)(?!sharklasers\.com)(?!guerillamail\.[a-zA-Z])(?!grr\.la)(?!guerillamailblock\.[a-zA-Z])(?!pokemail\.net)(?!spam4\.me)(?!networksfs\.com)(?!optimaweb\.me)(?!matra\.top)(?!wootap\.me)([a-zA-Z0-9]{1,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,}))")))
+(assert (= x "<style>@keyframes x{}</style><footer style=""animation-name:x"" onanimationstart=""alert(1)""></footer>"))
+(check-sat)

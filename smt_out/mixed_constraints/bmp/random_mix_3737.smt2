@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<shadow onmouseup\u{1f600}=""alert(1)\u{10348}"">test</shadow>") (= x "<xmp id=x tabindex=1 ondeacti\u{1f600}vate=alert(1)></xmp><input id=y autofocus>")))
+(assert (or (= z "ut autofocus>") (= z "e=true;</script>") (= z "t</content>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.prefixof "e" z) (not (str.contains z "e=true;<")) (not (str.suffixof "dow>" x))))
+(assert (or (not (= (str.indexof z "/cont" 0) 2)) (not (str.in_re z ((_ re.from_regex ecma2020) "[A-Za-z][0-9][A-Za-z][\s]?[0-9][A-Za-z][0-9][\s]?$"))) (str.contains y "ue;</sc")))
+(assert (or (not (str.contains z "ue;</s")) (str.prefixof "<div dr" x)))
+(check-sat)

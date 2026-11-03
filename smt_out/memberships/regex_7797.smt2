@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z,',\u{e0},\u{e8},\u{e9},\u{ec},\u{f2},\u{f9},\s]{2,30}")))
+(assert (= x "<;HEAD>;<;META HTTP-EQUIV="";CONTENT-TYPE""; CONTENT="";text/html; charset=UTF-7"";>; <;/HEAD>;+ADw-SCRIPT+AD4-alert(';XSS';);+ADw-/SCRIPT+AD4-"))
+(check-sat)

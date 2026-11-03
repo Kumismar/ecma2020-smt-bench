@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([a-z\u{430}-\u{44f}\u{451}0-9_-]+\.)*[a-z\u{430}-\u{44f}\u{451}0-9_-]+@[a-z\u{430}-\u{44f}\u{451}0-9_-]+(\.[a-z\u{430}-\u{44f}\u{451}0-9_-]+)*\.[a-z\u{430}-\u{44f}\u{451}]{2,6}")))
+(assert (= x "<samp draggable=""true"" ondragleave=""alert(1)"">test</samp>"))
+(check-sat)

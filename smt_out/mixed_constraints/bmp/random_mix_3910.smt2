@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>@keyframes x{}</style><hgroup style=""animation-name:x"" onanimationend=""alert(1)""></hgroup>") (= x "<style>@keyframes x{}</style><ul style\u{1f600}=""animation-name:x"" onanimationstart=""alert(\u{1f600}1)""></ul>") (= x "<div draggable=""true"" contenteditable>drag me</div><progress ondrop=alert(1) contenteditable>drop here</progress>")))
+(assert (or (= z "tenteditable>test</time>") (= z "dfn onkeypress=""alert(1)"" contenteditable>test</dfn>")))
+(assert (= y (str.++ x z)))
+(assert (or (= "<style>@keyframes x{}</style><hgroup style=""animation-name:x"" onanimationend=""alertx></hgroup>tenteditable>test</time>" (str.replace y "(1)""" "x")) (not (= (str.at z 4) "/")) (not (str.suffixof "test</dfn>" y))))
+(assert (or (str.in_re y ((_ re.from_regex ecma2020) "^[A-Za-z0-9._-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$")) (not (= (str.indexof z "test<" 0) 42)) (not (str.contains (str.replace z "t1" """") "emen"""">"))))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020) "^\d+([.]\d{0,2}){0,1}$"))) (str.suffixof "oembed>" x) (not (str.suffixof "</dfn>" z))))
+(check-sat)

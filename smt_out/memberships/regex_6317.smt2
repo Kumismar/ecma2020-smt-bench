@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*?[\u{5c}u30A1-\u{5c}u30F60-9A-Za-z])[\u{5c}u30A1-\u{5c}u30F60-9A-Za-z-\u{30fc}\u{ff0d}\s]{0,50}$")))
+(assert (= x "<style>@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}</style><source id=x style=""position:absolute;"" onanimationcancel=""alert(1)""></source>"))
+(check-sat)

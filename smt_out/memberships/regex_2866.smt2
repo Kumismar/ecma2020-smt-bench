@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "J'ai lu ce livre.")))
+(assert (= x "<hgroup id=x tabindex=1 onfocus=alert(1)></hgroup>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\b[\w\.-]+@((?!gmail|googlemail|yahoo|hotmail).)[\w\.-]+\.\w{2,4}\b")))
+(assert (= x "<div draggable=""true"" contenteditable>drag me</div><big ondragover=alert(1) contenteditable>drop here</big>"))
+(check-sat)

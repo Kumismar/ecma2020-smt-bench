@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\u{e7}\u{e8}\u{e9}\u{ea}\u{eb}\u{ef} '-]+")))
+(assert (= x "<;A HREF="";http://ha.ckers.org@google"";>;XSS<;/A>;"))
+(check-sat)

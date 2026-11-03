@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^\s*]([a-zA-Z\u{f1}\u{d1}\u{c0}-\u{ff}0-9.,-/#\s]+){0,500}$")))
+(assert (= x "<SCRIPT>document.write(""<SCRI"");</SCRIPT>PT SRC=""http://ha.ckers.org/xss.js""></SCRIPT>"))
+(check-sat)

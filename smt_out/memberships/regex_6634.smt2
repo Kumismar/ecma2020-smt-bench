@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9._%+-@#:;?()&$=*\s\u{e4}\u{f6}\u{fc}\u{df}\u{1e9e}\u{c4}\u{d6}\u{dc} ]+")))
+(assert (= x "<;/TITLE>;<;SCRIPT>;alert(""XSS"");<;/SCRIPT>;"))
+(check-sat)

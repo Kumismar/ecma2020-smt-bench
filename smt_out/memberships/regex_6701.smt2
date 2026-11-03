@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[p{Z}s]*(?:[^p{Z}s][p{Z}s]*){4,100}$")))
+(assert (= x "<ins draggable=""true"" ondrag=""alert(1)"">test</ins>"))
+(check-sat)

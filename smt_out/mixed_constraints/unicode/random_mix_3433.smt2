@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<shadow oncut=""alert(1)"" contenteditable>test</\u{1f600}shadow>") (= x "<dialog onfocusout=alert(1) tabindex=1 id=x></dialog><input autofocus>")))
+(assert (or (= z "<\x00img src=xxx:x onerror=javascript:alert(1)>") (= z "=""video/mp4""></video>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020 u) "^([1-9]|[1-4]\d|50)$"))) (= "<\x00img src=xxx:x onerror=javascri<b>lert(1)>" (str.replace z "pt:a" "<b>")) (not (str.suffixof "(1)>" y))))
+(assert (or (not (str.suffixof "rt(1)>" y)) (not (= "log" (str.substr x 49 3)))))
+(assert (or (not (= "ideo>" (str.substr z 16 9))) (not (str.in_re z ((_ re.from_regex ecma2020 u) "(^$)|(^[a-zA-Z\u{5c}u00C0-\u{5c}u00D6\u{5c}u00D8-\u{5c}u00F6\u{5c}u00F8-\u{5c}u00FF][-a-zA-Z.' \u{5c}u00C0-\u{5c}u00D6\u{5c}u00D8-\u{5c}u00F6\u{5c}u00F8-\u{5c}u00FF]{1,}$)"))) (not (= "=\u{201d}jav&#" (str.substr y 8 7)))))
+(check-sat)

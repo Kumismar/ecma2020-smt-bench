@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{7,48}")))
+(assert (= x "<a onmouseover=""alert(document.cookie)"">xxs link</a>"))
+(check-sat)

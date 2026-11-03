@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z\u{e0}\u{e8}\u{e9}\u{ec}\u{f2}\u{f9}]+")))
+(assert (= x "&lt;!--#exec cmd=\""/bin/echo '&lt;SCR'\""--&gt;&lt;!--#exec cmd=\""/bin/echo 'IPT SRC=http&#58;//ha&#46;ckers&#46;org/xss&#46;js&gt;&lt;/SCRIPT&gt;'\""--&gt;"))
+(check-sat)

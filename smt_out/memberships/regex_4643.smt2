@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "achetez")))
+(assert (= x "<div style=""background:url(/f#&#127;oo/;color:red/*/foo.jpg);"">X"))
+(check-sat)

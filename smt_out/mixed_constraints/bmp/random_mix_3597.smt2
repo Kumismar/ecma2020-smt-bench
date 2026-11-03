@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<canvas draggable=""true"" ondragend=""alert(1)"">test</canvas>") (= x "</title><SCRIPT>document.vulnerable=true;</script>")))
+(assert (or (= z "tyle>") (= z "ick=""alert(1)"">test</nav>")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.at x 24) ".") (not (str.contains x "/can"))))
+(assert (or (= "yle>" (str.substr z 1 9)) (not (str.suffixof "('&#49;')" y)) (str.in_re z ((_ re.from_regex ecma2020) "^[\w\s\x22\x27\u{e0}\u{f2}\u{e8}\u{ec}\u{e9}@\.-]+$"))))
+(assert (or (str.in_re y ((_ re.from_regex ecma2020) "\d{3}\d{3}\d{3}\d{2}")) (not (<= (str.len z) 27)) (not (str.suffixof "s>tyle>" y))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z|A-Z|0-9|'\u{e0}\u{ec}\u{f2}\u{f9}\u{e8}\u{e9}\s]{3,20}")))
+(assert (= x "<del onbeforecopy=""alert(1)"" contenteditable>test</del>"))
+(check-sat)

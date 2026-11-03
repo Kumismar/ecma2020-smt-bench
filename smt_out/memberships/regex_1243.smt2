@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=^.{5,253}$)(^((?!-)[a-zA-Z0-9\-\u{105}\u{10d}\u{119}\u{117}\u{12f}\u{161}\u{173}\u{16b}\u{17e}\u{104}\u{10c}\u{118}\u{116}\u{12e}\u{160}\u{172}\u{16a}\u{17d}]{0,62}[a-zA-Z0-9\-\u{105}\u{10d}\u{119}\u{117}\u{12f}\u{161}\u{173}\u{16b}\u{17e}\u{104}\u{10c}\u{118}\u{116}\u{12e}\u{160}\u{172}\u{16a}\u{17d}]\.)+[lL][tT]$)")))
+(assert (= x "<div id=""135""><?xml-stylesheet type=""text/xsl"" href=""#"" ?>"))
+(check-sat)

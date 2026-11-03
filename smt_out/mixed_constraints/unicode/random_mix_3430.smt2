@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "&lt;STYLE TYPE=\""text/javascript\""&gt;alert('XSS');&lt;/STYLE&gt;") (= x "<body onpopstate=alert(1)>")))
+(assert (or (= z "</element>") (= z "nbeforepaste=""alert(1)"" contenteditable>test</shadow>")))
+(assert (= y (str.++ x z)))
+(assert (or (= "/ele" (str.substr z 1 4)) (not (= (str.len x) 26)) (not (= (str.at z 13) """"))))
+(assert (or (not (str.prefixof "&lt;ST" x)) (= (str.indexof x "bod" 0) 1) (str.in_re x ((_ re.from_regex ecma2020 u) ".{2,100}$"))))
+(assert (or (str.contains z "element") (= "xSTYLE TYPE=\""text/javascript\""&gt;alert('XSS');&lt;/STYLE&gt;" (str.replace x "&lt;" "x"))))
+(check-sat)

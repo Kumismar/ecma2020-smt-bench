@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z- \u{f6}\u{e4}\u{fc}\u{d6}\u{c4}\u{dc}\u{df}]+")))
+(assert (= x "<applet onreadystatechange applet onreadystatechange=""javascript:javascript:alert(1)""></applet onreadystatechange>"))
+(check-sat)

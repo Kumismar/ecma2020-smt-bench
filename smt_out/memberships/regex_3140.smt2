@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?:(?:\+|0{0,2})91(\s*[\-]\s*)?|[0]?)?[789]\d{9}$")))
+(assert (= x "<audio autoplay controls onseeked=alert(1)><source src=""validaudio.wav"" type=""audio/wav""></audio>"))
+(check-sat)

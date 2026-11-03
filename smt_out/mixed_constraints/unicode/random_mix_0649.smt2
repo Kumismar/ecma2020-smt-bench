@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<a href=""javas\x0Ccript:javascript:alert(1)"" id=""fuzzelement1"">test</a>") (= x "<img src onerror /"" '""= alt=javascript:alert(1)//"">")))
+(assert (or (= z "ntransitionend=alert(1)></nobr>") (= z "=a\u{20000}lert(1)></in\u{1f4a9}s>") (= z "/u>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= (str.at x 3) "h")) (not (str.contains z "tart=""ale")) (str.in_re y ((_ re.from_regex ecma2020 u) "^[0-9A-Za-z-_]+$"))))
+(assert (or (str.in_re z ((_ re.from_regex ecma2020 u) "[a-zA-Z-]{3,}")) (= ">" (str.substr z 2 5))))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[0-9a-zA-Z-_.@]+$"))) (= (str.at y 30) "v") (= "u>" (str.substr z 1 10))))
+(check-sat)

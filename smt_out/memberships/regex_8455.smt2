@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{e6}\u{f8}\u{e5}\u{c6}\u{d8}\u{c5}\s\-]+")))
+(assert (= x "<HTML xmlns:xss><?import namespace=""xss"" implementation=""%(htc)s""><xss:xss>XSS</xss:xss></HTML>"""""",""XML namespace.""),(""""""<XML ID=""xss""><I><B>&lt;IMG SRC=""javas<!-- -->cript:javascript:alert(1)""&gt;</B></I></XML><SPAN DATASRC=""#xss"" DATAFLD=""B"" DATAFORMATAS=""HTML""></SPAN>"))
+(check-sat)

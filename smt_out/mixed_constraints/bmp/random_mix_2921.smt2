@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<script\x2Ftype=""text/javascript"">javascript:alert(1\u{1f600});</scri\u{1f600}pt>") (= x "alert(String.fromCharCode(88,83,83));'))"">") (= x "<article onmouseover=""alert(1)"">test</article>")))
+(assert (or (= z "abbr>") (= z "=alert(1) tabindex=1 id=x></element><input autofocus>") (= z "epaste=""alert(1)"" contenteditable>test</marquee>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.suffixof "/marquee>" y)) (not (str.contains z "lert(1)"" c")) (str.prefixof "<sel" x)))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "^[a-zA-Z_ ]*$"))) (not (str.prefixof "abbr" z)) (str.suffixof "e>" x)))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020) "[a-zA-Z\u{151}\u{150}\u{f6}\u{d6}\u{fc}\u{dc}\u{f3}\u{d3}\u{171}\u{170}\u{e1}\u{c1}\u{ed}\u{e9}\u{c9}\u{fa}\u{da}]{2,}$"))) (>= (str.len y) 67)))
+(check-sat)

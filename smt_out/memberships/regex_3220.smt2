@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "raju")))
+(assert (= x "top[8680439..toString(30)](1)"))
+(check-sat)

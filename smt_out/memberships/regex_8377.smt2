@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z]{3,25}$")))
+(assert (= x "\u{2018};alert(String.fromCharCode(88,83,83))//\u{2019};alert(String.fromCharCode(88,83,83))//\u{201d};alert(String.fromCharCode(88,83,83))//\u{201d};alert(String.fromCharCode(88,83,83))//\u{2013}></SCRIPT>\u{201d}>\u{2019}><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>"))
+(check-sat)

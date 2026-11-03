@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([A-z\u{c0}-\u{ff}-]+( [a-zA-Z]+)*){2,16}$")))
+(assert (= x "<menuitem onbeforecopy=""alert(1)"" contenteditable>test</menuitem>"))
+(check-sat)

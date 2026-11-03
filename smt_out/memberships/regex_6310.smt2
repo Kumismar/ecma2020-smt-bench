@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{30a2}-\u{30f3}\u{309b}\u{309c}\u{30a1}-\u{30a9}\u{30e3}-\u{30e7}\u{30fc}\u{300c}\u{300d}\u{3001}]+$")))
+(assert (= x "<svg><em onload=alert(1)></em>"))
+(check-sat)

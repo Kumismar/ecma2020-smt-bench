@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!.*(\.ru|\.site|28dtdbnfomen\.com|19mdgszxomen\.com|cannabis7oil\.com)).*$")))
+(assert (= x "<ul id=x tabindex=1 onfocus=alert(1)></ul>"))
+(check-sat)

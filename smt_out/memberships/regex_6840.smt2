@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w.%+-_]+@[\w.-]+\.[\w]{2,6}$")))
+(assert (= x "<frameset onmouseup=""alert(1)"">test</frameset>"))
+(check-sat)

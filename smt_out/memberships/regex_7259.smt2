@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "UJI|V\u{e8}rtebres|vertebres|v\u{e8}rtebres|v\u{e9}rtebres|V\u{e9}rtebres|uji")))
+(assert (= x "<dfn onblur=alert(1) tabindex=1 id=x></dfn><input autofocus>"))
+(check-sat)

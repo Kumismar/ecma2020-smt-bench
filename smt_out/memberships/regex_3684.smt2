@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9a-zAZ\u{d1}\u{f1}._@-]{10,50}")))
+(assert (= x "<script>alert(String.fromCharCode(88,83,83))</script>"))
+(check-sat)

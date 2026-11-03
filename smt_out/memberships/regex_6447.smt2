@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "Will be loaded via script")))
+(assert (= x "<noembed onkeypress=""alert(1)"" contenteditable>test</noembed>"))
+(check-sat)

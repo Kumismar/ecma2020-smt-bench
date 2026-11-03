@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*?[\u{5c}u3041-\u{5c}u309F\u{5c}u30FC])[\u{5c}u3041-\u{5c}u309F\u{5c}u30FC\s]*")))
+(assert (= x "<command onbeforecut=""alert(1)"" contenteditable>test</command>"))
+(check-sat)

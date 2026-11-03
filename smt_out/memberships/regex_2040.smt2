@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\u{9422}\u{7a66}|\u{6fc2}")))
+(assert (= x "<xmp onkeydown=""alert(1)"" contenteditable>test</xmp>"))
+(check-sat)

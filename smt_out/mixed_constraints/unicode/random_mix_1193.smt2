@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<script language=""JavaScript"">alert('XSS')</script>") (= x "<!--><scRipT src=//14.rs>") (= x "<caption onmouseenter=""alert(1)"">test</caption>")))
+(assert (or (= z "gt;") (= z """transition:color 1s"" ontransitionend=alert(1)></listing>") (= z "=""alert(1)"" contenteditable>test</rt>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.prefixof "<scr" x) (not (str.contains y "!--><")) (not (= ">=""al" (str.substr y 46 5)))))
+(assert (or (str.suffixof "alert(1)>" x) (>= (str.len x) 47) (not (str.in_re z ((_ re.from_regex ecma2020 u) "^(?!.*@).*$")))))
+(assert (or (not (= ";" (str.substr z 2 4))) (str.contains y "er=""alert(")))
+(check-sat)

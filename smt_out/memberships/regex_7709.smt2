@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9._%+-]{1,}@[A-Za-z0-9._%+-]{1,}([.]{1}[A-Za-z0-9._%+-]{2,}|[.]{1}[A-Za-z0-9._%+-]{2,}[.]{1}[A-Za-z0-9._%+-]{2,})")))
+(assert (= x "<div style=""font-family:foo}color=red;"">XXX"))
+(check-sat)

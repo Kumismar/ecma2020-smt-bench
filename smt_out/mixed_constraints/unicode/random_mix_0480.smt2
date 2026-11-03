@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<select id=x tabindex=1 onbeforedeactivate=alert(1)></select><input autofocus>") (= x "`""'><img src=xxx:x \x27onerror=javascript:alert(1)>") (= x "<main onpaste=""alert(1)"" contenteditable>test</main>")))
+(assert (or (= z "ck=""alert(1)"">test</listing>") (= z "ODY>;") (= z "rt(1)"" contenteditable>test</hgroup>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= (str.indexof y "on" 0) 6)) (str.contains x "teditabl") (str.contains (str.replace z "tab" " ") "edi l")))
+(assert (or (= "ODY""" (str.replace z ">;" """")) (str.suffixof "us>ODY>;" y) (str.in_re y ((_ re.from_regex ecma2020 u) "^[0-9]{13}$"))))
+(assert (or (not (= (str.at x 11) """")) (not (str.contains (str.replace y "efor" "<b>") "1 onb<b>ede"))))
+(check-sat)

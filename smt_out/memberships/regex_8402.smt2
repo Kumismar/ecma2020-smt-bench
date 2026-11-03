@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\u{7f51}\u{521b}\u{90a6}")))
+(assert (= x "<em onbeforecopy=""alert(1)"" contenteditable>test</em>"))
+(check-sat)

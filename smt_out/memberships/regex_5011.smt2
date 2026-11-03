@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.{2,30}")))
+(assert (= x "<article id=x tabindex=1 onbeforeactivate=alert(1)></article>"))
+(check-sat)

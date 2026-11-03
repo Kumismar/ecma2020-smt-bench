@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<pre onmouseout=""alert(1)"">test</pre>") (= x "<dt onkeyup=""alert(1)"" contenteditable>test</dt>") (= x "(alert)(1)")))
+(assert (or (= z "c=xxx:x />") (= z "1)"">") (= z ">")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020) "^(?:(?:31(-)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(-)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(-)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(-)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})"))) (not (str.in_re y ((_ re.from_regex ecma2020) "4|four"))) (not (str.suffixof ")" x))))
+(assert (or (not (= "ale" (str.substr x 17 3))) (not (= (str.indexof y "<pre " 0) 0)) (not (= (str.at z 2) """"))))
+(assert (or (= (str.indexof x "re o" 0) 2) (not (str.prefixof "(ale" y)) (not (= "\u{10348}&#x\u{10348}<b>03C;ody onmouseup=""alert(1)"">test</body>" (str.replace y "0" "<b>")))))
+(check-sat)

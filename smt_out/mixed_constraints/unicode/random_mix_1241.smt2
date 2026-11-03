@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>@keyframes x{}</style><canvas style=""animation-name:x"" onanimationend=""alert(1)""></canvas>") (= x "<ol onkeypress=""alert(1)"" contenteditable>test</ol>") (= x "<noscript id=x tabindex=1 ondeactivate=alert(1)></noscript><input id=y autofocus>")))
+(assert (or (= z """alert(String.fromCharCode(88,83,83))"">") (= z "</nobr>") (= z "e>test\u{1d400}</cite>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.contains x "<canv")) (= (str.at y 82) "3") (not (str.suffixof "cite>" z))))
+(assert (or (= (str.len z) 91) (not (= (str.len y) 81))))
+(assert (or (not (str.contains x "ript><in")) (not (str.in_re x ((_ re.from_regex ecma2020 u) "telephone"))) (str.contains (str.replace y "le=""" "<b>") "sty<b>a")))
+(check-sat)

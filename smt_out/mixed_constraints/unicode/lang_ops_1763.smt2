@@ -1,0 +1,7 @@
+; lang_ops, Unicode mode: x from a disjunction of constants, (negated) membership of x in a regex built by language operations from ECMAScript regexes
+(set-logic QF_SLIA)
+(set-info :status unsat)
+(declare-const x String)
+(assert (or (= x "<progress onfocusout=alert(1) tabindex=1 id=x></progress><input autofocus>") (= x "<div draggable=""true"" contenteditable>drag me</div><big o\u{1f4a9}ndrop\u{20000}=alert(1) contenteditable>drop here</big>") (= x "<object data=""data:text/html;base64,%(base64)s"">")))
+(assert (str.in_re x (re.diff (re.inter ((_ re.from_regex ecma2020 u) "^[a-zA-Z\u{105}\u{107}\u{119}\u{142}\u{144}\u{f3}\u{15b}\u{17a}\u{17c}\u{104}\u{118}\u{141}\u{143}\u{d3}\u{15a}\u{179}\u{17b} ]*$") (re.comp (re.++ re.all (str.to_re "(1) c") re.all))) ((_ re.from_regex ecma2020 u) "^[A-Za-z\u{e1}\u{e0}\u{e2}\u{e3}\u{e9}\u{e8}\u{ea}\u{ed}\u{ef}\u{f3}\u{f4}\u{f5}\u{f6}\u{fa}\u{e7}\u{f1}\u{c1}\u{c0}\u{c2}\u{c3}\u{c9}\u{c8}\u{cd}\u{cf}\u{d3}\u{d4}\u{d5}\u{d6}\u{da}\u{c7}\u{d1}]{2,30} [A-Za-z\u{e1}\u{e0}\u{e2}\u{e3}\u{e9}\u{e8}\u{ea}\u{ed}\u{ef}\u{f3}\u{f4}\u{f5}\u{f6}\u{fa}\u{e7}\u{f1}\u{c1}\u{c0}\u{c2}\u{c3}\u{c9}\u{c8}\u{cd}\u{cf}\u{d3}\u{d4}\u{d5}\u{d6}\u{da}\u{c7}\u{d1}]{2,30}[ A-Za-z\u{e1}\u{e0}\u{e2}\u{e3}\u{e9}\u{e8}\u{ea}\u{ed}\u{ef}\u{f3}\u{f4}\u{f5}\u{f6}\u{fa}\u{e7}\u{f1}\u{c1}\u{c0}\u{c2}\u{c3}\u{c9}\u{c8}\u{cd}\u{cf}\u{d3}\u{d4}\u{d5}\u{d6}\u{da}\u{c7}\u{d1}]*$"))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[9|8|7|6|5|4|3|2]\d{8}$")))
+(assert (= x "<;IMG SRC=javascript:alert(String.fromCharCode(88,83,83))>;"))
+(check-sat)

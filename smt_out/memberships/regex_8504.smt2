@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([A-Z]{1})([a-z]{2,20})((\s{1,2}|-{1})([A-Z]{1})([a-z]{2,20}))?$")))
+(assert (= x "<menu oncopy=""alert(1)"" contenteditable>test</menu>"))
+(check-sat)

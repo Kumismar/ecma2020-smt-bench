@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9a-zA-Z_.-]*")))
+(assert (= x "<script>alert(""XSS by \nxss"")</script><marquee><h1>XSS by xss</h1></marquee>"))
+(check-sat)

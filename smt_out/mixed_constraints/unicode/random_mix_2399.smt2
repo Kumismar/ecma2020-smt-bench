@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<figcaption id=x tabindex=1 onbeforeactivate=alert(1)></figcaption>") (= x "<q oncopy=""alert(1)"" contenteditable>test</q>")))
+(assert (or (= z "l draggable=""true"" ondragstart=""alert(1)"">test</ol>") (= z "lnerable=true;>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[0-9]{1,12}$"))) (= (str.at y 52) "e") (not (= (str.at y 38) "t"))))
+(assert (or (not (str.prefixof "lnerabl" z)) (not (str.prefixof "lnera" z))))
+(assert (or (str.in_re y ((_ re.from_regex ecma2020 u) "(\+?)([0-9]{10,})\b")) (= (str.at x 53) ">") (= "tentedita" (str.substr x 24 9))))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<;A HREF="";http://1113982867/"";>;XSS<;/A>;") (= x "<style>@keyframes x{}</style><marquee style=""animation-name:x"" onanimationend=""alert(1)""></marquee>") (= x "<footer o\u{10348}nmouseout=""alert(1)"">test</footer>")))
+(assert (or (= z "1 onfocus=alert(1)></content>") (= z "ue"" ondragenter=""alert(1)"">test</plaintext>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.suffixof "S<;/A>;" x)) (not (str.in_re x ((_ re.from_regex ecma2020) "\S{6,}"))) (str.prefixof "<style" y)))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020) "^(?!-)[a-zA-Z0-9-]+$"))) (= (str.indexof y "ler" 0) 22) (= (str.at x 56) "a")))
+(assert (or (not (= " tabindex=1 ondeajavascript:vate=alert(1)></template><input id=y autofocus>" (str.replace z "cti" "javascript:"))) (not (str.in_re z ((_ re.from_regex ecma2020) "^\s*([A-Za-z\/\s\.'-]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$|\w+")))))
+(check-sat)

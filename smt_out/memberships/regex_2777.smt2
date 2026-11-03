@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(2018|2019|2020|2021|2022)")))
+(assert (= x "<script>alert(document.head.childNodes[3].text)</script>"))
+(check-sat)

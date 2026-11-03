@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^((0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$)|(^1((3|5|8){1}\d{1}|70)\d{8}$)")))
+(assert (= x "<input draggable=""true"" ondragend=""alert(1)"">test</input>"))
+(check-sat)

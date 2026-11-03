@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{430}-\u{44f}\u{410}-\u{42f}-0-9 ?.,-/!= ]{3,80}")))
+(assert (= x "<!-- Up to Opera 11.64 - see link below -->"))
+(check-sat)

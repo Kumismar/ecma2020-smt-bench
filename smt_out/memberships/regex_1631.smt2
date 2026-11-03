@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[-A-Z\u{c4}\u{d6}\u{dc}\u{dd}\u{15e}\u{147}\u{c7}\u{17d}a-z\u{e4}\u{f6}\u{fc}\u{fd}\u{15f}\u{148}\u{e7}\u{17e}]+")))
+(assert (= x "<tfoot onfocusout=alert(1) tabindex=1 id=x></tfoot><input autofocus>"))
+(check-sat)

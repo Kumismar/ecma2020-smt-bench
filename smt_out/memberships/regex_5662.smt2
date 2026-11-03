@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?:[a-z]+[0-9_\.-]*)+[a-z0-9_\.-]*)@((?:[a-z0-9]+[\.-]*)+\.[a-z]{2,4})$")))
+(assert (= x "<video oncanplaythrough=alert(1)><source src=""validvideo.mp4"" type=""video/mp4""></video>"))
+(check-sat)

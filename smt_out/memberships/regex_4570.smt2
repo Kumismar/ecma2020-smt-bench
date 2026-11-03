@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\S+(\s\S+)$")))
+(assert (= x "<time draggable=""true"" ondrag=""alert(1)"">test</time>"))
+(check-sat)

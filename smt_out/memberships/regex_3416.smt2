@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^\d{1}-\d{3}-\d{3}-\d{2}-\d{2}$")))
+(assert (= x "&lt;IMG SRC=\""jav&#x0D;ascript&#058;alert('XSS');\""&gt;"))
+(check-sat)

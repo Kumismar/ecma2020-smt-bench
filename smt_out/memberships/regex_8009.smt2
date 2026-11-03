@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".*@\w{2,}\.\w{2,}|.*@\w{2,}\.\w{2,}.\w{2,}")))
+(assert (= x "<map onfocusout=alert(1) tabindex=1 id=x></map><input autofocus>"))
+(check-sat)

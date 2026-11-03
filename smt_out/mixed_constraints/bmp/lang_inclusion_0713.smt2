@@ -1,0 +1,6 @@
+; lang_inclusion, BMP mode: is the language of a regex A included in the language of a regex B, both built from ECMAScript regexes: a string x in A and not in B, or an equation (re.inter A B) = A or (re.union A B) = B
+; construction: followed_by_literal, inclusion holds, encoding: union_equation
+(set-logic QF_SLIA)
+(set-info :status sat)
+(assert (= (re.union ((_ re.from_regex ecma2020) "(?:^[a-zA-Z\u{e4}\u{c4}\u{eb}\u{cb}\u{ef}\u{cf}\u{f6}\u{d6}\u{fc}\u{dc}\u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{c1}\u{c9}\u{cd}\u{d3}\u{da}\u{c2}\u{ca}\u{ce}\u{d4}\u{db}\u{e2}\u{ea}\u{ee}\u{f4}\u{fb}\u{e0}\u{e8}\u{ec}\u{f2}\u{f9}\u{c0}\u{c8}\u{cc}\u{d2}\u{d9} _-]{3,30}$)ale") ((_ re.from_regex ecma2020) "^[a-zA-Z\u{e4}\u{c4}\u{eb}\u{cb}\u{ef}\u{cf}\u{f6}\u{d6}\u{fc}\u{dc}\u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{c1}\u{c9}\u{cd}\u{d3}\u{da}\u{c2}\u{ca}\u{ce}\u{d4}\u{db}\u{e2}\u{ea}\u{ee}\u{f4}\u{fb}\u{e0}\u{e8}\u{ec}\u{f2}\u{f9}\u{c0}\u{c8}\u{cc}\u{d2}\u{d9} _-]{3,30}$")) ((_ re.from_regex ecma2020) "^[a-zA-Z\u{e4}\u{c4}\u{eb}\u{cb}\u{ef}\u{cf}\u{f6}\u{d6}\u{fc}\u{dc}\u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{c1}\u{c9}\u{cd}\u{d3}\u{da}\u{c2}\u{ca}\u{ce}\u{d4}\u{db}\u{e2}\u{ea}\u{ee}\u{f4}\u{fb}\u{e0}\u{e8}\u{ec}\u{f2}\u{f9}\u{c0}\u{c8}\u{cc}\u{d2}\u{d9} _-]{3,30}$")))
+(check-sat)

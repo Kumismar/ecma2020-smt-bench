@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=^.{8,}$)(((?=.*[a-z])(?=.*[A-Z])(?=.*\d))|((?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*()]+))|((?=.*[a-z])(?=.*\d)(?=.*[!@#$%^*()]+))|((?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^*()]+))).*$")))
+(assert (= x "<nextid onkeyup=""alert(1)"" contenteditable>test</nextid>"))
+(check-sat)

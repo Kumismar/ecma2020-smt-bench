@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[1-9][0-9]{0,6}\/[1-9][0-9]30\/[1-9][0-9]{0,1}$")))
+(assert (= x "<style>:target {color:red;}</style><samp id=x style=""transition:color 1s"" ontransitionend=alert(1)></samp>"))
+(check-sat)

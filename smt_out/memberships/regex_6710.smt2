@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z]{6}[A-Za-z0-9]{2}[A-Za-z][A-Za-z0-9]{2}[A-Za-z][A-Za-z0-9]{3}[A-Za-z]$")))
+(assert (= x "<em draggable=""true"" ondragleave=""alert(1)"">test</em>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<div draggable=""true"" contenteditable>drag me</div><dd ondragover=alert(1) contenteditable>drop here</dd>") (= x "<nav id=x tabindex=1 onbeforedeactivate=alert(1)></nav><input autofocus>")))
+(assert (or (= z "nter=""alert(1)"">test</details>") (= z "</output>") (= z "pan>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= "<nav id=x tabindex=1 onbeforedeacti<b>alert(1)></nav><input autofocus>nter=""alert(1)"">test</details>" (str.replace y "vate=" "<b>"))) (str.suffixof "tofocus>" x) (not (= (str.at z 1) "/"))))
+(assert (or (= "d on" (str.substr x 53 4)) (not (str.in_re y ((_ re.from_regex ecma2020) "(^[^\s][\w\s\S]{2,}$)"))) (not (= "rag" (str.substr y 6 3)))))
+(assert (or (not (str.prefixof "nter=" z)) (str.contains (str.replace x "tgrou" "x") "pxp o") (str.suffixof "pan>" y)))
+(check-sat)

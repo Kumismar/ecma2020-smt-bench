@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<center onmouseup=""alert(1)"">test</center>") (= x """><img src=1 onerr\u{1f600}or=alert(1)>.gif") (= x "<style>:target {color:red;}</style><video id=x style=""transition:color 1s"" ontransitionend=alert(1)></video>")))
+(assert (or (= z "pt>") (= z "ody onResize>")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.indexof z "rub" 0) 31) (not (>= (str.len y) 45))))
+(assert (or (not (str.contains (str.replace y "(1)" "alert(1)") "rtalert(1)>")) (str.prefixof "ody " z) (not (str.prefixof "alert(" z))))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020 u) "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*([^a-zA-Z\d\s])).{8,}$"))) (str.suffixof "ter>pt>" y) (str.prefixof """><img s" y)))
+(check-sat)

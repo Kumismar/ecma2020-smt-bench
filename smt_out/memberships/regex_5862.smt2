@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\x21-\x7E]{7,7}")))
+(assert (= x "<label dataformatas=""html"" datasrc=""#xss"" datafld=""payload""></label>//[""'`-->]]>]</div>"))
+(check-sat)

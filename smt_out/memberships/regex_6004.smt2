@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\u{c3}\u{201e}\u{c3}\u{a4}\u{c3}\u{2013}\u{c3}\u{b6}\u{c3}\u{153}\u{c3}\u{bc}\u{c3}\u{178}]{1,32}")))
+(assert (= x "<style>@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}</style><datalist id=x style=""position:absolute;"" onanimationcancel=""alert(1)""></datalist>"))
+(check-sat)

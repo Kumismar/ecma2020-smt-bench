@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([\u{410}-\u{42f}][\u{430}-\u{44f}\u{451}]+|[A-Z][a-z]+)([ -]+([\u{410}-\u{42f}][\u{430}-\u{44f}\u{451}]+|[A-Z][a-z]+))+$")))
+(assert (= x "<IMG SRC=x oncopy=""alert(String.fromCharCode(88,83,83))"">"))
+(check-sat)

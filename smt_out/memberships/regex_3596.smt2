@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "Alberta|British Columbia|Manitoba|New Brunswick|Newfoundland and Labrador|Nova Scotia|Ontario|Prince Edward Island|Quebec|Saskatchewan|AB|BC|MB|NB|NL|NS|ON|PEI|QC|SK|ab|bc|mb|nb|nl|ns|on|pei|qc|sk")))
+(assert (= x "<body draggable=""true"" ondragstart=""alert(1)"">test</body>"))
+(check-sat)

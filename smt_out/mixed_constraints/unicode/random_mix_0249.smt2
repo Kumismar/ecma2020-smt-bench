@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<command draggable=""true"" ondragstart=""alert(1)"">test</command>") (= x "<SCRIPT>document.write(""XSS"");</SCRIPT>")))
+(assert (or (= z """>test</figure>") (= z "/address>") (= z "a:text/xml,%3Cscript xmlns='http://www.w3.org/1999/xhtml'%3Ealert(88)%3C/script%3E""/>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.suffixof ">" z) (not (str.in_re x ((_ re.from_regex ecma2020 u) "^\+?\d{9,18}"))) (not (str.prefixof "<a" x))))
+(assert (or (not (= "%3E" (str.substr z 57 3))) (not (= (str.len y) 148))))
+(assert (or (not (str.contains y """X")) (str.suffixof ">t</ol>" y) (not (= (str.indexof z "e" 0) 3))))
+(check-sat)

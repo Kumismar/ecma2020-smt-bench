@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<div draggable=""true"" contenteditable>drag me</div><slot ondragover=alert(1) contenteditable>drop here</slot>") (= x "<ins onbeforecopy=""alert(1)"" contenteditable>test</ins>")))
+(assert (or (= z "eleave=""alert(1)"">test</big>") (= z "ble>test</small>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.suffixof "mall>" z)) (not (= """ xli" (str.substr y 44 5)))))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z-]+\.)+[a-zA-Z]{2,3}$"))) (not (= "eleave=""alert(1st</big>" (str.replace z ")"">te" ""))) (= "<script ondblclick="" lert(1)"">test</script>!--[if gte IE 4]><SCRIPT>javascript:alert(1);</SCRIPT><![endif]-->" (str.replace y "a" " "))))
+(assert (or (not (str.contains (str.replace x "iv d" "javascript:") "<djavascript:ragga")) (not (str.suffixof ">" z)) (not (str.contains z "le>tes"))))
+(check-sat)

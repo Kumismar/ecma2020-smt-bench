@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9\u{c6}\u{d8}\u{c5}\u{e6}\u{f8}\u{e5}\u{dc}\u{fc}\u{d6}\u{f6}\u{c4}\u{e4}a-zA-Z+-_@./)(!#&% ]{1,999}")))
+(assert (= x "<style>@keyframes slidein {}</style><abbr style=""animation-duration:1s;animation-name:slidein;animation-iteration-count:2"" onanimationiteration=""alert(1)""></abbr>"))
+(check-sat)

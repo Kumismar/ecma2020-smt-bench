@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "05[\d]{8}")))
+(assert (= x "&lt;?import namespace=\""t\"" implementation=\""#default#time2\""&gt;"))
+(check-sat)

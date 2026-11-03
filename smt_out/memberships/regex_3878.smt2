@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w'\-,.][^0-9_!\u{c2}\u{a1}?\u{c3}\u{b7}?\u{c2}\u{bf}/\\+=@#$%\u{cb}\u{2020}&*(){}|~<>;:[\]]{2,}$")))
+(assert (= x "<progress id=x tabindex=1 onactivate=alert(1)></progress>"))
+(check-sat)

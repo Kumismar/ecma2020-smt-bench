@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u{410}-\u{42f}\u{430}-\u{44f}]{2,20}")))
+(assert (= x "<body background=javascript:'""><script>alert(navigator.userAgent)</script>></body>"))
+(check-sat)

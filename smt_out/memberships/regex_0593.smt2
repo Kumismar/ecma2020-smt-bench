@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?!.*[0,9]\d{8,})(?!.*[\u{6f0},\u{6f9}][\u{6f0}-\u{6f9}]{8,})(?!.*[@]).+$")))
+(assert (= x "<address onmousemove=""alert(1)"">test</address>"))
+(check-sat)

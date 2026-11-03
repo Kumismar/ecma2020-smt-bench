@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(\+84|0){1}(9|8|7|5|3){1}[0-9]{8}")))
+(assert (= x "<meta charset=""mac-farsi"">\u{bc}script\u{be}javascript:alert(1)\u{bc}/script\u{be}"))
+(check-sat)

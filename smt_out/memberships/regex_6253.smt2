@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u{430}-\u{44f}\u{410}-\u{42f}-. ]{5,100}")))
+(assert (= x "<style>@keyframes slidein {}</style><em style=""animation-duration:1s;animation-name:slidein;animation-iteration-count:2"" onanimationiteration=""alert(1)""></em>"))
+(check-sat)

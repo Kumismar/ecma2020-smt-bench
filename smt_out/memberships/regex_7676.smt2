@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-1][0-9]|[1-9]")))
+(assert (= x "<IMG SRC="" &#14;  javascript:alert('XSS');"">"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<article onmousemove=""alert(1)"">test</article>") (= x "&lt;IMG SRC=JaVaScRiPt:alert(&apos;XSS&apos;)&gt;") (= x "<div draggable=""true"" contenteditable>drag me</div><audio ondrop=alert(1) contenteditable>drop here</audio>")))
+(assert (or (= z "enteditable>test</abbr>") (= z "=""alert(1)"">te\u{10348}st</script>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.contains z "ript>") (not (str.in_re z ((_ re.from_regex ecma2020) "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"))) (not (= "/a" (str.substr y 37 2)))))
+(assert (or (not (= (str.at y 74) "8")) (not (<= (str.len x) 115)) (= "op=aler" (str.substr x 62 7))))
+(assert (or (not (= (str.at y 44) "t")) (not (str.suffixof "(1)></br>" x))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([a-zA-Z1-9]\w*|0[A-Za-z1-9]\w*|00[a-zA-Z1-9]\w*)$")))
+(assert (= x "<acronym oncut=""alert(1)"" contenteditable>test</acronym>"))
+(check-sat)

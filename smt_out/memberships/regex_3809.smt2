@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9A-Za-z\u{c0}-\u{d6}\u{d8}-\u{f6}\u{f8}-\u{ff}\s/-/./_']{1,}")))
+(assert (= x "<style>@keyframes slidein {}</style><hgroup style=""animation-duration:1s;animation-name:slidein;animation-iteration-count:2"" onanimationiteration=""alert(1)""></hgroup>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!gmail)(?!yahoo)(?!hotmail).)*$")))
+(assert (= x "<blink draggable=""true"" ondragenter=""alert(1)"">test</blink>"))
+(check-sat)

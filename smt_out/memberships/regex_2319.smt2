@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z A-Z0-9.'-]{1,64}")))
+(assert (= x "<? echo('<SCR)';echo('IPT>alert(""XSS"")</SCRIPT>'); ?>"))
+(check-sat)

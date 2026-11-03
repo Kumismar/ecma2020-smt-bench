@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]+(-[0-9]*)* *[a-zA-Z-z\u{17c}\u{17a}\u{107}\u{144}\u{f3}\u{142}\u{119}\u{105}\u{15b}\u{17b}\u{179}\u{106}\u{104}\u{15a}\u{118}\u{141}\u{d3}\u{143}\u{f6}\u{e4}\u{fc}\u{d6}\u{c4}\u{dc}\u{df} ]+")))
+(assert (= x "<!'/*""/*/'/*/""/*--></Script><Image SrcSet=K */; OnError=confirm`1` //>"))
+(check-sat)

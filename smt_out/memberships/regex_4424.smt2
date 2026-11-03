@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\w\-\.]+\@[\w\-\.]+\.([a-z]+)$")))
+(assert (= x "<BODY ONLOAD=alert(\u{2018}XSS\u{2019})>"))
+(check-sat)

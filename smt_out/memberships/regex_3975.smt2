@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z,&]{3,4}[0-9]{2}[0-1][0-9][0-3][0-9][A-Za-z,0-9][A-Za-z,0-9][0-9,Aa]$")))
+(assert (= x "<marquee loop=1 width=0 onfinish=alert(1)>"))
+(check-sat)

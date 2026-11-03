@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u{5c}u00C0-\u{5c}u017FA-Za-z0-9.!#$%&\u{2019}*+/=?^_`{|}~-]+@[\u{5c}u00C0-\u{5c}u017FA-Za-z0-9.-]+\.[A-Za-z]{2,}$")))
+(assert (= x "<bgsound oncut=""alert(1)"" contenteditable>test</bgsound>"))
+(check-sat)

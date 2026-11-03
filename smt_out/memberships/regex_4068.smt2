@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^(([A-Z&\u{e2}\u{96}\u{92}]|[a-z&]|\s){1})(([A-Z&\u{e2}\u{96}\u{92}]|[a-z&]){3})([0-9]{6})((([A-Z&\u{e2}\u{96}\u{92}]|[a-z&]|[0-9]){3})))|(^(([A-Z&\u{e2}\u{96}\u{92}]|[a-z&]){3})([0-9]{6})((([A-Z&\u{e2}\u{96}\u{92}]|[a-z&]|[0-9]){3})))")))
+(assert (= x "<source onbeforecopy=""alert(1)"" contenteditable>test</source>"))
+(check-sat)

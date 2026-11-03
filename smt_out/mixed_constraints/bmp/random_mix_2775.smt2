@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>@keyframes x{}</style><time style=""animation-name:x"" onanimationstart=""alert(1)""></time>") (= x "<div draggable=""true"" contenteditable>drag me</div><dl ondragover=alert(1) contenteditable>drop here</dl>") (= x "<mark onkeypress=""alert(1)"" contenteditable>test</mark>")))
+(assert (or (= z "l>") (= z "do draggable=""true"" ondrag=""alert(1)"">test</bdo>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= "l" (str.substr z 0 1))) (not (= (str.at y 127) "d")) (str.in_re x ((_ re.from_regex ecma2020) "^[^<>()!%_+$&]*$"))))
+(assert (or (not (str.prefixof "<d" y)) (not (str.in_re x ((_ re.from_regex ecma2020) "^0([1-7]|9)$")))))
+(assert (or (str.in_re z ((_ re.from_regex ecma2020) "^[\u{3041}-\u{3093}\u{30fc}\u{3000} \r\n\t]+$")) (<= (str.len z) 8) (str.contains x "rames ")))
+(check-sat)

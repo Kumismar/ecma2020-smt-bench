@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\w{1,25})@(\w{1,16})(\.(\w{1,4})){1,3}$")))
+(assert (= x "<label id=x tabindex=1 onfocus=alert(1)></label>"))
+(check-sat)

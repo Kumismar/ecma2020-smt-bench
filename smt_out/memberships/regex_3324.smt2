@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(http:\/\/|https:\/\/|)[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(/\S*)?$")))
+(assert (= x "<style>@keyframes x{}</style><param style=""animation-name:x"" onanimationstart=""alert(1)""></param>"))
+(check-sat)

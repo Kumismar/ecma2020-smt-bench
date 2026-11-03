@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>@keyframes x{}</style><dl style=""animation-name:x"" onanimationend=""alert(1)""></dl>") (= x "<form><a href=""javascript:\u{5c}u0061lert&#x28;1&#x29;"">X</script><img/*/src=""worksinchrome&colon;prompt&#x28;1&#x29;""/*/onerror='eval(src)'>") (= x "<param onbe\u{1f600}forepaste=""alert(1)"" contentedi\u{20000}table>test</param>")))
+(assert (or (= z "sefont>") (= z "><input autofocus>") (= z "ve=""alert(1)"">test</map>")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.indexof y " x{}<" 0) 17) (not (str.suffixof "efont>" y)) (not (str.in_re x ((_ re.from_regex ecma2020) "^\+7\s\(\d{3,}\)\s\d{3,}-\d{2,}-\d{2,}$")))))
+(assert (or (not (str.prefixof "<form>" y)) (not (str.contains x "><dl st")) (str.contains z "ont>")))
+(assert (or (not (= "t" (str.substr x 39 1))) (not (str.in_re y ((_ re.from_regex ecma2020) "^[a-zA-Z0-9-_.,/ ]*$"))) (not (str.suffixof "t</pre>" x))))
+(check-sat)

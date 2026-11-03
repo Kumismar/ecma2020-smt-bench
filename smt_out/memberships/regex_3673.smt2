@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u{5c}u00BF-\u{5c}u1FFF\u{5c}u2C00-\u{5c}uD7FF\w ]{3,35}")))
+(assert (= x "<progress draggable=""true"" ondragleave=""alert(1)"">test</progress>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?!.*(gmail\.org|gmail\.us|yaho\.com|\.con)).*)([^@]+@[^@]+\.[^@]+)$")))
+(assert (= x "<<SCRIPT>%(payload)s//<</SCRIPT>"))
+(check-sat)

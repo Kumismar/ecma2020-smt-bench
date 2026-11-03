@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>@keyframes x{}</style><canvas style=""animation-name:x"" onanimationstart=""alert(1)""></canvas>") (= x "<link rel=""stylesheet"" href=""javascript:document.vulnerable=true;"">") (= x "<var draggable=""true"" ondragstart=""alert(1)"">test</var>")))
+(assert (or (= z "p>") (= z "editable>drop here</font>") (= z "nsitionend=alert(1)></meter>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= "vu" (str.substr y 49 2))) (str.contains (str.replace y "asc" "") "vript:")))
+(assert (or (not (str.suffixof "p>" y)) (not (= "ert(1" (str.substr y 68 5))) (str.suffixof "eter>" y)))
+(assert (or (str.in_re x ((_ re.from_regex ecma2020 u) "[A-Za-z0-9 ,]+")) (= (str.indexof z ">" 0) 1) (not (str.prefixof "<li" x))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^([ \u{5c}u00c0-\u{5c}u01ffa-zA-Z'\-]){5,50}$")))
+(assert (= x "<command onmouseenter=""alert(1)"">test</command>"))
+(check-sat)

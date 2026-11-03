@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u{30a1}-\u{30f3}|\u{3000}| |\u{30fc}]+$")))
+(assert (= x "<cite id=x tabindex=1 ondeactivate=alert(1)></cite><input id=y autofocus>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<hgroup draggable=""true"" ondragleave=""alert(1)"">test</hgroup>") (= x "<video id=x controls onfocusin=alert(1)><source src=""validvideo.mp4"" type=video/mp4></video>") (= x "<style>:target {color:red;}</style><legend id=x style=""transition:color 1s"" ontransitionend=alert(1)></legend>")))
+(assert (or (= z "le><colgroup style=""animation-name:x"" \u{1d400}onanimationstart=""alert(1)""></colgroup>") (= z "nanimationend=""alert(1)""></figcaption>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020 u) "^([\d\+\-\(\)\s]{3,})+[0-9]{4,}$"))) (not (str.contains (str.replace z "capt" "x") "igxion>")) (= (str.indexof z "on" 0) 27)))
+(assert (or (str.contains x "rt(1)"">tes") (str.suffixof "lgroup>" y) (str.contains (str.replace y "ion" "alert(1)") "atalert(1)-nam")))
+(assert (or (not (str.contains (str.replace z "i" "alert(1)") "nanalert(1)m")) (str.prefixof "le>" z)))
+(check-sat)

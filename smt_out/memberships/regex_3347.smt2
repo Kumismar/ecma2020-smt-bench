@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[A-Za-z0-9\u{e4}\u{f6}\u{fc}\u{c4}\u{d6}\u{dc}\u{df}\-]{6,15}$")))
+(assert (= x "<table id=x tabindex=1 onbeforeactivate=alert(1)></table>"))
+(check-sat)

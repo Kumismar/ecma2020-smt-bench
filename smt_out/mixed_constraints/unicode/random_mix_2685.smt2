@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<command onkeyup=""alert(1)"" contenteditable>test</command>") (= x "<svg><set onrepeat=alert(1) attributename=x dur=1s repeatcount=2>")))
+(assert (or (= z "e>test</rp>") (= z "ert(1)"" contenteditable>test</base>") (= z "lert(\u{10348}""XSS"");<;/SCRIPT>;")))
+(assert (= y (str.++ x z)))
+(assert (or (= (str.indexof y "a" 0) 16) (not (= (str.indexof x "est" 0) 45)) (str.in_re z ((_ re.from_regex ecma2020 u) "^[1-9]+\.?[0-9]*"))))
+(assert (or (str.suffixof "est</rp>" z) (str.prefixof "<comma" x)))
+(assert (or (str.suffixof "t=2>" x) (= (str.at x 46) "r") (str.prefixof "<svg><set " x)))
+(check-sat)

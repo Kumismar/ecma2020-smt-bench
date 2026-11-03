@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>:target {color: red;}</style><title id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></title>") (= x "<st\u{1f600}yle>:target {color: red;}</style><objec\u{1f4a9}t id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></object>") (= x "<div draggable=""true"" contenteditable>drag me</div><area ondrop=alert(1) contenteditable>drop here</area>")))
+(assert (or (= z "onani\u{1f4a9}mationend=""alert(1)""></q>") (= z "le>test</rt>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.contains z "le>test</r") (not (str.contains (str.replace y "/rt>" "") "test<"))))
+(assert (or (str.prefixof "<frameset" y) (not (= (str.indexof y "R" 0) 3)) (not (= (str.indexof x "=" 0) 45))))
+(assert (or (str.in_re x ((_ re.from_regex ecma2020 u) "^[\u{3041}-\u{3093}\u{3094}\u{30fc}\u{3000} ]*$")) (not (str.in_re z ((_ re.from_regex ecma2020 u) "(?=^.{8,}$)((?=.*\d)|(?=.*\W+)).*$"))) (not (str.in_re z ((_ re.from_regex ecma2020 u) "^(([+]{1,2}[0-9]{2,3})|[0]{1})[0-9]{0,10}[(]{0,1}[0-9]{1,10}[)]{0,1}[0-9]{1,10}[\s|\/|-]{0,1}[0-9]{2,10}[\s|\/|-]{0,1}[0-9]{0,10}$")))))
+(check-sat)

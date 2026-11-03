@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(https?:\/\/)?((?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61})?)?[A-Za-z0-9]\\.)*[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z]{2,})?(\.[a-zA-Z]{2,})?\.[a-zA-Z]{2,}\/?(:[0-9]{1,5})?$")))
+(assert (= x "<area draggable=""true"" ondragenter=""alert(1)"">test</area>"))
+(check-sat)

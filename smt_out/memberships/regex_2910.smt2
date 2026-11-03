@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(^[aAbB][a-jA-J]\d{5}$|^[aAbB][a-jA-J]\d{5}\D{1}\d{1}$)")))
+(assert (= x "<?xml version=""1.0"" encoding=""ISO-8859-1""?><foo><![CDATA[' or 1=1 or ''=']]></foof>"))
+(check-sat)

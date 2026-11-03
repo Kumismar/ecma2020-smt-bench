@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$")))
+(assert (= x "<rect  fill=""white"" style=""clip-path:url(test3.svg#a);fill:url(#b);filter:url(#c);marker:url(#d);mask:url(#e);stroke:url(#f);""/>"))
+(check-sat)

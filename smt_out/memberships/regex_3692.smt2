@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "b[a-zA-Z\u{430}-\u{44f}\u{410}-\u{42f}0-9._%+-]+@[a-zA-Z\u{430}-\u{44f}\u{410}-\u{42f}0-9.-]+.[a-zA-Z\u{430}-\u{44f}\u{410}-\u{42f}]{2,6}b")))
+(assert (= x "<svg><hgroup onload=alert(1)></hgroup>"))
+(check-sat)

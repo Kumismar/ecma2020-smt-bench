@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[-A-Za-z0-9_\u{e8}\u{e9}\u{f2}\u{e0}\u{f9} \s]*$")))
+(assert (= x "<div style=""background:url(test5.svg)"">PRESS ENTER</div>//[""'`-->]]>]</div>"))
+(check-sat)

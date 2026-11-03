@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<track onbeforecopy=""alert(1)"" contenteditable>test</track>") (= x "<acronym onkeydown=""alert(1)"" contenteditable>test</acronym>") (= x "<i onmouseout=""alert(1)"">test</i>")))
+(assert (or (= z "style>@keyframes x{}</style><figure style=""animation-name:x"" onanimationend=""alert(1)""></figure>") (= z "ink onmouseover=""alert(1)"">test</blink>") (= z "</figure>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.in_re z ((_ re.from_regex ecma2020 u) "^[a-zA-Z][a-zA-Z \.]{1,50}$")) (= (str.at x 3) "o") (str.contains x "l id=x")))
+(assert (or (= "l" (str.substr x 16 1)) (str.contains z "t id=") (not (str.contains x "t=""ale"))))
+(assert (or (str.in_re y ((_ re.from_regex ecma2020 u) "^([0-9]{8})-([0-9])-([0-9]{2})$")) (str.contains (str.replace y "onym " "<b>") "<acr<b>o") (not (= (str.indexof y "(1)" 0) 25))))
+(check-sat)

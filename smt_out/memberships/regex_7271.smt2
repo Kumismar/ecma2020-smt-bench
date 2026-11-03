@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((19|20)\d{2}|\d{2})$")))
+(assert (= x "<button autofocus onfocus=alert(1)>test</button>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[Hh][Tt][Tt][Pp][Ss]?:\/\/(?:(?:[a-zA-Z\u{5c}u00a1-\u{5c}uffff0-9]+-?)*[a-zA-Z\u{5c}u00a1-\u{5c}uffff0-9]+)(?:\.(?:[a-zA-Z\u{5c}u00a1-\u{5c}uffff0-9]+-?)*[a-zA-Z\u{5c}u00a1-\u{5c}uffff0-9]+)*(?:\.(?:[a-zA-Z\u{5c}u00a1-\u{5c}uffff]{2,}))(?::\d{2,5})?(?:\/[^\s]*)?")))
+(assert (= x "<ol oncontextmenu=""alert(1)"">test</ol>"))
+(check-sat)

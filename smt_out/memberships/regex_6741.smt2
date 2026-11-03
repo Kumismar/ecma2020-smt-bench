@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.*\d)(?=.*[a-zA-Z])(?!.*\s).{6,15}$")))
+(assert (= x "<x '=""foo""><x foo='><img src=x onerror=alert(62)//'>"))
+(check-sat)

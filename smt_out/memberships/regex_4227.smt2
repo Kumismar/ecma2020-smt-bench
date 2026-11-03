@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "4139993")))
+(assert (= x "<bgsound onPropertyChange bgsound onPropertyChange=""javascript:javascript:alert(1)""></bgsound onPropertyChange>"))
+(check-sat)

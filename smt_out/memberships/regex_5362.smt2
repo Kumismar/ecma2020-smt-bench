@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "((A[KLRZ])|(C[AOT])|(D[CE])|(FL)|(GA)|(HI)|(I[ADLN])|(K[SY])|(LA)|(M[ADEINOST])|(N[CDEHJMVY])|(MP)|(O[HKR])|(PA)|(RI)|(S[CD])|(T[NX])|(UT)|(V[AT])|(W[AIVY]))")))
+(assert (= x "<div  style=""position:absolute;top:0;left:0;width:100%;height:100%""  onmouseover=""prompt(1)"" onclick=""alert(1)"">x</button>?"))
+(check-sat)

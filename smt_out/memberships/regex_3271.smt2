@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z\u{c0}-\u{ff}][a-zA-Z\u{c0}-\u{ff}]+([-'\s][a-zA-Z\u{c0}-\u{ff}][a-zA-Z\u{c0}-\u{ff}]+)?")))
+(assert (= x "<video src=1 onerror=alert(1)>"))
+(check-sat)

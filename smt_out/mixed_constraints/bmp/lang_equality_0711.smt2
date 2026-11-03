@@ -1,0 +1,7 @@
+; lang_equality, BMP mode: are the languages of two regexes A and B built from ECMAScript regexes equal: an equation A = B, its negation, or a string x in exactly one of them
+; construction: union_absorbs_inter, languages equal, encoding: symmetric_difference
+(set-logic QF_SLIA)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.union (re.diff (re.union ((_ re.from_regex ecma2020) "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,6})+$") (re.inter ((_ re.from_regex ecma2020) "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,6})+$") ((_ re.from_regex ecma2020) "^[A-Za-z0-9 .'-\u{e7}\u{c7}\u{f1}\u{d1}\u{f5}\u{d5}\u{e3}\u{c3}\u{e0}\u{e1}\u{e8}\u{e9}\u{ec}\u{ed}\u{f2}\u{f3}\u{f9}\u{fa}\u{c0}\u{c1}\u{c8}\u{c9}\u{cc}\u{cd}\u{d2}\u{d3}\u{d9}\u{da}&]+$"))) ((_ re.from_regex ecma2020) "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,6})+$")) (re.diff ((_ re.from_regex ecma2020) "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,6})+$") (re.union ((_ re.from_regex ecma2020) "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,6})+$") (re.inter ((_ re.from_regex ecma2020) "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]{2,6})+$") ((_ re.from_regex ecma2020) "^[A-Za-z0-9 .'-\u{e7}\u{c7}\u{f1}\u{d1}\u{f5}\u{d5}\u{e3}\u{c3}\u{e0}\u{e1}\u{e8}\u{e9}\u{ec}\u{ed}\u{f2}\u{f3}\u{f9}\u{fa}\u{c0}\u{c1}\u{c8}\u{c9}\u{cc}\u{cd}\u{d2}\u{d3}\u{d9}\u{da}&]+$")))))))
+(check-sat)

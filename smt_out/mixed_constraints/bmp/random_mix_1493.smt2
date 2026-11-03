@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>#x{font-famil\u{1f600}y:foo[bar;color:green;}#y];color\u{10348}:red;{}</style>//[""'`-->]]>]</div>") (= x "</a>//[""'`-->]]>]</div>")))
+(assert (or (= z "st</body>") (= z "91)</script>'>"">") (= z "nteditable>test</data>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.contains z "1)</scr") (= (str.at z 14) """") (not (= (str.at z 11) ">"))))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020) "(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{6,}"))) (str.contains (str.replace x "l" """") """a""ert(1")))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020) "^(19|20)\d\d([-])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$"))) (not (str.contains z ">test")) (not (= "=<b>rt('XSS');\\"")\"";" (str.replace z "\""ale" "<b>")))))
+(check-sat)

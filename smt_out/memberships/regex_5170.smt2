@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\sZ\u{e1}a\u{e9}ei\u{ed}\u{f3}\u{fa}u\u{f1}\u{e7}\u{c1}A\u{c9}\u{cb}\u{cd}L\u{d3}\u{da}U\u{c7}]{3,35}")))
+(assert (= x "<bdo onmouseenter=""alert(1)"">test</bdo>"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status unsat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>:target {transform: rotate(180deg);}</style><article id=x style=""transition:transform 2s"" ontransitionrun=alert(1)></article>") (= x "&lt;XSS STYLE=&quot;behavior: url(http://ha.ckers.org/xss.htc);&quot;&gt;")))
+(assert (or (= z "id=x onfocusin=alert(1)>") (= z "ntenteditable>te\u{1f4a9}st</picture>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= "ntentedit" (str.substr y 132 9))) (= (str.indexof z "b" 0) 10) (not (str.suffixof "/article>" x))))
+(assert (or (str.contains z "st</pictu") (str.in_re x ((_ re.from_regex ecma2020) "^[A-Z]'?[- a-zA-Z]+$"))))
+(assert (or (str.in_re z ((_ re.from_regex ecma2020) "[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}")) (= (str.at y 134) "=") (not (str.contains z "e\u{1f4a9}st</pic"))))
+(check-sat)

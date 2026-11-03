@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<rb id=x tabindex=1 onbeforeactivate=alert(1)></rb>") (= x "<th onmou\u{1f600}seover=""alert(1)"">test</th>")))
+(assert (or (= z "s>") (= z "able>drop here</h1>") (= z "ir>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.prefixof "<r" y)) (not (str.in_re y ((_ re.from_regex ecma2020) "^[^\u{b1}!@\u{a3}$%^&*_+\u{a7}\u{a1}\u{20ac}#\u{a2}\u{a7}\u{b6}\u{2022}\u{aa}\u{ba}\u{ab}\/<>?:;|=]{1,20}$"))) (not (= "</th>" (str.substr x 32 6)))))
+(assert (or (not (= "<aalert(1)32;href&#61;&#91;&#00;&#93;""&#00; onmouseover=prompt&#40;1&#41;&#47;&#47;"">XYZ</a" (str.replace x "&#" "alert(1)"))) (not (str.suffixof "</rb>ir>" y)) (not (str.contains (str.replace z "ir>" "<b>") "<b>"))))
+(assert (or (not (str.prefixof "onclick" z)) (str.prefixof "i" z)))
+(check-sat)

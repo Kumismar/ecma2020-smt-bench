@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?:(?:http|https):\/\/)?(?:www.)?facebook.com\/?(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?")))
+(assert (= x "<sup onmousedown=""alert(1)"">test</sup>"))
+(check-sat)

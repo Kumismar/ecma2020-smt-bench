@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 ".{12,512}")))
+(assert (= x "<body onload!#$%&()*~+-_.,:;?@[/|\]^`=document.vulnerable=true;>"))
+(check-sat)

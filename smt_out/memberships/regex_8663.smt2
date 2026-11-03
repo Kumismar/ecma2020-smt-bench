@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[1|2]{1}[0-9]{3}-[0|1]{1}[0-9]{1}-[0-3]{1}[0-9]{1}$")))
+(assert (= x "<style>@keyframes x{from {left:0;}to {left: 1000px;}}:target {animation:10s ease-in-out 0s 1 x;}</style><nextid id=x style=""position:absolute;"" onanimationcancel=""alert(1)""></nextid>"))
+(check-sat)

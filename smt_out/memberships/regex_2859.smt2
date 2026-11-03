@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "\(\d{2}\)\s*\d{5}-\d{4}")))
+(assert (= x "%253Cscript%253Ealert('XSS')%253C%252Fscript%253E"))
+(check-sat)

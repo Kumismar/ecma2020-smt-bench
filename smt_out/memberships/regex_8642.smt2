@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9a-zA-Z\u{430}-\u{44f}\u{410}-\u{42f}\u{451}\u{401} -.]{2,60}")))
+(assert (= x "<button onkeypress=""alert(1)"" contenteditable>test</button>"))
+(check-sat)

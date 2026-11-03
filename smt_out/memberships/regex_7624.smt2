@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{1,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[\u{200c}\u{200b}a-zA-Z]{2,})")))
+(assert (= x "<a href=""\xE2\x80\x86javascript:javascript:alert(1)"" id=""fuzzelement1"">test</a>"))
+(check-sat)

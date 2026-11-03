@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0-9]{1,2}:(?:00|15|30|45)$")))
+(assert (= x "<SCRIPT> alert(\u{201c}XSS\u{201d}); </SCRIPT>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*?[\u{5c}u30A1-\u{5c}u30FC])[\u{5c}u30A1-\u{5c}u30FC\s]*")))
+(assert (= x "\u{5c}u003C"))
+(check-sat)

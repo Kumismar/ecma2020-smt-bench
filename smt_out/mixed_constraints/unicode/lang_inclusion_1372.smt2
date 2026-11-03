@@ -1,0 +1,7 @@
+; lang_inclusion, Unicode mode: is the language of a regex A included in the language of a regex B, both built from ECMAScript regexes: a string x in A and not in B, or an equation (re.inter A B) = A or (re.union A B) = B
+; construction: diff_in_operand, inclusion holds, encoding: diff
+(set-logic QF_SLIA)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.diff (re.diff ((_ re.from_regex ecma2020 u) "^[A-Za-z\u{410}-\u{42f}\u{430}-\u{44f}\u{401}\u{451}\u{406}\u{456}\u{407}\u{457}\u{404}\u{454}\s]+$") ((_ re.from_regex ecma2020 u) "[a-zA-Z0-9\u{e0}\u{e1}\u{e2}\u{e4}\u{e3}\u{e5}\u{105}\u{10d}\u{107}\u{119}\u{e8}\u{e9}\u{ea}\u{eb}\u{117}\u{12f}\u{ec}\u{ed}\u{ee}\u{ef}\u{142}\u{144}\u{f2}\u{f3}\u{f4}\u{f6}\u{f5}\u{f8}\u{f9}\u{fa}\u{fb}\u{fc}\u{173}\u{16b}\u{ff}\u{fd}\u{17c}\u{17a}\u{f1}\u{e7}\u{10d}\u{161}\u{17e}\u{c0}\u{c1}\u{c2}\u{c4}\u{c3}\u{c5}\u{104}\u{106}\u{10c}\u{116}\u{118}\u{c8}\u{c9}\u{ca}\u{cb}\u{cc}\u{cd}\u{ce}\u{cf}\u{12e}\u{141}\u{143}\u{d2}\u{d3}\u{d4}\u{d6}\u{d5}\u{d8}\u{d9}\u{da}\u{db}\u{dc}\u{172}\u{16a}\u{178}\u{dd}\u{17b}\u{179}\u{d1}\u{df}\u{c7}\u{152}\u{c6}\u{10c}\u{160}\u{17d}\u{2202}\u{f0} ,.'-]{8,20}")) ((_ re.from_regex ecma2020 u) "^[A-Za-z\u{410}-\u{42f}\u{430}-\u{44f}\u{401}\u{451}\u{406}\u{456}\u{407}\u{457}\u{404}\u{454}\s]+$"))))
+(check-sat)

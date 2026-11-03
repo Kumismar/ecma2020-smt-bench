@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\d\-]{6,22}")))
+(assert (= x "<script ""a='>'"" SRC=""http://www.securitycompass.com/xss.js""></script>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-za-z\u{439}\u{438}\u{442}\u{430}\u{43c}\u{449}0-9]{0,}")))
+(assert (= x "<nextid onblur=alert(1) tabindex=1 id=x></nextid><input autofocus>"))
+(check-sat)

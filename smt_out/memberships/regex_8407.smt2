@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[\u{5c}u30A1-\u{5c}u30F6\s]*")))
+(assert (= x "<div draggable=""true"" contenteditable>drag me</div><section ondragover=alert(1) contenteditable>drop here</section>"))
+(check-sat)

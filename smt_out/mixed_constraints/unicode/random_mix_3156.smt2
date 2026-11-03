@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>:target {color:red;}</style><sup id=x style=""transition:color 1s"" ontransitionend=alert(1)></sup>") (= x "<menuitem onkeypress=""alert(1)"" contenteditable>test</menuitem>")))
+(assert (or (= z "rt(1)"">test</body>") (= z "ource onblur=alert(1) tabindex=1 id=x></source><input autofocus>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.suffixof "m>" x)) (not (str.suffixof "uitem>" x)) (not (= (str.at z 25) "i"))))
+(assert (or (not (str.prefixof "ource on" z)) (not (str.in_re z ((_ re.from_regex ecma2020 u) "^[1-9][0-9]{1,5}"))) (not (<= (str.len x) 110))))
+(assert (or (str.suffixof "ofocus>" y) (not (str.prefixof "<style><" x)) (not (str.in_re y ((_ re.from_regex ecma2020 u) "^[a-zA-Z0-9.!#$%&\u{2019}*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$")))))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(\+[\d]{1,5}|0)?[6-9]\d{9}$")))
+(assert (= x "<sub onblur=alert(1) tabindex=1 id=x></sub><input autofocus>"))
+(check-sat)

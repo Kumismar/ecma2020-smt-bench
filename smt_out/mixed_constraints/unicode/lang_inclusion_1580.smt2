@@ -1,0 +1,6 @@
+; lang_inclusion, Unicode mode: is the language of a regex A included in the language of a regex B, both built from ECMAScript regexes: a string x in A and not in B, or an equation (re.inter A B) = A or (re.union A B) = B
+; construction: preceded_by_literal, inclusion holds, encoding: inter_equation
+(set-logic QF_SLIA)
+(set-info :status sat)
+(assert (= (re.inter ((_ re.from_regex ecma2020 u) "enter(?:^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$)") ((_ re.from_regex ecma2020 u) "^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$")) ((_ re.from_regex ecma2020 u) "enter(?:^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$)")))
+(check-sat)

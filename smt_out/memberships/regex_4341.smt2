@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-z\u{c4}\u{d6}\u{dc}\u{e4}\u{fc}\u{f6}\u{df}\- ,']{2}")))
+(assert (= x "<STYLE>@import'http://ha.ckers.org/xss.css';</STYLE>"))
+(check-sat)

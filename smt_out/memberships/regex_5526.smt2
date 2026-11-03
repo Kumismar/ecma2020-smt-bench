@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "([0-9]{9}[x|X|v|V]|[0-9]{12})")))
+(assert (= x "<BODY BACKGROUND=\u{201d}javascript:alert(\u{2018}XSS\u{2019})\u{201d}>"))
+(check-sat)

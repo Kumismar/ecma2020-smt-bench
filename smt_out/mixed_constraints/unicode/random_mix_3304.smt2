@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<SCRIPT a="">"" '' SRC=""http://ha.ckers.org/xss.js""></SCRIPT>") (= x """`'><script>\xC2\x85javascript:alert(1)</script>")))
+(assert (or (= z "arquee>") (= z ">") (= z ";}</style><wbr id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></wbr>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (>= (str.len x) 51)) (not (= "mp" (str.substr x 44 2))) (= (str.indexof z "e" 0) 4)))
+(assert (or (not (= (str.len x) 48)) (str.in_re x ((_ re.from_regex ecma2020 u) "^[a-zA-Z0-9]{17}$"))))
+(assert (or (not (str.prefixof "<SCRIPT " x)) (not (str.in_re y ((_ re.from_regex ecma2020 u) "[A-Za-z\u{c0}\u{c1}\u{c2}\u{c3}\u{c4}\u{c5}\u{c6}\u{c7}\u{c8}\u{c9}\u{ca}\u{cb}\u{cc}\u{cd}\u{ce}\u{cf}\u{d0}\u{d1}\u{d2}\u{d3}\u{d4}\u{d5}\u{d6}\u{d8}\u{d9}\u{da}\u{db}\u{dc}\u{dd}\u{de}\u{df}\u{e0}\u{e1}\u{e2}\u{e3}\u{e4}\u{e5}\u{e6}\u{e7}\u{e8}\u{e9}\u{ea}\u{eb}\u{ec}\u{ed}\u{ee}\u{ef}\u{f0}\u{f1}\u{f2}\u{f3}\u{f4}\u{f5}\u{f6}\u{f8}\u{f9}\u{fa}\u{fb}\u{fc}\u{fd}\u{fe}\u{ff} \t\r\n\f0-9-,./#&]*$"))) (not (str.in_re x ((_ re.from_regex ecma2020 u) "^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$")))))
+(check-sat)

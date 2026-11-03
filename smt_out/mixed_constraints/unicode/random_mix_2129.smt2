@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<thead id=x tabindex=1 ondeactivate=alert(1)></thead><input id=y autofocus>") (= x "<abbr oncut=""alert(1)"" contenteditable>test</abbr>")))
+(assert (or (= z "ad=alert(1)></header>") (= z "&&>") (= z "style><col id=x style=""transition:color 10s"" ontransitioncancel=alert(1)></col>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020 u) "^L[0-9]{2}P[0-9]{4}$"))) (not (= (str.indexof x "x" 0) 10)) (= "ocus>" (str.substr y 70 5))))
+(assert (or (not (>= (str.len z) 3)) (not (str.contains (str.replace y "=y au" "alert(1)") "t idalert(1)tofoc")) (not (str.in_re x ((_ re.from_regex ecma2020 u) "(^[aAbB][a-jA-J]\d{5}$|^[aAbB][a-jA-J]\d{5}\D{1}\d{1}$)")))))
+(assert (or (not (= "ader>" (str.substr z 16 9))) (not (= "ntedi" (str.substr x 28 5)))))
+(check-sat)

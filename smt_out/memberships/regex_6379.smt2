@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "http(s?)://.+")))
+(assert (= x "\u{201c}><s\u{201d}%2b\u{201d}cript>alert(document.cookie)</script>"))
+(check-sat)

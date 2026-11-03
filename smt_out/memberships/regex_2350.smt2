@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z]{3}[A-Za-z ]{0,50}")))
+(assert (= x "<STYLE>@im\port'\ja\vasc\ript:alert(""XSS"")';</STYLE>"))
+(check-sat)

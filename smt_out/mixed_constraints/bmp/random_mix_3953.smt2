@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<dialog draggable=""true"" ondragend=""alert(1)"">test</dialog>") (= x "<svg><tbody onload=alert(1)></tbody>")))
+(assert (or (= z "t") (= z "object>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.prefixof "<svg><t" x) (= "<progress id=x tabin1 onfocus=alert(1)></progress>ert(1\u{10348})</script>"">" (str.replace y "dex=" "")) (str.in_re z ((_ re.from_regex ecma2020) "^[A-Za-z ]+$"))))
+(assert (or (not (<= (str.len x) 44)) (= "rue"" " (str.substr y 20 5)) (not (= (str.at x 29) "/"))))
+(assert (or (not (str.in_re z ((_ re.from_regex ecma2020) "^[a-z0-9_\+-]+(\.[a-z0-9_\+-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*\.([a-z]{2,4})$"))) (= (str.at z 2) "j") (not (str.contains y "me o"))))
+(check-sat)

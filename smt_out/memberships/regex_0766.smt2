@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z\u{c0}-\u{d6}\u{d8}-\u{f6}\u{f8}-\u{ff}-0-9$, ]{2,99}$")))
+(assert (= x "<div style=""binding: url([link to code]);"">"))
+(check-sat)

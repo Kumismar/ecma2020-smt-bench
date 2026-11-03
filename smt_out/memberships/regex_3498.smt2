@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z-\u{f1}\u{d1}\u{e1}\u{e9}\u{f3}\u{ed}\u{fa}\u{c1}\u{c9}\u{d3}\u{cd}\u{da} ]{1,20}$")))
+(assert (= x "&lt;HTML xmlns:xss&gt;"))
+(check-sat)

@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<acronym oncontextmenu=""alert(1)"">test</acronym>") (= x "<script id=x tabindex=1 onfocus=alert(1)></script>")))
+(assert (or (= z "x=1 ondeactivate=alert(1)></html><input id=y autofocus>") (= z "3))"">") (= z "alert(1)"" contenteditable>test</ol>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= ")" (str.substr z 7 1))) (not (str.prefixof "<secti" y)) (not (= ">tes" (str.substr x 33 4)))))
+(assert (or (not (= (str.indexof z "d" 0) 61)) (str.contains y "ondeactiva") (not (str.in_re z ((_ re.from_regex ecma2020) "[BGHRS]{2}[0-9]{3,3}[-][0-9]{4}$")))))
+(assert (or (not (= (str.indexof x """a" 0) 23)) (not (str.suffixof ")"">" z)) (= (str.at x 34) "e")))
+(check-sat)

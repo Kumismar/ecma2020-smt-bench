@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z\u{154}\u{c1}\u{c2}\u{102}\u{c4}\u{139}\u{106}\u{c7}\u{10c}\u{c9}\u{118}\u{cb}\u{11a}\u{cd}\u{ce}\u{10e}\u{110}\u{143}\u{147}\u{d3}\u{d4}\u{150}\u{d6}\u{158}\u{16e}\u{da}\u{170}\u{dc}\u{dd}\u{162}\u{df}\u{155}\u{e1}\u{e2}\u{103}\u{e4}\u{13a}\u{107}\u{e7}\u{10d}\u{e9}\u{119}\u{eb}\u{11b}\u{ed}\u{ee}\u{10f}\u{111}\u{144}\u{148}\u{f3}\u{f4}\u{151}\u{f6}\u{159}\u{16f}\u{fa}\u{171}\u{fc}\u{fd}\u{163}\u{2d9} \t\r\n\f\u{15b}, \u{107}, \u{142}, \u{f3}, \u{144}, \u{17c}, \u{17a}, \u{105}, \u{119}]*$")))
+(assert (= x "<eval>new ActiveXObject(&apos;htmlfile&apos;).parentWindow.alert(135)</eval>"))
+(check-sat)

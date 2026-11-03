@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=-_!*()@%&]).{8,}$")))
+(assert (= x "&lt;LINK REL=\""stylesheet\"" HREF=\""http&#58;//ha&#46;ckers&#46;org/xss&#46;css\""&gt;"))
+(check-sat)

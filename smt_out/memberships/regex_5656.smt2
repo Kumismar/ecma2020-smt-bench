@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{410}-\u{42f}\u{430}-\u{44f}\u{401}\u{451}\u{454}\u{404}\u{457}\u{407}\u{406}\u{456}Ii\u{490}\u{491}\u{2018}'\u{2019}\u{b4}`\s]+$")))
+(assert (= x "<xml:namespace prefix=""t"">"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9\._]+@[A-Za-z]+\.com")))
+(assert (= x "<style>@keyframes x{}</style><img style=""animation-name:x"" onanimationend=""alert(1)""></img>"))
+(check-sat)

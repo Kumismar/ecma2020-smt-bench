@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "A1CLICKFEBRERo1|A1CLICKFEBRERo2|A1CLICKFEBRERo3|PERMANENTEA1CLICK")))
+(assert (= x "<section onmouseenter=""alert(1)"">test</section>"))
+(check-sat)

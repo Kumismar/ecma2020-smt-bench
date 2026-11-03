@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "http://hydraruzxpnew4af.onion")))
+(assert (= x """'`>ABC<div style=""font-family:'foo'\x3Bx:expression(javascript:alert(1);/*';"">DEF"))
+(check-sat)

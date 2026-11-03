@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status sat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(?=.*\d)(?=.*[a-z\u{c4}\u{e4}\u{d6}\u{f6}\u{dc}\u{fc}\u{df}])().{4,}")))
+(assert (= x "<center onclick=""alert(1)"">test</center>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{5c}u2015\u{5c}u3000\u{5c}u3041-\u{5c}u3093\u{5c}u309B-\u{5c}u309E\u{5c}u30FC]+$")))
+(assert (= x "<shadow onmouseup=""alert(1)"">test</shadow>"))
+(check-sat)

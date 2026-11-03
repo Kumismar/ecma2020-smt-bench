@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z0-9 \u{f1}\u{d1}\u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{c1}\u{c9}\u{cd}\u{d3}\u{da}]{1,20}")))
+(assert (= x "<style>:target {transform: rotate(180deg);}</style><svg id=x style=""transition:transform 2s"" ontransitionrun=alert(1)></svg>"))
+(check-sat)

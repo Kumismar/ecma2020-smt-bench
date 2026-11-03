@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[^A-z\u{410}-\u{44f}]{5,}")))
+(assert (= x "<X OnXxx=1"))
+(check-sat)

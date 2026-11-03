@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-zA-Z0-9-\u{e0}\u{e2}\u{e4}\u{e7}\u{e9}\u{e8}\u{ea}\u{eb}\u{ee}\u{ef}\u{f4}\u{f6}\u{f9}\u{fb}\u{fc}\u{ff}\u{e6}\u{153} \u{c0}\u{c2}\u{c4}\u{c7}\u{c9}\u{c8}\u{ca}\u{cb}\u{ce}\u{cf}\u{d4}\u{d6}\u{d9}\u{db}\u{dc}\u{178}\u{c6}\u{152}]+")))
+(assert (= x "<script> var+xmlHttp+=+null; try+{ xmlHttp+=+new+XMLHttpRequest(); }+catch(e)+{} if+(xmlHttp)+{ xmlHttp.open('GET',+'/xssme2',+true); xmlHttp.onreadystatechange+=+function+()+{ if+(xmlHttp.readyState+==+4)+{ xmlHttp.responseText.match(/document.cookie%5Cs%2B=%5Cs%2B'(.*)'/gi); alert(RegExp.%241); } } xmlHttp.send(null); }; </script>#"))
+(check-sat)

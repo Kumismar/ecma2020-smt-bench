@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")))
+(assert (= x "<img/src=`%00` onerror=this.onerror=confirm(1)"))
+(check-sat)

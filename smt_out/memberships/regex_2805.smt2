@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((?![0-9]|[!@#$%^&*(),.?:{} |<>]|\bcom\b|\bnet\b|\blose weight\b|\bfuck\b|\bsex\b|\bsexy\b).)*$")))
+(assert (= x "<template id=x tabindex=1 onactivate=alert(1)></template>"))
+(check-sat)

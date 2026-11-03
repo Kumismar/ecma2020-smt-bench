@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$")))
+(assert (= x "<multicol onblur=alert(1) tabindex=1 id=x></multicol><input autofocus>"))
+(check-sat)

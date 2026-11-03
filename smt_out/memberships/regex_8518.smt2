@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[\u{5c}u4e00-\u{5c}u9fa5]{1,5}$")))
+(assert (= x "<frameset draggable=""true"" ondragenter=""alert(1)"">test</frameset>"))
+(check-sat)

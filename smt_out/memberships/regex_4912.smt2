@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z0-9._%+-]+@[a-z0-9.-]+\.[cominet]{2,}$")))
+(assert (= x "<meta charset=""mac-farsi"">\u{bc}script\u{be}javascript:alert(1)\u{bc}/script\u{be}"))
+(check-sat)

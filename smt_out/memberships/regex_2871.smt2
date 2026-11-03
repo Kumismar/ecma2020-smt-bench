@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "Tu es une fille sympa.")))
+(assert (= x "<dt onclick=""alert(1)"">test</dt>"))
+(check-sat)

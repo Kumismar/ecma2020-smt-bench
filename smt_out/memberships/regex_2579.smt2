@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(\+91[\-\s]?)?[0]?(91)?[789]\d{9}$")))
+(assert (= x "<animation xlink:href=""data:text/xml,%3Csvg xmlns='http://www.w3.org/2000/svg' onload='alert(88)'%3E%3C/svg%3E""/>"))
+(check-sat)

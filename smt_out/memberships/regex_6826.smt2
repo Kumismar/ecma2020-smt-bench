@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[0-9()+\s]{9,25}$")))
+(assert (= x "<svg><set onrepeat=alert(1) attributename=x dur=1s repeatcount=2>"))
+(check-sat)

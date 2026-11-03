@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^.+@(?:(?!(g|hot|y|google|hush|fast|at|short|at|proton)?mail)(?!live)(?!gmx)(?!gmail)(?!yahoo)(?!hotmail)(?!outlook)(?!msn)(?!icloud)(?!facebook)(?!aol)(?!zoho)(?!yandex)(?!lycox)(?!inbox)(?!myway)(?!aim)(?!goowy)(?!juno).)+\..+$")))
+(assert (= x "<summary oncopy=""alert(1)"" contenteditable>test</summary>"))
+(check-sat)

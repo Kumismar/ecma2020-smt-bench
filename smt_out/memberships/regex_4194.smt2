@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[A-Za-z \s]{3,25}")))
+(assert (= x "<canvas oncut=""alert(1)"" contenteditable>test</canvas>"))
+(check-sat)

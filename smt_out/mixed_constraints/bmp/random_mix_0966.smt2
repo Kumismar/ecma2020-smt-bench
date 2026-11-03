@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<style>@keyframes x{}</style><rp style=""animation-name:x"" onanimationend=""alert(1)""></rp>") (= x "<style>@keyframes x{}</style><optgroup style=""animation-name:x"" onanimationstart=""alert(1)""></optgroup>")))
+(assert (or (= z "ert(1)"" contenteditable>test</embed>") (= z "=1 ondeactivate=alert(1)></rb><input id=y autofocus>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.contains y "<style>@ke") (not (str.in_re z ((_ re.from_regex ecma2020) "^\w+$")))))
+(assert (or (not (str.contains (str.replace x "le" "") "ty>@k")) (str.in_re z ((_ re.from_regex ecma2020) "^(?=.*[a-z].*)(?=.*[A-Z].*)(?=.*[0-9].*)(?=.*[^A-Za-z0-9].*)(?=[^\s]+$).{8,20}$")) (str.suffixof ">" x)))
+(assert (or (= (str.at y 72) "=") (not (str.suffixof "cus>" z)) (= (str.indexof z "ndea" 0) 4)))
+(check-sat)

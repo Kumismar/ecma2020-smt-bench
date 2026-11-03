@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z\u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{c1}\u{c9}\u{cd}\u{d3}\u{da}\u{d1}\u{f1}\u{e4}\u{eb}\u{ef}\u{f6}\u{fc}\u{ff}\u{c4}\u{cb}\u{cf}\u{d6}\u{dc}\u{178} ]*$")))
+(assert (= x "<picture onbeforecut=""alert(1)"" contenteditable>test</picture>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^((\+48)[0-9]{9})$")))
+(assert (= x "<div id=""83""><x:template xmlns:x=""http://www.wapforum.org/2001/wml""  x:ontimer=""$(x:unesc)j$(y:escape)a$(z:noecs)v$(x)a$(y)s$(z)cript$x:alert(83)""><x:timer value=""1""/></x:template>//[""'`-->]]>]</div>"))
+(check-sat)

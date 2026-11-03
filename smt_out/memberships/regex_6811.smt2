@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[0-9]-[0-9]{2,7}-[0-9]{2,7}-[0-9X]")))
+(assert (= x "<address draggable=""true"" ondragleave=""alert(1)"">test</address>"))
+(check-sat)

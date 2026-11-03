@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "&lt;IMG SRC=&quot;java\u{20000}sc\u{20000}ript:alert(&apos;XSS&apos;)&quot;") (= x """/></a></><img src=1.gif onerror=alert(1)>") (= x "<dfn onbeforecopy=""alert(1)"" contenteditable>test</dfn>")))
+(assert (or (= z "ss.js") (= z "ragstart=""alert(1)"">test</details>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (str.suffixof "/details>" z)) (not (= "#116,\u{5c}u006" (str.substr x 67 10))) (str.in_re y ((_ re.from_regex ecma2020 u) "^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+"))))
+(assert (or (not (str.in_re x ((_ re.from_regex ecma2020 u) "^\d+\s*$"))) (not (str.prefixof "&lt;IM" x)) (not (str.prefixof "<div d" y))))
+(assert (or (str.in_re x ((_ re.from_regex ecma2020 u) ".{1,80}")) (= (str.at y 59) "s") (str.suffixof "ss.js" z)))
+(check-sat)

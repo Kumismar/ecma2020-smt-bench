@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "(https://www\.youtube\.com\/(.+))|(https://vimeo.com\/(.+))")))
+(assert (= x "<script/src=""data&colon;text%2Fj\u{5c}u0061v\u{5c}u0061script,\u{5c}u0061lert('\u{5c}u0061')""></script a=\u{5c}u0061 & /=%2F"))
+(check-sat)

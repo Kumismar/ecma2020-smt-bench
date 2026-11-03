@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^[a-zA-Z][0-9\u{142}\u{15b}\u{17c}\u{f3}\u{105}\u{119}\u{144}\u{107}a-zA-Z-._\- ]*$")))
+(assert (= x """><img src=x onerror=window.open('https://www.google.com/');>"))
+(check-sat)

@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "^(14)$")))
+(assert (= x "<marquee onstart='javascript:alert('1');'>=(\u{25d5}_\u{25d5})="))
+(check-sat)

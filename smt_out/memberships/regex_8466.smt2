@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "domain_name")))
+(assert (= x "%2BADw-script+AD4-alert(document.location)%2BADw-/script%2BAD4-"))
+(check-sat)

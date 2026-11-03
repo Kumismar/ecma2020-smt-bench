@@ -1,0 +1,6 @@
+(set-logic QF_S)
+(set-info :status unsat)
+(declare-const x String)
+(assert (str.in_re x (re.from_ecma2020 "[a-z A-Z \u{e1}\u{e9}\u{ed}\u{f3}\u{fa}\u{b4} \u{c1}\u{c9}\u{cd}\u{d3}\u{da}]{3,40}")))
+(assert (= x "<svg><animatetransform onrepeat=alert(1) attributeName=transform repeatCount=2 dur=1s>"))
+(check-sat)

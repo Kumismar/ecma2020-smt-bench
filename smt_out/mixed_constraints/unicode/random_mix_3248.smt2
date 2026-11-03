@@ -1,0 +1,13 @@
+; random_mix, Unicode mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x """`'><script>\x2Bjavascript:alert(1)</script>") (= x "<form oncut=""alert(1)"" contenteditable>test</form>") (= x "<source onbeforecut=""alert(1)"" contenteditable>test</source>")))
+(assert (or (= z "x"" onanimationstart=""alert(1)""></canvas>") (= z "est</fieldset>")))
+(assert (= y (str.++ x z)))
+(assert (or (str.prefixof "<form on" y) (not (= (str.at x 56) "r")) (not (str.suffixof "as>" z))))
+(assert (or (not (str.prefixof """`'><scrip" x)) (not (str.in_re x ((_ re.from_regex ecma2020 u) "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,4}$")))))
+(assert (or (str.contains x "le>t") (not (= "1)</script" (str.substr x 33 10))) (not (= "<form oncut=""alert(1)"" conjavascript:teditable>test</form>est</fieldset>" (str.replace y "ten" "javascript:")))))
+(check-sat)

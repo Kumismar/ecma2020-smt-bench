@@ -1,0 +1,13 @@
+; random_mix, BMP mode: x, z from disjunctions of constants, y = x ++ z, clauses of 1 to 3 random (negated) constraints of x, y, z: memberships, affixes, contains, lengths, str.at, str.indexof, str.substr, str.replace
+(set-logic QF_SLIA)
+(set-info :status sat)
+(declare-const x String)
+(declare-const y String)
+(declare-const z String)
+(assert (or (= x "<template onmouseover=""alert(1)"">test</template>") (= x "<STYLE>BODY{-moz-binding:url(""http://ha.ckers.org/xssmo\u{1f600}z.xml#xss"")}</STYLE>")))
+(assert (or (= z "tenteditable>test</spacer>") (= z "ert(1)>")))
+(assert (= y (str.++ x z)))
+(assert (or (not (= (str.indexof z "e" 0) 0)) (not (= """)}</STY" (str.substr y 65 8))) (= "sed" (str.substr x 9 3))))
+(assert (or (not (<= (str.len x) 80)) (not (<= (str.len y) 56)) (= "rt(1)" (str.substr y 26 5))))
+(assert (or (not (str.in_re y ((_ re.from_regex ecma2020) "\w+ \w+.*"))) (not (= (str.at x 5) "E")) (str.suffixof "e>" x)))
+(check-sat)
