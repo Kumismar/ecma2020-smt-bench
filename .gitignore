@@ -1,0 +1,5 @@
+/smt_out_tmp/
+/results/
+/test_output/
+/z3-*
+__pycache__/
